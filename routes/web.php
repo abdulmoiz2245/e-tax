@@ -56,6 +56,9 @@ Route::middleware('auth')->group(function () {
     Route::get('form-import', [PagesController::class, 'form_import'])->name('form_import');
 
 
+
+    Route::get('/payer/add-payer', [PagesController::class, 'add_payer'])->name('add_payer');
+
     // Account pages
     Route::prefix('account')->group(function () {
         Route::get('settings', [SettingsController::class, 'index'])->name('settings.index');
