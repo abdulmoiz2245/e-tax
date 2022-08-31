@@ -38,13 +38,29 @@ class PagesController extends Controller
             return view('pages.fillings.cart');
 
     }
+    
 
+    public function payer()
+    {
+        // Get view file location from menu config
+        // Check if the page view file exist
+            return view('pages.payer.payer');
+
+    }
 
     public function field_forms()
     {
         // Get view file location from menu config
         // Check if the page view file exist
             return view('pages.fillings.field_forms');
+
+    }
+
+    public function form_import()
+    {
+        // Get view file location from menu config
+        // Check if the page view file exist
+            return view('pages.form_import');
 
     }
 
