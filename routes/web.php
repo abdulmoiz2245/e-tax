@@ -51,6 +51,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('billing-invoice', [PagesController::class, 'billing_invoice'])->name('billing_invoice');
     Route::get('billing-information', [PagesController::class, 'billing_information'])->name('billing_information');
+    Route::get('/payer/add-payer', [PagesController::class, 'add_payer'])->name('add_payer');
 
     // Account pages
     Route::prefix('account')->group(function () {

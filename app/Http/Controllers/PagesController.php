@@ -71,4 +71,8 @@ class PagesController extends Controller
             return view('pages.billing_information');
 
     }
+
+    public function add_payer(){
+        return view('pages.payer.add_payer');
+    }
 }
