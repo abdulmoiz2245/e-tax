@@ -106,4 +106,41 @@ class PagesController extends Controller
         return view('pages.forms.form_2021_form_1099_nec');
 
     }
+
+    public function form_2021_form_w_2(){
+        return view('pages.forms.form_2021_form_w_2');
+
+    }
+
+    public function form_2021_form_1099_b(){
+        return view('pages.forms.form_2021_form_1099_b');
+
+    }
+
+    public function form_2021_form_1099_int(){
+        return view('pages.forms.form_2021_form_1099_int');
+
+    }
+
+    public function form_2021_form_1099_r(){
+        return view('pages.forms.form_2021_form_1099_r');
+
+    }
+
+    public function form_2021_form_1099_div(){
+        return view('pages.forms.form_2021_form_1099_div');
+
+    }
+
+    public function form_2021_form_1099_s(){
+        return view('pages.forms.form_2021_form_1099_s');
+
+    }
+
+    public function form_2021_form_1042_s(){
+        return view('pages.forms.form_2021_form_1042_s');
+
+    }
+
+
 }

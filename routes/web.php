@@ -51,6 +51,23 @@ Route::middleware('auth')->group(function () {
     Route::get('fillings/start-filling/form/2021-form-1098-t', [PagesController::class, 'form_2021_form_1098_t'])->name('form_2021_form_1098_t');
     Route::get('fillings/start-filling/form/2021-form-1099-mics', [PagesController::class, 'form_2021_form_1099_mics'])->name('form_2021_form_1099_mics');
     Route::get('fillings/start-filling/form/2021-form-1099-nec', [PagesController::class, 'form_2021_form_1099_nec'])->name('form_2021_form_1099_nec');
+    Route::get('fillings/start-filling/form/2021-form-w-2', [PagesController::class, 'form_2021_form_w_2'])->name('form_2021_form_w_2');
+    Route::get('fillings/start-filling/form/2021-form-1099-b', [PagesController::class, 'form_2021_form_1099_b'])->name('form_2021_form_1099_b');
+    Route::get('fillings/start-filling/form/2021-form-1099-c', [PagesController::class, 'form_2021_form_1099_c'])->name('form_2021_form_1099_c');
+    Route::get('fillings/start-filling/form/2021-form-1099-int', [PagesController::class, 'form_2021_form_1099_int'])->name('form_2021_form_1099_int');
+    Route::get('fillings/start-filling/form/2021-form-1099-r', [PagesController::class, 'form_2021_form_1099_r'])->name('form_2021_form_1099_r');
+    Route::get('fillings/start-filling/form/2021-form-1099-div', [PagesController::class, 'form_2021_form_1099_div'])->name('form_2021_form_1099_div');
+    Route::get('fillings/start-filling/form/2021-form-1099-s', [PagesController::class, 'form_2021_form_1099_s'])->name('form_2021_form_1099_s');
+    Route::get('fillings/start-filling/form/2021-form-1042-s', [PagesController::class, 'form_2021_form_1042_s'])->name('form_2021_form_1042_s');
+
+
+    Route::get('fillings/start-filling/form/2021-form-1094-C', [PagesController::class, 'form_2021_form_1094_c'])->name('form_2021_form_1094_c');
+    Route::get('fillings/start-filling/form/2021-form-w-2C', [PagesController::class, 'form_2021_form_w_2c'])->name('form_2021_form_w_2c');
+    Route::get('fillings/start-filling/form/2021-form-1095-B', [PagesController::class, 'form_2021_form_1095_b'])->name('form_2021_form_1095_b');
+    Route::get('fillings/start-filling/form/2021-form-1099-MICS', [PagesController::class, 'form_2021_form_1099_mics'])->name('form_2021_form_1099_mics');
+    Route::get('fillings/start-filling/form/2021-form-1099-MICS', [PagesController::class, 'form_2021_form_1099_mics'])->name('form_2021_form_1099_mics');
+
+
 
 
     
