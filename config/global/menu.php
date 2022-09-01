@@ -200,10 +200,10 @@ return array(
                 'svg'  => theme()->getSvgIcon("demo1/media/icons/duotone/General/User.svg", "svg-icon-2"),
                 'font' => '<i class="bi bi-person fs-2"></i>',
             ),
-            'classes'    => array('item' => 'menu-accordion'),
-            'attributes' => array(
-                "data-kt-menu-trigger" => "click",
-            ),
+            
+
+            'path'  => 'payer',
+
             
         ),
 

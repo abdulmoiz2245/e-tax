@@ -47,6 +47,13 @@ Route::middleware('auth')->group(function () {
     Route::get('fillings/form-in-progress', [PagesController::class, 'form_in_progress'])->name('form_in_progress');
     Route::get('fillings/field-forms', [PagesController::class, 'field_forms'])->name('field_forms');
     Route::get('fillings/start-filling', [PagesController::class, 'start_filling'])->name('start_filling');
+
+    Route::get('fillings/start-filling/form/2021-form-1098-t', [PagesController::class, 'form_2021_form_1098_t'])->name('form_2021_form_1098_t');
+    Route::get('fillings/start-filling/form/2021-form-1099-mics', [PagesController::class, 'form_2021_form_1099_mics'])->name('form_2021_form_1099_mics');
+    Route::get('fillings/start-filling/form/2021-form-1099-nec', [PagesController::class, 'form_2021_form_1099_nec'])->name('form_2021_form_1099_nec');
+
+
+    
     Route::get('fillings/cart', [PagesController::class, 'cart'])->name('cart');
 
     Route::get('billing-invoice', [PagesController::class, 'billing_invoice'])->name('billing_invoice');

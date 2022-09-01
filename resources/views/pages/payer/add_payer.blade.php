@@ -1,9 +1,6 @@
 <x-base-layout>
     <style>
-
-
-      
-        .card-title-text{
+        .card-title-text {
             font-style: normal;
             font-weight: 400 !important;
             font-size: 15px !important;
@@ -12,7 +9,7 @@
 
         }
 
-        .card-title-p{
+        .card-title-p {
             font-style: normal;
             font-weight: 400 !important;
             font-size: 12px !important;
@@ -21,7 +18,7 @@
 
         }
 
-        .card-count{
+        .card-count {
 
             font-style: normal;
             font-weight: 600 !important;
@@ -29,25 +26,25 @@
             line-height: 53px;
         }
 
-        .dash-title{
+        .dash-title {
             font-style: normal;
             font-weight: 600 !important;
             font-size: 30px !important;
             line-height: 38px;
         }
 
-        .dash-title-secondry{
+        .dash-title-secondry {
             font-style: normal;
             font-weight: 400;
             font-size: 20px;
             line-height: 24px;
         }
 
-        .card .card-header{
-            min-height: auto ;
+        .card .card-header {
+            min-height: auto;
         }
 
-        .card-main-title{
+        .card-main-title {
             font-style: normal;
             font-weight: 400;
             font-size: 18px;
@@ -55,8 +52,8 @@
             color: #000000;
         }
 
-        @media (min-width: 1440px)  {
-            .card-title-text{
+        @media (min-width: 1440px) {
+            .card-title-text {
                 font-style: normal;
                 font-weight: 400 !important;
                 font-size: 16px !important;
@@ -64,13 +61,14 @@
                 color: #6F6F6F !important;
             }
 
-            
 
-            .dash-title{
+
+            .dash-title {
                 font-weight: 700 !important;
-               
+
             }
-            .card-count{
+
+            .card-count {
 
                 font-style: normal;
                 font-weight: 600 !important;
@@ -79,10 +77,10 @@
             }
         }
 
-       
 
-        @media (min-width: 320px) and (max-width:1200){
-            .billing-form{
+
+        @media (min-width: 320px) and (max-width:1200) {
+            .billing-form {
                 padding-left: 15% !important;
                 padding-right: 15% !important;
 
@@ -91,28 +89,30 @@
 
         @media (min-width: 1201px) {
 
-            .billing-form{
+            .billing-form {
                 padding-left: 25% !important;
                 padding-right: 25% !important;
 
             }
         }
 
-        @media (min-width: 1200px){
-            .container{
+        @media (min-width: 1200px) {
+            .container {
                 max-width: 1093px !important;
             }
         }
+
         input[type='radio'] {
-           
-            accent-color:#ffc700
+
+            accent-color: #ffc700
         }
+
         .center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  ; 
-}
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            ;
+        }
     </style>
 
     <!--begin::Row-->
@@ -121,35 +121,35 @@
         <!--begin::Col-->
 
         <div class="col-md-12">
-            <span><a href="/billing-invoice"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
+            <span><a href="/payer"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
             <span class="pr-2" style="color:#6F6F6F;padding-left: 7px;">Back to Payers</span>
         </div>
-        <!--end::Col--> 
+        <!--end::Col-->
 
         <!--begin::Col-->
 
         <div class="col-md-12">
             <h1 class="dash-title">Add New Payer</h1>
         </div>
-        <!--end::Col--> 
+        <!--end::Col-->
     </div>
     <!--end::Row-->
 
 
 
     <!--begin::Row-->
-    <div class="row " style="margin-bottom: 36px;" >
+    <div class="row " style="margin-bottom: 36px;">
         <!--begin::Col-->
         <div class="col-md-12">
             <div class="card ">
-                    
 
-                    <!--begin::Body-->
-                    <div class="card-body billing-form d-flex flex-column pt-3 pb-3 justify-content-end" >
-                        <form action="" method="post">
-                            <div>
-                              
-                                    {{ theme()->getView('partials/widgets/form/input/_text',
+
+                <!--begin::Body-->
+                <div class="card-body billing-form d-flex flex-column pt-3 pb-3 justify-content-end">
+                    <form action="" method="post">
+                        <div>
+
+                            {{ theme()->getView('partials/widgets/form/input/_text',
                                         array( 
                                                 'type' => 'text' ,
                                                 'name' => 'Tin' ,
@@ -159,8 +159,8 @@
                                         )
                                     }}
 
-                                  
-                                        {{ theme()->getView('partials/widgets/form/input/_text',
+
+                            {{ theme()->getView('partials/widgets/form/input/_text',
                                             array( 
                                                     'type' => 'text' ,
                                                     'name' => 'payer_name' ,
@@ -169,7 +169,7 @@
                                                 )
                                             )
                                         }}
-                                        {{ theme()->getView('partials/widgets/form/input/_text',
+                            {{ theme()->getView('partials/widgets/form/input/_text',
                                             array( 
                                                     'type' => 'text' ,
                                                     'name' => 'address_1' ,
@@ -178,7 +178,7 @@
                                                 )
                                             )
                                         }}
-                                        {{ theme()->getView('partials/widgets/form/input/_text',
+                            {{ theme()->getView('partials/widgets/form/input/_text',
                                             array( 
                                                     'type' => 'text' ,
                                                     'name' => 'address_2' ,
@@ -187,7 +187,7 @@
                                                 )
                                             )
                                         }}
-                                        {{ theme()->getView('partials/widgets/form/input/_text',
+                            {{ theme()->getView('partials/widgets/form/input/_text',
                                             array( 
                                                     'type' => 'text' ,
                                                     'name' => 'united_states' ,
@@ -196,7 +196,7 @@
                                                 )
                                             )
                                         }}
-                                        {{ theme()->getView('partials/widgets/form/input/_text',
+                            {{ theme()->getView('partials/widgets/form/input/_text',
                                             array( 
                                                     'type' => 'text' ,
                                                     'name' => 'city' ,
@@ -206,10 +206,10 @@
                                             )
                                         }}
 
-                                        <div class="row">
+                            <div class="row">
 
-                                            <div class="col-md-6">
-                                                {{ theme()->getView('partials/widgets/form/input/_select',
+                                <div class="col-md-6">
+                                    {{ theme()->getView('partials/widgets/form/input/_select',
                                                     array( 
                                                             'type' => 'select' ,
                                                             'name' => 'select_state' ,
@@ -224,11 +224,11 @@
                                                         )
                                                     )
                                                 }}
-                                                
 
-                                            </div>
-                                            <div class="col-md-6">
-                                            {{ theme()->getView('partials/widgets/form/input/_text',
+
+                                </div>
+                                <div class="col-md-6">
+                                    {{ theme()->getView('partials/widgets/form/input/_text',
                                                 array( 
                                                         'type' => 'text' ,
                                                         'name' => 'zip_code' ,
@@ -237,8 +237,8 @@
                                                     )
                                                 )
                                             }}
-                                            </div>
-                                            {{ theme()->getView('partials/widgets/form/input/_text',
+                                </div>
+                                {{ theme()->getView('partials/widgets/form/input/_text',
                                             array( 
                                                     'type' => 'text' ,
                                                     'name' => 'city' ,
@@ -247,7 +247,7 @@
                                                 )
                                             )
                                         }}
-                                        {{ theme()->getView('partials/widgets/form/input/_text',
+                                {{ theme()->getView('partials/widgets/form/input/_text',
                                             array( 
                                                     'type' => 'text' ,
                                                     'name' => 'phone' ,
@@ -256,7 +256,7 @@
                                                 )
                                             )
                                         }}
-                                        {{ theme()->getView('partials/widgets/form/input/_text',
+                                {{ theme()->getView('partials/widgets/form/input/_text',
                                             array( 
                                                     'type' => 'email' ,
                                                     'name' => 'email_address' ,
@@ -265,7 +265,7 @@
                                                 )
                                             )
                                         }}
-                                        {{ theme()->getView('partials/widgets/form/input/_text',
+                                {{ theme()->getView('partials/widgets/form/input/_text',
                                             array( 
                                                     'type' => 'text' ,
                                                     'name' => 'department_contact' ,
@@ -274,53 +274,53 @@
                                                 )
                                             )
                                         }}
-<br>
-                                        <div class="row mt-5">
-                                            <div class="col-md-4">
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio"  style="margin-right:5px" checked>EIN
-                                                </label>
-   
-
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio" style="margin-right:5px" >SSN
-                                                </label>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio" style="margin-right:5px"  >Unknown
-                                                </label>
-                                            </div>
-                                        </div>
+                                <br>
+                                <div class="d-md-flex justify-content-between mt-10 custom">
+                                    <div style="margin-bottom: 7px;">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optradio" style="margin-right:5px" checked>EIN
+                                        </label>
 
 
-                                        </div>
-                            </div>
+                                    </div>
+                                    <div style="margin-bottom: 7px;">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optradio" style="margin-right:5px">SSN
+                                        </label>
+                                    </div>
 
-                            
-
-                            <div style="margin-top: 34px; margin-bottom:34px">
-                                <div class="center">
-                                   
-                                    <div class="col-md-6">
-                                        <button class=" center btn w-100  mt-3"  style="background: #F4B42A;  color:#fff" >Save</button>
+                                    <div style="margin-bottom: 7px;">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optradio" style="margin-right:5px">Unknown
+                                        </label>
                                     </div>
                                 </div>
+
+
                             </div>
-                            
-                        </form>
-                        
-                    </div>
-                    <!--end::Body-->
+                        </div>
+
+
+
+                        <div style="margin-top: 34px; margin-bottom:34px">
+                            <div class="center">
+
+                                <div class="col-md-6">
+                                    <button class=" center btn w-100  mt-3" style="background: #F4B42A;  color:#fff">Save</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
                 </div>
+                <!--end::Body-->
+            </div>
 
         </div>
         <!--end::Col-->
 
-       
+
     </div>
     <!--end::Row-->
 

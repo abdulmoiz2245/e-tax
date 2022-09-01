@@ -91,4 +91,19 @@ class PagesController extends Controller
     public function add_payer(){
         return view('pages.payer.add_payer');
     }
+
+    public function form_2021_form_1099_mics(){
+        return view('pages.forms.form_2021_form_1099_mics');
+
+    }
+
+    public function form_2021_form_1098_t (){
+        return view('pages.forms.form_2021_form_1098_t ');
+
+    }
+
+    public function form_2021_form_1099_nec(){
+        return view('pages.forms.form_2021_form_1099_nec');
+
+    }
 }

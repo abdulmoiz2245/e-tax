@@ -96,7 +96,51 @@
     </div>
     <!--end::Row-->
 
+          <!--begin::Row-->
+    <div class="row " style="margin-bottom: 36px;"  >
+        <!--begin::Col-->
+        <div class="col-md-12">
+            <div class="card " style="padding: 24px;">
+                 
+                    <!--begin::Body-->
+                    <div class="card-body d-flex flex-column p-0 justify-content-end">
+                        <div class="d-flex justify-content-between" >
+                            <div class="">
+                                <h3 class="card-title align-items-start d-flex m-0 mt-2" >
+                                    <span class="card-label  mb-1 align-self-center card-title-text" style="color: black !important;">Add your first payers and recipients</span>
+                                </h3>
+                                <!--begin::Items-->
+                                <div class="text-left" >
+                                    <p style="color:#6f6f6f">Setting these up in advance will ensure creating and filing forms is quick and easy.</p>  
+                                    
+                                </div>
+                                <!--end::Items-->
+                            </div>
+                            <div class="">
+                                <a href="payer/add-payer">
+                                    <button class="btn font-neue" style="background: #F4B42A;  color:#fff;padding:14px; padding-left:30px;padding-right:30px;
+                                        font-style: normal;
+                                        font-weight: 700;
+                                        font-size: 16px;
+                                        line-height: 20px;
+                                        margin-left:12px;
+                                        color: #FFFFFF;
+                                    "> <i class="fa fa-plus" style="color:#fff"></i>   Add New</button>
+                                </a>
+                            </div>
+                            
+                        </div>
+                      
+                    </div>
+                    <!--end::Body-->
+                </div>
 
+        </div>
+        <!--end::Col-->
+
+       
+    </div>
+    <!--end::Row-->
 
     <!--begin::Row-->
     <div class="row " >
@@ -117,14 +161,17 @@
                     <!--end::Body-->
 
                 </div>
-                <button class="btn font-neue" style="background: #F4B42A;  color:#fff;padding:14px; padding-left:30px;padding-right:30px;
-                    font-style: normal;
-                    font-weight: 700;
-                    font-size: 16px;
-                    line-height: 20px;
-                    margin-left:12px;
-                    color: #FFFFFF;
-                "> <i class="fa fa-plus" style="color:#fff"></i> Add New</button>
+                <a href="payer/add-payer">
+                    <button class="btn font-neue" style="background: #F4B42A;  color:#fff;padding:14px; padding-left:30px;padding-right:30px;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 16px;
+                        line-height: 20px;
+                        margin-left:12px;
+                        color: #FFFFFF;
+                    "> <i class="fa fa-plus" style="color:#fff"></i>   Add New</button>
+                </a>
+                
 
             </div>
         </div>
