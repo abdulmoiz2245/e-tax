@@ -88,6 +88,9 @@ Route::middleware('auth')->group(function () {
         Route::get('settings', [SettingsController::class, 'index'])->name('settings.index');
         Route::get('account', [PagesController::class, 'account'])->name('account');
 
+        Route::get('team-member/learnmore', [PagesController::class, 'account_learnmore'])->name('account_learnmore');
+
+
         Route::put('settings', [SettingsController::class, 'update'])->name('settings.update');
         Route::put('settings/email', [SettingsController::class, 'changeEmail'])->name('settings.changeEmail');
         Route::put('settings/password', [SettingsController::class, 'changePassword'])->name('settings.changePassword');

@@ -162,5 +162,10 @@ class PagesController extends Controller
 
     }
 
+    public function account_learnmore(){
+
+        return view('pages.account.learn_more');
+    }
+
 
 }
