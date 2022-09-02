@@ -47,6 +47,8 @@ Route::middleware('auth')->group(function () {
     Route::get('fillings/form-in-progress', [PagesController::class, 'form_in_progress'])->name('form_in_progress');
     Route::get('fillings/field-forms', [PagesController::class, 'field_forms'])->name('field_forms');
     Route::get('fillings/start-filling', [PagesController::class, 'start_filling'])->name('start_filling');
+    Route::get('fillings/start-filling/form/2021-form-1098', [PagesController::class, 'form_2021_form_1098'])->name('form_2021_form_1098');
+
 
     Route::get('fillings/start-filling/form/2021-form-1098-t', [PagesController::class, 'form_2021_form_1098_t'])->name('form_2021_form_1098_t');
     Route::get('fillings/start-filling/form/2021-form-1099-mics', [PagesController::class, 'form_2021_form_1099_mics'])->name('form_2021_form_1099_mics');
@@ -64,8 +66,7 @@ Route::middleware('auth')->group(function () {
     Route::get('fillings/start-filling/form/2021-form-1094-C', [PagesController::class, 'form_2021_form_1094_c'])->name('form_2021_form_1094_c');
     Route::get('fillings/start-filling/form/2021-form-w-2C', [PagesController::class, 'form_2021_form_w_2c'])->name('form_2021_form_w_2c');
     Route::get('fillings/start-filling/form/2021-form-1095-B', [PagesController::class, 'form_2021_form_1095_b'])->name('form_2021_form_1095_b');
-    Route::get('fillings/start-filling/form/2021-form-1099-MICS', [PagesController::class, 'form_2021_form_1099_mics'])->name('form_2021_form_1099_mics');
-    Route::get('fillings/start-filling/form/2021-form-1099-MICS', [PagesController::class, 'form_2021_form_1099_mics'])->name('form_2021_form_1099_mics');
+
 
 
 

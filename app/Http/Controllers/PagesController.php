@@ -97,6 +97,11 @@ class PagesController extends Controller
 
     }
 
+    public function form_2021_form_1098 (){
+        return view('pages.forms.form_2021_form_1098 ');
+
+    }
+
     public function form_2021_form_1098_t (){
         return view('pages.forms.form_2021_form_1098_t ');
 
