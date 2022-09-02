@@ -8,7 +8,7 @@
         @foreach($item as $key => $val)
 
         <div class="select-box__value">
-            <input class="select-box__input" type="radio" id="selct-id-{{ $key }}" value="{{ $key }}" name="{{ $name }}" checked="checked" />
+            <input class="select-box__input" type="radio" id="selct-id-{{ $key }}" value="{{ $key }}" name="{{ $name }}" />
             <p class="select-box__input-text">{{ $val }}</p>
         </div>
 
