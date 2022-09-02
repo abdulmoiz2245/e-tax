@@ -48,6 +48,8 @@
             min-height: auto;
         }
 
+      
+
 
         @media (min-width: 1440px) {
             .card-title-text {
@@ -96,7 +98,7 @@
         <!--begin::Col-->
 
         <div class="col-md-12" style="margin-bottom: 40px;">
-            <h1 class="dash-title" style="margin-bottom: 18px; font-size:30px !important">2021 Form 1099-MISC</h1>
+            <h1 class="dash-title" style="margin-bottom: 18px; font-size:30px !important">2021 Form 1098-T</h1>
         </div>
         <!--end::Col-->
     </div>
@@ -145,7 +147,7 @@
     </div>
     <!--end::Row-->
 
-    <div class="row">
+    <!-- <div class="row">
         <div class="limiter">
             <div class="" style="padding: 0; padding-top:30px">
                 <div class="">
@@ -216,7 +218,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="row mt-10">
         <div class="card">
@@ -242,7 +244,7 @@
                     <h4 class="f-20-fig">Recipient Details</h4>
                 </div>
 
-                <div class="d-md-flex justify-content-end tag ">
+                <div class="d-md-flex justify-content-end tag">
 
                     {{ theme()->getView('partials/widgets/form/input/_select',
                                                     array( 
@@ -282,9 +284,9 @@
     </div>
 
     <div class="row gy-5 g-xl-4 mb-5" style="margin-top: 50px; ">
-        <div class="col-md-12" style="margin-bottom: 40px;">
+        <div class="col-md-12" >
             <h1 class="f-20-fig" style="margin-bottom: 18px;">Income</h1>
-            <p class="f-16-fig" style="color:#6F6F6F">If your State is not part of the Combined Federal/State Filing program, you may check to file State Tax information directly to that State. A rate of $1.00 per form will be added to your cart. Supported states are: DC, GA, IL, KS, MI, NC, OR, RI, VA, VT, WI.</p>
+            <!-- <p class="f-16-fig" style="color:#6F6F6F">If your State is not part of the Combined Federal/State Filing program, you may check to file State Tax information directly to that State. A rate of $1.00 per form will be added to your cart. Supported states are: DC, GA, IL, KS, MI, NC, OR, RI, VA, VT, WI.</p> -->
         </div>
     </div>
     <div class="row " style="margin-bottom: 36px;">
@@ -301,9 +303,9 @@
                             <div class="col-md-6">
                                 {{ theme()->getView('partials/widgets/form/input/_text',
                                     array( 
-                                            'type' => 'text' ,
+                                            'type' => 'date' ,
                                             'name' => 'rent' ,
-                                            'placeholder' => 'Rent' ,
+                                            'placeholder' => 'Date of identifiable event' ,
                                             'required'=> true , 'id' => ''
                                         )
                                     )
@@ -314,58 +316,31 @@
                                     array( 
                                             'type' => 'text' ,
                                             'name' => 'royalities' ,
-                                            'placeholder' => 'Royalities' ,
+                                            'placeholder' => 'Amount of debt discharged' ,
                                             'required'=> true , 'id' => ''
                                         )
                                     )
                                 }}
                             </div>
-                        </div>
 
-                        <div class="row">
                             <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_text',
+                            {{ theme()->getView('partials/widgets/form/input/_text',
                                     array( 
-                                            'type' => 'text' ,
-                                            'name' => 'other_income' ,
-                                            'placeholder' => 'Other Income' ,
+                                            'type' => 'date' ,
+                                            'name' => 'royalities' ,
+                                            'placeholder' => ' Interest, if included in box 2' ,
                                             'required'=> true , 'id' => ''
                                         )
                                     )
                                 }}
                             </div>
-                            <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_text',
-                                    array( 
-                                            'type' => 'text' ,
-                                            'name' => 'other_income' ,
-                                            'placeholder' => 'Other Income' ,
-                                            'required'=> true , 'id' => ''
-                                        )
-                                    )
-                                }}
-                            </div>
-                        </div>
 
-
-                        <div class="row">
                             <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_text',
+                            {{ theme()->getView('partials/widgets/form/input/_text',
                                     array( 
-                                            'type' => 'text' ,
-                                            'name' => 'fishing_boat_proceeds' ,
-                                            'placeholder' => 'Fishing boat proceeds' ,
-                                            'required'=> true , 'id' => ''
-                                        )
-                                    )
-                                }}
-                            </div>
-                            <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_text',
-                                    array( 
-                                            'type' => 'text' ,
-                                            'name' => 'medical_and_healthcare_payments' ,
-                                            'placeholder' => 'Medical and healthcare payments' ,
+                                            'type' => 'date' ,
+                                            'name' => 'royalities' ,
+                                            'placeholder' => 'Debt description' ,
                                             'required'=> true , 'id' => ''
                                         )
                                     )
@@ -374,132 +349,23 @@
 
                             <div class="col-md-12" style="padding-top: 15px;">
                                 <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                <label for="vehicle1">Payer made direct sales totaling $5,000 or more of consumer products to recipient for resale</label>
+                                <label for="vehicle1">Check here if the debtor was personally liable for repayment of the debt</label>
                             </div>
 
-                            <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_text',
-                                    array( 
-                                            'type' => 'text' ,
-                                            'name' => 'fishing_boat_proceeds' ,
-                                            'placeholder' => 'Substitute payments in lieu of dividends or interest' ,
-                                            'required'=> true , 'id' => ''
-                                        )
-                                    )
-                                }}
-                            </div>
-                            <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_text',
-                                    array( 
-                                            'type' => 'text' ,
-                                            'name' => 'medical_and_healthcare_payments' ,
-                                            'placeholder' => 'Crop insurance proceeds' ,
-                                            'required'=> true , 'id' => ''
-                                        )
-                                    )
-                                }}
-                            </div>
-
-                            <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_text',
-                                    array( 
-                                            'type' => 'text' ,
-                                            'name' => 'fishing_boat_proceeds' ,
-                                            'placeholder' => ' Gross proceeds paid to an attorney' ,
-                                            'required'=> true , 'id' => ''
-                                        )
-                                    )
-                                }}
-                            </div>
-                            <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_text',
-                                    array( 
-                                            'type' => 'text' ,
-                                            'name' => 'medical_and_healthcare_payments' ,
-                                            'placeholder' => ' Fish purchased for resale' ,
-                                            'required'=> true , 'id' => ''
-                                        )
-                                    )
-                                }}
-                            </div>
-
-                            <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_text',
-                                    array( 
-                                            'type' => 'text' ,
-                                            'name' => 'fishing_boat_proceeds' ,
-                                            'placeholder' => ' Section 409A deferrals' ,
-                                            'required'=> true , 'id' => ''
-                                        )
-                                    )
-                                }}
-                            </div>
-                            <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_text',
-                                    array( 
-                                            'type' => 'text' ,
-                                            'name' => 'medical_and_healthcare_payments' ,
-                                            'placeholder' => 'Excess golden parachute payments' ,
-                                            'required'=> true , 'id' => ''
-                                        )
-                                    )
-                                }}
-                            </div>
-
-                            <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_text',
-                                    array( 
-                                            'type' => 'text' ,
-                                            'name' => 'fishing_boat_proceeds' ,
-                                            'placeholder' => ' Nonqualified deferred compensation' ,
-                                            'required'=> true , 'id' => ''
-                                        )
-                                    )
-                                }}
-                            </div>
-                            <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_text',
-                                    array( 
-                                            'type' => 'text' ,
-                                            'name' => 'medical_and_healthcare_payments' ,
-                                            'placeholder' => 'State tax withheld' ,
-                                            'required'=> true , 'id' => ''
-                                        )
-                                    )
-                                }}
-                            </div>
-                        </div>
-
-
-
-
-                        <div class="row">
+                            
 
                             <div class="col-md-6">
                                 {{ theme()->getView('partials/widgets/form/input/_select',
-                                                array( 
-                                                        'type' => 'select' ,
-                                                        'name' => 'select_state' ,
-                                                        'item' => array(
-                                                        'ir' =>  'IR',
-                                                        'bs'=>   'BS',
-                                                        'ks' =>  'KS'
-                                                        ) ,
-
-                                                        'placeholder' => ' State' ,
-                                                        'required'=> true , 'id' => ''
-                                                    )
-                                                )
-                                            }}
-
-
-                            </div>
-                            <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_text',
                                             array( 
                                                     'type' => 'text' ,
                                                     'name' => 'zip_code' ,
-                                                    'placeholder' => 'State tax withheld' ,
+                                                      'item' => array(
+                                                          'sdad' => 'SAD',
+                                                          'identifiable_event_code' => 'Identifiable event code'
+
+
+                                                      ),
+                                                    'placeholder' => 'Federal income tax withheld' ,
                                                     'required'=> true , 'id' => ''
                                                 )
                                             )
@@ -511,18 +377,13 @@
                                             array( 
                                                     'type' => 'text' ,
                                                     'name' => 'zip_code' ,
-                                                    'placeholder' => 'State Income' ,
+                                                    'placeholder' => 'Fair market value of property' ,
                                                     'required'=> true , 'id' => ''
                                                 )
                                             )
                                         }}
                             </div>
-
-                            <br>
-
                         </div>
-
-
 
                         <div style="margin-top: 34px; margin-bottom:34px">
                             <div class="row">

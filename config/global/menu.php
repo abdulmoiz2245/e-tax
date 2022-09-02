@@ -184,7 +184,7 @@ return array(
         array(
             'title' => 'Dashboard',
             'path'  => 'index',
-            'icon'  => theme()->getSvgIcon("demo1/media/icons/duotone/Design/PenAndRuller.svg", "svg-icon-2"),
+            'icon'  => theme()->getSvgIcon("demo1/media/icons/dashboard.svg", "svg-icon-2"),
         ),
 
         // //// Modules
@@ -197,7 +197,7 @@ return array(
         array(
             'title'      => 'Payers',
             'icon'       => array(
-                'svg'  => theme()->getSvgIcon("demo1/media/icons/duotone/General/User.svg", "svg-icon-2"),
+                'svg'  => theme()->getSvgIcon("demo1/media/icons/payers.svg", "svg-icon-2"),
                 'font' => '<i class="bi bi-person fs-2"></i>',
             ),
             
@@ -211,7 +211,7 @@ return array(
         array(
             'title'      => 'Fillings',
             'icon'       => array(
-                'svg'  => theme()->getSvgIcon("demo1/media/icons/duotone/Layout/Layout-4-blocks.svg", "svg-icon-2"),
+                'svg'  => theme()->getSvgIcon("demo1/media/icons/filings.svg", "svg-icon-2"),
                 'font' => '<i class="bi bi-layers fs-3"></i>',
             ),
             'classes'    => array('item' => 'menu-accordion'),
@@ -259,7 +259,7 @@ return array(
         array(
             'title'      => 'Report',
             'icon'       => array(
-                'svg'  => theme()->getSvgIcon("demo1/media/icons/duotone/Layout/Layout-4-blocks.svg", "svg-icon-2"),
+                'svg'  => theme()->getSvgIcon("demo1/media/icons/report.svg", "svg-icon-2"),
                 'font' => '<i class="bi bi-layers fs-3"></i>',
             ),
             'classes'    => array('item' => 'menu-accordion'),

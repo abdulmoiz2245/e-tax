@@ -1,8 +1,10 @@
 .card-title-text{
     font-style: normal;
     font-weight: 400 !important;
-    font-size: 18px !important;
+    font-size: 20px !important;
     line-height: 19px;
+    color: #6F6F6F !important;
+
 }
 
 .card-count{
@@ -19,5 +21,76 @@
     font-size: 38px !important;
     line-height: 38px;
 }
+
+.card-header{
+    align-items: baseline;
+    padding-top: 24px !important;
+
+}
+
+.card-body{
+    padding-bottom: 24px !important;
+}
+
+
+
+
+.card-title-p{
+    font-style: 'Questrial' ,sans-serif !important ;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 19px;
+    color: #6F6F6F !important;
+
+}
+
+.card-count{
+
+    font-style: normal;
+    font-weight: 600 !important;
+    font-size: 42px !important;
+    line-height: 53px;
+}
+
+.dash-title{
+    font-style: normal;
+    font-weight: 600 !important;
+    font-size: 30px !important;
+    line-height: 38px;
+}
+
+.dash-title-secondry{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+
+@media (min-width: 1440px)  {
+    .card-title-text{
+        font-style: normal;
+        font-weight: 400 !important;
+        font-size: 18px !important;
+        line-height: 19px;
+        color: #6F6F6F !important;
+    }
+
+    
+
+    .dash-title{
+        font-weight: 700 !important;
+       
+    }
+    .card-count{
+
+        font-style: normal;
+        font-weight: 600 !important;
+        font-size: 42px !important;
+        line-height: 53px;
+    }
+}
+
+
 
 

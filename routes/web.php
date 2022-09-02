@@ -64,8 +64,6 @@ Route::middleware('auth')->group(function () {
     Route::get('fillings/start-filling/form/2021-form-1094-C', [PagesController::class, 'form_2021_form_1094_c'])->name('form_2021_form_1094_c');
     Route::get('fillings/start-filling/form/2021-form-w-2C', [PagesController::class, 'form_2021_form_w_2c'])->name('form_2021_form_w_2c');
     Route::get('fillings/start-filling/form/2021-form-1095-B', [PagesController::class, 'form_2021_form_1095_b'])->name('form_2021_form_1095_b');
-    Route::get('fillings/start-filling/form/2021-form-1099-MICS', [PagesController::class, 'form_2021_form_1099_mics'])->name('form_2021_form_1099_mics');
-    Route::get('fillings/start-filling/form/2021-form-1099-MICS', [PagesController::class, 'form_2021_form_1099_mics'])->name('form_2021_form_1099_mics');
 
 
 
@@ -86,6 +84,8 @@ Route::middleware('auth')->group(function () {
     // Account pages
     Route::prefix('account')->group(function () {
         Route::get('settings', [SettingsController::class, 'index'])->name('settings.index');
+        Route::get('account', [PagesController::class, 'account'])->name('account');
+
         Route::put('settings', [SettingsController::class, 'update'])->name('settings.update');
         Route::put('settings/email', [SettingsController::class, 'changeEmail'])->name('settings.changeEmail');
         Route::put('settings/password', [SettingsController::class, 'changePassword'])->name('settings.changePassword');

@@ -117,6 +117,11 @@ class PagesController extends Controller
 
     }
 
+    public function form_2021_form_1099_c(){
+        return view('pages.forms.form_2021_form_1099_c');
+
+    }
+
     public function form_2021_form_1099_int(){
         return view('pages.forms.form_2021_form_1099_int');
 
@@ -139,6 +144,16 @@ class PagesController extends Controller
 
     public function form_2021_form_1042_s(){
         return view('pages.forms.form_2021_form_1042_s');
+
+    }
+
+    public function form_2021_form_1094_c(){
+        return view('pages.forms.form_2021_form_1094_c');
+
+    }
+
+    public function account(){
+        return view('pages.account');
 
     }
 

@@ -48,6 +48,8 @@
             min-height: auto;
         }
 
+      
+
 
         @media (min-width: 1440px) {
             .card-title-text {
@@ -96,7 +98,7 @@
         <!--begin::Col-->
 
         <div class="col-md-12" style="margin-bottom: 40px;">
-            <h1 class="dash-title" style="margin-bottom: 18px; font-size:30px !important">2021 Form 1099-MISC</h1>
+            <h1 class="dash-title" style="margin-bottom: 18px; font-size:30px !important">2021 Form 1098-T</h1>
         </div>
         <!--end::Col-->
     </div>
@@ -145,7 +147,7 @@
     </div>
     <!--end::Row-->
 
-    <div class="row">
+    <!-- <div class="row">
         <div class="limiter">
             <div class="" style="padding: 0; padding-top:30px">
                 <div class="">
@@ -216,7 +218,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="row mt-10">
         <div class="card">
@@ -242,7 +244,7 @@
                     <h4 class="f-20-fig">Recipient Details</h4>
                 </div>
 
-                <div class="d-md-flex justify-content-end tag ">
+                <div class="d-md-flex justify-content-end tag">
 
                     {{ theme()->getView('partials/widgets/form/input/_select',
                                                     array( 
@@ -303,7 +305,7 @@
                                     array( 
                                             'type' => 'text' ,
                                             'name' => 'rent' ,
-                                            'placeholder' => 'Rent' ,
+                                            'placeholder' => 'Applicable checkbox on Form 8949' ,
                                             'required'=> true , 'id' => ''
                                         )
                                     )
@@ -314,192 +316,118 @@
                                     array( 
                                             'type' => 'text' ,
                                             'name' => 'royalities' ,
-                                            'placeholder' => 'Royalities' ,
+                                            'placeholder' => '1a Description of property (Example: 100 sh. XYZ Co.)' ,
                                             'required'=> true , 'id' => ''
                                         )
                                     )
                                 }}
                             </div>
-                        </div>
 
-                        <div class="row">
                             <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_text',
+                            {{ theme()->getView('partials/widgets/form/input/_text',
                                     array( 
-                                            'type' => 'text' ,
-                                            'name' => 'other_income' ,
-                                            'placeholder' => 'Other Income' ,
+                                            'type' => 'date' ,
+                                            'name' => 'royalities' ,
+                                            'placeholder' => '1a Description of property (Example: 100 sh. XYZ Co.)' ,
                                             'required'=> true , 'id' => ''
                                         )
                                     )
                                 }}
                             </div>
-                            <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_text',
-                                    array( 
-                                            'type' => 'text' ,
-                                            'name' => 'other_income' ,
-                                            'placeholder' => 'Other Income' ,
-                                            'required'=> true , 'id' => ''
-                                        )
-                                    )
-                                }}
-                            </div>
-                        </div>
 
-
-                        <div class="row">
                             <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_text',
+                            {{ theme()->getView('partials/widgets/form/input/_text',
                                     array( 
-                                            'type' => 'text' ,
-                                            'name' => 'fishing_boat_proceeds' ,
-                                            'placeholder' => 'Fishing boat proceeds' ,
+                                            'type' => 'date' ,
+                                            'name' => 'royalities' ,
+                                            'placeholder' => '1c Date sold or disposed' ,
                                             'required'=> true , 'id' => ''
                                         )
                                     )
                                 }}
                             </div>
+
                             <div class="col-md-6">
                                 {{ theme()->getView('partials/widgets/form/input/_text',
                                     array( 
                                             'type' => 'text' ,
-                                            'name' => 'medical_and_healthcare_payments' ,
-                                            'placeholder' => 'Medical and healthcare payments' ,
+                                            'name' => 'royalities' ,
+                                            'placeholder' => '1a Description of property (Example: 100 sh. XYZ Co.)' ,
                                             'required'=> true , 'id' => ''
                                         )
                                     )
                                 }}
+                            </div>
+
+                            <div class="col-md-6">
+                                {{ theme()->getView('partials/widgets/form/input/_text',
+                                            array( 
+                                                    'type' => 'text' ,
+                                                    'name' => 'zip_code' ,
+                                                    'placeholder' => '1f Accrued market discount' ,
+                                                    'required'=> true , 'id' => ''
+                                                )
+                                            )
+                                        }}
+                            </div>
+                            <div class="col-md-6">
+                                {{ theme()->getView('partials/widgets/form/input/_text',
+                                            array( 
+                                                    'type' => 'text' ,
+                                                    'name' => 'zip_code' ,
+                                                    'placeholder' => '1g Wash sale loss disallowed' ,
+                                                    'required'=> true , 'id' => ''
+                                                )
+                                            )
+                                        }}
                             </div>
 
                             <div class="col-md-12" style="padding-top: 15px;">
                                 <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                <label for="vehicle1">Payer made direct sales totaling $5,000 or more of consumer products to recipient for resale</label>
+                                <label for="vehicle1">Short-term gain or loss</label>
                             </div>
 
-                            <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_text',
-                                    array( 
-                                            'type' => 'text' ,
-                                            'name' => 'fishing_boat_proceeds' ,
-                                            'placeholder' => 'Substitute payments in lieu of dividends or interest' ,
-                                            'required'=> true , 'id' => ''
-                                        )
-                                    )
-                                }}
-                            </div>
-                            <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_text',
-                                    array( 
-                                            'type' => 'text' ,
-                                            'name' => 'medical_and_healthcare_payments' ,
-                                            'placeholder' => 'Crop insurance proceeds' ,
-                                            'required'=> true , 'id' => ''
-                                        )
-                                    )
-                                }}
+                            <div class="col-md-12" style="padding-top: 15px;">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1">Check if proceeds from: Collectibles</label>
                             </div>
 
-                            <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_text',
-                                    array( 
-                                            'type' => 'text' ,
-                                            'name' => 'fishing_boat_proceeds' ,
-                                            'placeholder' => ' Gross proceeds paid to an attorney' ,
-                                            'required'=> true , 'id' => ''
-                                        )
-                                    )
-                                }}
-                            </div>
-                            <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_text',
-                                    array( 
-                                            'type' => 'text' ,
-                                            'name' => 'medical_and_healthcare_payments' ,
-                                            'placeholder' => ' Fish purchased for resale' ,
-                                            'required'=> true , 'id' => ''
-                                        )
-                                    )
-                                }}
+                            <div class="col-md-12" style="padding-top: 15px;">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1">Long-term gain or loss</label>
                             </div>
 
-                            <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_text',
-                                    array( 
-                                            'type' => 'text' ,
-                                            'name' => 'fishing_boat_proceeds' ,
-                                            'placeholder' => ' Section 409A deferrals' ,
-                                            'required'=> true , 'id' => ''
-                                        )
-                                    )
-                                }}
-                            </div>
-                            <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_text',
-                                    array( 
-                                            'type' => 'text' ,
-                                            'name' => 'medical_and_healthcare_payments' ,
-                                            'placeholder' => 'Excess golden parachute payments' ,
-                                            'required'=> true , 'id' => ''
-                                        )
-                                    )
-                                }}
+                            <div class="col-md-12" style="padding-top: 15px;">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1">Check if proceeds from: QOF</label>
                             </div>
 
-                            <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_text',
-                                    array( 
-                                            'type' => 'text' ,
-                                            'name' => 'fishing_boat_proceeds' ,
-                                            'placeholder' => ' Nonqualified deferred compensation' ,
-                                            'required'=> true , 'id' => ''
-                                        )
-                                    )
-                                }}
+                            <div class="col-md-12" style="padding-top: 15px;">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1">Reported to IRS: Gross proceeds</label>
                             </div>
-                            <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_text',
-                                    array( 
-                                            'type' => 'text' ,
-                                            'name' => 'medical_and_healthcare_payments' ,
-                                            'placeholder' => 'State tax withheld' ,
-                                            'required'=> true , 'id' => ''
-                                        )
-                                    )
-                                }}
+
+                            <div class="col-md-12" style="padding-top: 15px;">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1">Check if loss is not allowed based on amount in 1d</label>
                             </div>
-                        </div>
 
-
-
-
-                        <div class="row">
-
-                            <div class="col-md-6">
-                                {{ theme()->getView('partials/widgets/form/input/_select',
-                                                array( 
-                                                        'type' => 'select' ,
-                                                        'name' => 'select_state' ,
-                                                        'item' => array(
-                                                        'ir' =>  'IR',
-                                                        'bs'=>   'BS',
-                                                        'ks' =>  'KS'
-                                                        ) ,
-
-                                                        'placeholder' => ' State' ,
-                                                        'required'=> true , 'id' => ''
-                                                    )
-                                                )
-                                            }}
-
-
+                            <div class="col-md-12" style="padding-top: 15px;">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1">Reported to IRS: Net proceeds</label>
                             </div>
+
+                            <div class="col-md-12" style="padding-top: 15px;">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1">Check if basis reported to IRS</label>
+                            </div>
+
                             <div class="col-md-6">
                                 {{ theme()->getView('partials/widgets/form/input/_text',
                                             array( 
                                                     'type' => 'text' ,
                                                     'name' => 'zip_code' ,
-                                                    'placeholder' => 'State tax withheld' ,
+                                                    'placeholder' => 'Federal income tax withheld' ,
                                                     'required'=> true , 'id' => ''
                                                 )
                                             )
@@ -511,18 +439,62 @@
                                             array( 
                                                     'type' => 'text' ,
                                                     'name' => 'zip_code' ,
-                                                    'placeholder' => 'State Income' ,
+                                                    'placeholder' => 'Profit or (loss) realized in 2021 on closed contracts' ,
                                                     'required'=> true , 'id' => ''
                                                 )
                                             )
                                         }}
                             </div>
 
-                            <br>
+                            <div class="col-md-6">
+                                {{ theme()->getView('partials/widgets/form/input/_text',
+                                            array( 
+                                                    'type' => 'text' ,
+                                                    'name' => 'zip_code' ,
+                                                    'placeholder' => 'Unrealized profit or (loss) on open contracts—12/31/2020' ,
+                                                    'required'=> true , 'id' => ''
+                                                )
+                                            )
+                                        }}
+                            </div>
+
+                            <div class="col-md-6">
+                                {{ theme()->getView('partials/widgets/form/input/_text',
+                                            array( 
+                                                    'type' => 'text' ,
+                                                    'name' => 'zip_code' ,
+                                                    'placeholder' => 'Unrealized profit or (loss) on open contracts—12/31/2021' ,
+                                                    'required'=> true , 'id' => ''
+                                                )
+                                            )
+                                        }}
+                            </div>
+
+                            <div class="col-md-6">
+                                {{ theme()->getView('partials/widgets/form/input/_text',
+                                            array( 
+                                                    'type' => 'text' ,
+                                                    'name' => 'zip_code' ,
+                                                    'placeholder' => 'Aggregate profit or (loss) on contracts' ,
+                                                    'required'=> true , 'id' => ''
+                                                )
+                                            )
+                                        }}
+                            </div>
+
+                            <div class="col-md-6">
+                                {{ theme()->getView('partials/widgets/form/input/_text',
+                                            array( 
+                                                    'type' => 'text' ,
+                                                    'name' => 'zip_code' ,
+                                                    'placeholder' => 'Bartering' ,
+                                                    'required'=> true , 'id' => ''
+                                                )
+                                            )
+                                        }}
+                            </div>
 
                         </div>
-
-
 
                         <div style="margin-top: 34px; margin-bottom:34px">
                             <div class="row">

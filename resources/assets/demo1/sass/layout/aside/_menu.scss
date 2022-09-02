@@ -45,9 +45,9 @@
 
             //$title-color, $icon-color, $bullet-color, $arrow-color, $bg-color
             @include menu-link-default-state( #9899ac, #494b74, #9899ac, #9899ac, null);
-            @include menu-link-hover-state( $white, $primary, $primary, $white, #1b1b28);
-            @include menu-link-show-state( $white, $primary, $primary, $white, #1b1b28);
-            @include menu-link-active-state( $white, $primary, $primary, $white, #1b1b28);
+            @include menu-link-hover-state( $white, #fff, #fff, $white, #1b1b28);
+            @include menu-link-show-state( $white, $primary, #fff, $white, #1b1b28);
+            @include menu-link-active-state( $white, #fff, #fff, $white, #1b1b28);
         }
     }
 }
@@ -74,3 +74,50 @@
     padding-right: 20px;
 }
 
+.aside-light .menu .menu-title{
+    font-weight: 400 !important;
+}
+
+
+
+.menu-title{
+    font-size: 18px ;
+    line-height: 22.01px;
+}
+.menu-link{
+    padding-top: 17px !important;
+    padding-bottom: 17px !important;
+
+}
+
+.menu-state-icon-primary .menu-item .menu-link.active .menu-icon .svg-icon svg [fill]:not(.permanent):not(g){
+    fill:white !important;
+}
+
+.svg-icon svg [fill]:not(.permanent):not(g) {
+    transition: fill 0.3s ease;
+    fill: #2B014C !important;
+}
+
+.menu-state-title-primary .menu-item .menu-link:hover:not(.disabled):not(.active) .menu-title{
+    color: #2B014C !important;
+}
+
+
+
+.menu-title-gray-800 .menu-item .menu-link .menu-title {
+    color: #fff !important;
+}
+
+.menu-title-gray-800 .menu-item .menu-link:not(.active) .menu-title {
+    color: #2B014C !important;
+}
+
+.svg-icon svg [fill]:not(.permanent):not(g) {
+    transition: fill 0.3s ease;
+    fill: #2B014C !important; 
+}
+
+.menu-sub .menu-item .menu-title{
+    font-size: 16px !important;
+}

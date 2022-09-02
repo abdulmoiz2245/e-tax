@@ -272,7 +272,11 @@ body {
             animation-fill-mode: forwards;
     -webkit-animation-timing-function: step-start;
             animation-timing-function: step-start;
-    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+			box-shadow: 2px 2px 10px rgb(210 209 223 / 30%);
+			border-radius: 9px;
+			padding-top: 16px;
+    margin-top: 8px;
+	max-height: 300px;
     }
     .select-box__option {
         display: block;
@@ -445,5 +449,9 @@ body {
 	}
 	.custom input[type=radio]:checked {
 	  --s: .5;
+	}
+
+	.menu-sub .menu-item .menu-title{
+		font-size: 16px !important;
 	}
   }
