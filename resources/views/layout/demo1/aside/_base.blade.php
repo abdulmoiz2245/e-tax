@@ -22,7 +22,7 @@
     {{--begin::Brand--}}
     <div class="aside-logo flex-column-auto" id="kt_aside_logo">
         {{--begin::Logo--}}
-        <a href="{{ theme()->getPageUrl('index') }}">
+        <a href="{{ theme()->getPageUrl('dashboard') }}">
             <img alt="Logo" src="{{ asset(theme()->getMediaUrlPath() . 'logos/e-bottom-purple.png') }}" class="logo"/>
         </a>
         {{--end::Logo--}}

@@ -110,13 +110,14 @@
                     <h1 class="text-dark mb-3 " style="font-weight: 700;
                         font-size: 30px;
                         ">
-                        Let’s help you get things done!
+                        Login
                     </h1>
                     <!--end::Title-->
 
                     <!--begin::Link-->
                     <div class="" style="color: #6F6F6F; font-size:16px">
-                        How can we help?.
+                        Log In your account now.
+
                     </div>
                     <!--end::Link-->
                 </div>
@@ -129,13 +130,13 @@
                         <!--begin::Submit button-->
                         <a href="/dashboard" style="color:#fff">
                             <button type="button" class="btn btn-lg  w-100 mb-5" style="background:#F4B42A; color:#fff">
-                                E-Filing Tax Forms
+                            E-Filing Tax Forms
                             </button>
                         </a>
-
+                        
 
                         <button type="button" id="" class="btn btn-lg  w-100 mb-5" style="background:#F4B42A; color:#fff">
-                            <a href="" style="color:#fff">Crypto Tax Calculator</a>
+                           <a href="" style="color:#fff">Crypto Tax Calculator</a>  
                         </button>
 
 

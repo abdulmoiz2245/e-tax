@@ -82,17 +82,23 @@
         <!--begin::Col-->
 
         <div class="col-md-12">
-            <span><a href="/dashboard"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
-            <span class="pr-2" style="color:#6F6F6F;padding-left: 7px;">Back To Dashboard</span>
+            <!-- <span><a href="/dashboard"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
+            <span class="pr-2" style="color:#6F6F6F;padding-left: 7px;">Back To Dashboard</span> -->
         </div>
         <!--end::Col--> 
 
         <!--begin::Col-->
 
         <div class="col-md-12">
-            <h1 class="dash-title">Forms in Progress</h1>
+            <h1 class="dash-title">Summary Report</h1>
         </div>
         <!--end::Col--> 
+    </div>
+
+    <div class="row gy-5 gx-md-4" >
+        <div class="col-md-12">
+            <p class="dash-description-secondry font-questrial">Filing your forms is quick, easy and secure. Start by selecting how you want to enter your form data. After, your form will be moved to In Progress where you can make edits before filing.</p>
+        </div>
     </div>
     <!--end::Row-->
 
@@ -106,7 +112,7 @@
                     <!--begin::Beader-->
                     <div class="card-header border-0 pt-5 pb-0">
                         <h3 class="card-title align-items-start d-flex m-0 mt-2" >
-                            <span class="card-label  mb-1 align-self-center card-title-text" style="color: black !important;">You do not have any forms in progress.</span>
+                            <span class="card-label  mb-1 align-self-center card-title-text" style="color: black !important;">You do not have any forms for reporting.</span>
                         </h3>
                        
                     </div>
@@ -117,7 +123,7 @@
 
                         <!--begin::Items-->
                         <div class="mt-5 text-left" >
-                            <p style="color:#6f6f6f">Your saved forms will show on this page. From here, you can choose your service options and add forms to your cart. <a href="/fillings/start-filling" style="color:#F4B42A; font-weight:400">Get Started</a> </p>  
+                            <p style="color:#6f6f6f">Once you have forms in progress, in cart, or filed forms, you can download a report. <a href="/fillings/start-filling" style="color:#F4B42A; font-weight:400">Start filling now</a> </p>  
                             
                         </div>
                         <!--end::Items-->

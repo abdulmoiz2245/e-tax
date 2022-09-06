@@ -164,6 +164,7 @@ body {
 	font-weight: 300;
 	top: 25px ;
 	background: transparent;
+	z-index: -1;
 }
 
 .form__group label,
@@ -178,6 +179,7 @@ body {
 	font-weight: 300;
 	color: #BFBFBF;
 	padding: 0px 6px;
+	z-index: 999;
 	
 }
 
@@ -233,6 +235,9 @@ body {
     }
     .select-box__value {
     display: flex;
+	padding-right: 35px;
+            background-color: #fff;
+            border-radius: 10px;
     }
     .select-box__input {
     display: none;
@@ -291,6 +296,7 @@ body {
 		margin-left: 8px;
 		margin-right: 8px;
 		border-radius: 4px;
+		text-align: left;
     }
     .select-box__option:hover, .select-box__option:focus {
 		color: #000;
@@ -454,4 +460,25 @@ body {
 	.menu-sub .menu-item .menu-title{
 		font-size: 16px !important;
 	}
+  }
+
+
+//   .col-md-4{
+// 	margin-bottom: 15px;
+
+//   }
+
+//   .col-md-6{
+// 	margin-bottom: 15px;
+
+//   }
+
+//   .col-md-3{
+// 	margin-bottom: 15px;
+
+//   }
+
+  .card .card-body{
+	position: relative;
+    z-index: 1;
   }

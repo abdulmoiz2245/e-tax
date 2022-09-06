@@ -1,5 +1,20 @@
+<style>
+    .menu-sub{
+        width: 202px !important;
+    }
+
+    /* .menu-item a{
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    } */
+
+    .right-menu .menu-item a{
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+    }
+</style>
 <!--begin::Menu-->
-<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-state-bg-light-primary text-center  py-4 fs-6 " style="width: 202px;" data-kt-menu="true">
+<div class="menu right-menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-state-bg-light-primary text-center  py-4 fs-6 " style="width: 202px;" data-kt-menu="true">
     <!--begin::Menu item-->
     <div class="menu-item px-3">
         <div class="menu-content d-flex align-items-center   justify-content-center px-3">
@@ -24,7 +39,7 @@
 
      <!--begin::Menu item-->
      <div class="menu-item px-5">
-        <a href="{{ theme()->getPageUrl('settings.index') }}" class="menu-link px-5 justify-content-center" style="color:black">
+        <a href="/account/account" class="menu-link px-5 justify-content-center" style="color:black">
             My Account
         </a>
     </div>
@@ -36,15 +51,15 @@
 
     <!--begin::Menu item-->
     <div class="menu-item px-5">
-        <a href="" class="menu-link px-5 justify-content-center" style="color:black">
-            Billing and Invoice
+        <a href="/billing/billing-invoice" class="menu-link px-5 justify-content-center" style="color:black">
+            Billing & Invoice
         </a>
     </div>
     <!--end::Menu item-->
 
     <!--begin::Menu item-->
     <div class="menu-item px-5">
-        <a href="#" class="menu-link px-5 justify-content-center"style="color:black" >
+        <a href="/contact" class="menu-link px-5 justify-content-center"style="color:black" >
             <span class="menu-text">Contact Us</span>
            
         </a>

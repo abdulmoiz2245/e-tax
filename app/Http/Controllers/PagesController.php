@@ -167,5 +167,39 @@ class PagesController extends Controller
         return view('pages.account.learn_more');
     }
 
+    public function checkout(){
+
+        return view('pages.account.checkout');
+    }
+
+    public function account_verify(){
+
+        return view('pages.account.verify');
+    }
+
+    public function contact(){
+        return view('pages.contact');
+
+    }
+
+    public function total_summary(){
+        return view('pages.report.report_summary');
+
+    }
+
+    public function report_summary(){
+        return view('pages.report.summary');
+
+    }   
+
+    public function lets_help(){
+        return view('auth.lets_help');
+
+    }
+
+    public function dashboard(){
+        return view('pages.dashboard');
+    }
+
 
 }

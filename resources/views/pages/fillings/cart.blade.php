@@ -1,5 +1,11 @@
 <x-base-layout>
-   
+   <style>
+       @media (min-width: 1200px){
+            .container {
+                max-width: 980px !important;
+            }
+        }
+   </style>
 
     <!--begin::Row-->
     <div class="row gy-5 g-xl-4 mb-5" style="margin-top: 70px; ">
@@ -7,7 +13,7 @@
         <!--begin::Col-->
 
         <!-- <div class="col-md-12"> -->
-            <!-- <span><a href="/index"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span> -->
+            <!-- <span><a href="/dashboard"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span> -->
             <!-- <span class="pr-2" style="color:#6F6F6F;padding-left: 7px;">Back To Dashboard</span> -->
         <!-- </div> -->
         <!--end::Col--> 
@@ -42,7 +48,7 @@
 
                         <!--begin::Items-->
                         <div class="text-left" >
-                            <p  class =" font-questrial"style="color:#6f6f6f;font-size:16px">Add forms from Forms In Progress or TIN Matching for your Payers and Recipients.<a href="http://" style="color:#F4B42A; font-weight:400">Get Started</a> </p>  
+                            <p  class =" font-questrial"style="color:#6f6f6f;font-size:16px">Add forms from Forms In Progress or TIN Matching for your Payers and Recipients.<a href="/fillings/start-filling" style="color:#F4B42A; font-weight:400">Get Started</a> </p>  
                             
                         </div>
                         <!--end::Items-->

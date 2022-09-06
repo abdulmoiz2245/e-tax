@@ -183,7 +183,7 @@ return array(
         //// Dashboard
         array(
             'title' => 'Dashboard',
-            'path'  => 'index',
+            'path'  => 'dashboard',
             'icon'  => theme()->getSvgIcon("demo1/media/icons/dashboard.svg", "svg-icon-2"),
         ),
 
@@ -271,7 +271,7 @@ return array(
                 'items' => array(
                     array(
                         'title'      => 'Summary Report',
-                        'path'       => '#',
+                        'path'       => 'report/summary',
                         'bullet'     => '<span class=""></span>',
                         'attributes' => array(
                             'link' => array(
@@ -284,7 +284,7 @@ return array(
                     ),
                     array(
                         'title'  => 'Total Report ',
-                        'path'   => 'log/audit',
+                        'path'   => 'report/total-report',
                         'bullet' => '<span class=""></span>',
                     ),
                  

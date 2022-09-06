@@ -92,6 +92,8 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <!--begin::Row-->
     <div class="row gy-5 g-xl-4" style="margin-top: 10px;margin-bottom: 21px;">
@@ -99,7 +101,7 @@
         <!--begin::Col-->
 
         <div class="col-md-12">
-            <span><a href="/index"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
+            <span><a href="/dashboard"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
             <span class="pr-2" style="color:#6F6F6F;padding-left: 7px;">Back To Dashboard</span>
         </div>
         <!--end::Col-->
@@ -157,7 +159,8 @@
                             <img src="{{ asset(theme()->getMediaUrlPath() . 'logos/excel.png') }}" width="48" height="48" alt="">
                             <div class="w-fit" style="padding-left: 12px;">
                                 <h4 class="f-20-fig">2021 Excel Template
-                                    <a style="padding-left: 14px;">
+                                    <button data-toggle="modal" data-target="#exampleModalScrollable">a</button>
+                                    <a style="padding-left: 14px;" data-toggle="modal" data-target="#exampleModalScrollable">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM10 18C12.1217 18 14.1566 17.1571 15.6569 15.6569C17.1571 14.1566 18 12.1217 18 10C18 7.87827 17.1571 5.84344 15.6569 4.34315C14.1566 2.84285 12.1217 2 10 2C7.87827 2 5.84344 2.84285 4.34315 4.34315C2.84285 5.84344 2 7.87827 2 10C2 12.1217 2.84285 14.1566 4.34315 15.6569C5.84344 17.1571 7.87827 18 10 18ZM9 13H11V15H9V13ZM9 5H11V11H9V5Z" fill="#BFBFBF" />
                                         </svg>
@@ -276,6 +279,29 @@
         <!--end::Col-->
     </div>
     <!--end::Row-->
+
+
+    <!-- Modal-->
+    <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i aria-hidden="true" class="ki ki-close"></i>
+                    </button>
+                </div>
+                <div class="modal-body" style="height: 300px;">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary font-weight-bold">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal-->
 
 
 

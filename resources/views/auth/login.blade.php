@@ -142,6 +142,11 @@
                                     <input type="password" name="password" id="password" class="form__field" value="demo"  placeholder="Password"  required >
                                     <label for="password" class="form__label">Password</label>
                                 </div>
+                                <div style="text-align: end;margin-top: 4px;">
+                                    <a href="/forgot-password" class="f-16-neu-400-fig" style="color:#2B014C; font-size:14px !important;">
+                                        Forgot password?
+                                    </a>
+                                </div>
                               
                         </div>
                      

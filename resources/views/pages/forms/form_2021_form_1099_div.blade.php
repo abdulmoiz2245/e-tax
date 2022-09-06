@@ -79,9 +79,7 @@
             }
         }
 
-        .tag .select-box {
-            width: 200px;
-        }
+    
     </style>
 
     <!--begin::Row-->
@@ -90,7 +88,7 @@
         <!-- begin::Col-->
 
         <!-- <div class="col-md-12">
-            <span><a href="/index"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
+            <span><a href="/dashboard"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
             <span class="pr-2" style="color:#6F6F6F;padding-left: 7px;">Back To Dashboard</span>
         </div> -->
         <!--end::Col  -->
@@ -116,10 +114,10 @@
                 </div>
 
                 <div class="d-md-flex justify-content-end ">
-                    <div class="card h-100" style="width: fit-content;box-shadow: 2px 2px 10px rgba(210, 209, 223, 0.3);border-radius: 10px;">
+                    <div class="card h-100" style="width: fit-content;box-shadow: 2px 2px 10px rgba(210, 209, 223, 0.3);border-radius: 10px;margin-right:12px">
 
                         <!--begin::Body-->
-                        <div class="card-body d-md-flex flex-column  justify-content-end" style="padding:14px;">
+                        <div class="card-body d-md-flex flex-column  justify-content-end" style="padding:14px; padding-bottom:14px !important;">
 
                             <!--begin::Items-->
                             <div class="text-left">
@@ -136,7 +134,7 @@
                             font-weight: 700;
                             font-size: 16px;
                             line-height: 20px;
-                            margin-left:12px;
+                          
                             color: #FFFFFF;
                         "> <i class="fa fa-plus" style="color:#fff"></i> Add New</button>
                     </a>
@@ -565,7 +563,9 @@
 
                         <div style="margin-top: 34px; margin-bottom:34px">
                             <div class="row">
-                                <div class="col-md-6"><button class=" btn w-100  mt-3" style="background: #F4B42A;  color:#fff">Save</button></div>
+                                <div class="col-md-6">
+                                    <button class=" btn w-100  mt-3" style="background: #F4B42A;  color:#fff">Save</button>
+                                </div>
                                 <div class="col-md-6">
                                     <button class=" btn w-100 f-16-fig mt-3" style="  color:#6F6F6F;border: 1px solid #BFBFBF;border-radius: 10px;">Cancel</button>
                                 </div>

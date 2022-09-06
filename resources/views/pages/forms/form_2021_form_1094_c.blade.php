@@ -133,9 +133,7 @@
             }
         }
 
-        .tag .select-box {
-            width: 200px;
-        }
+        
     </style>
 
     <!--begin::Row-->
@@ -144,7 +142,7 @@
         <!-- begin::Col-->
 
         <!-- <div class="col-md-12">
-            <span><a href="/index"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
+            <span><a href="/dashboard"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
             <span class="pr-2" style="color:#6F6F6F;padding-left: 7px;">Back To Dashboard</span>
         </div> -->
         <!--end::Col  -->

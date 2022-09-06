@@ -184,7 +184,8 @@
 }
 
 .wrap-table100 {
-	width: 1170px
+	width: 1170px;
+	overflow-x: auto;
 }
 
 table {
@@ -246,7 +247,8 @@ table th.r {
 	font-size: 18px;
 	color: #fff;
 	line-height: 1.2;
-	font-weight: unset
+	font-weight: unset;
+	padding-right: 15px;
 }
 
 
@@ -280,17 +282,14 @@ tbody tr:hover {
 
 .column4 {
 	width: 110px;
-	text-align: right
 }
 
 .column5 {
 	width: 170px;
-	text-align: right
 }
 
 .column6 {
 	width: 222px;
-	text-align: right;
 	padding-right: 62px
 }
 

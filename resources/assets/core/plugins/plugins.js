@@ -42,9 +42,12 @@ window.FormValidation.plugins.Bootstrap5 = require('../../core/plugins/formvalid
 
 // Date Range Picker - A JavaScript component for choosing date ranges, dates and times: https://www.daterangepicker.com/
 require('bootstrap-daterangepicker/daterangepicker.js');
+require('bootstrap/js/src/modal.js');
+
 
 // Bootstrap Maxlength - This plugin integrates by default with Twitter bootstrap using badges to display the maximum length of the field where the user is inserting text: https://github.com/mimo84/bootstrap-maxlength
 require('bootstrap-maxlength/src/bootstrap-maxlength.js');
+
 require('../../core/plugins/bootstrap-multiselectsplitter/bootstrap-multiselectsplitter.min.js');
 
 // Select2 - Select2 is a jQuery based replacement for select boxes: https://select2.org/

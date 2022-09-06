@@ -27,6 +27,13 @@
 
         }
 
+        .select-box__value {
+            display: flex;
+            padding-right: 35px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
         .card-count {
 
             font-style: normal;
@@ -48,7 +55,22 @@
             min-height: auto;
         }
 
-      
+        /* .form__group label, .form__field ~ .form__label{
+            z-index: -1;
+        }
+
+        .form__group label, .form__field:focus ~ .form__label{
+            z-index: 999;
+        } */
+
+        /* .form__field{
+            position: relative;
+            z-index: 99;
+        } */
+
+        /* .form__group label, .form__field:focus ~ .form__label{
+            z-index: 2;
+        } */
 
 
         @media (min-width: 1440px) {
@@ -79,9 +101,7 @@
             }
         }
 
-        .tag .select-box {
-            width: 200px;
-        }
+      
     </style>
 
     <!--begin::Row-->
@@ -90,7 +110,7 @@
         <!-- begin::Col-->
 
         <!-- <div class="col-md-12">
-            <span><a href="/index"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
+            <span><a href="/dashboard"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
             <span class="pr-2" style="color:#6F6F6F;padding-left: 7px;">Back To Dashboard</span>
         </div> -->
         <!--end::Col  -->
@@ -98,7 +118,7 @@
         <!--begin::Col-->
 
         <div class="col-md-12" style="margin-bottom: 40px;">
-            <h1 class="dash-title" style="margin-bottom: 18px; font-size:30px !important">2021 Form 1098-T</h1>
+            <h1 class="dash-title" style="margin-bottom: 18px; font-size:30px !important">2021 Form 1099-C</h1>
         </div>
         <!--end::Col-->
     </div>
@@ -116,10 +136,10 @@
                 </div>
 
                 <div class="d-md-flex justify-content-end ">
-                    <div class="card h-100" style="width: fit-content;box-shadow: 2px 2px 10px rgba(210, 209, 223, 0.3);border-radius: 10px;">
+                    <div class="card h-100" style="width: fit-content;box-shadow: 2px 2px 10px rgba(210, 209, 223, 0.3);border-radius: 10px;margin-right:12px">
 
                         <!--begin::Body-->
-                        <div class="card-body d-md-flex flex-column  justify-content-end" style="padding:14px;">
+                        <div class="card-body d-md-flex flex-column  justify-content-end" style="padding:14px; padding-bottom:14px !important;">
 
                             <!--begin::Items-->
                             <div class="text-left">
@@ -136,7 +156,7 @@
                             font-weight: 700;
                             font-size: 16px;
                             line-height: 20px;
-                            margin-left:12px;
+                          
                             color: #FFFFFF;
                         "> <i class="fa fa-plus" style="color:#fff"></i> Add New</button>
                     </a>

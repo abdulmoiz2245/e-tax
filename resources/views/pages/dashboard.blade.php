@@ -1,78 +1,7 @@
 <x-base-layout>
     <style>
-        .card-title-text {
-            font-style: normal;
-            font-weight: 400 !important;
-            font-size: 15px !important;
-            line-height: 19px;
-            color: #6F6F6F !important;
-
-        }
-
-        .card-title-p {
-            font-style: normal;
-            font-weight: 400 !important;
-            font-size: 16px !important;
-            line-height: 19px;
-            color: #6F6F6F !important;
-
-        }
-
-        .card-count {
-
-            font-style: normal;
-            font-weight: 600 !important;
-            font-size: 42px !important;
-            line-height: 53px;
-        }
-
-        .dash-title {
-            font-style: normal;
-            font-weight: 600 !important;
-            font-size: 38px !important;
-            line-height: 38px;
-        }
-
-        .dash-description-secondry {
-            font-family: 'Questrial';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 20px;
-        }
-
-        .select-box__value {
-            display: flex;
-            padding-right: 35px;
-            background-color: #fff;
-            border-radius: 10px;
-        }
-
-
-
-        @media (min-width: 1440px) {
-            .card-title-text {
-                font-style: normal;
-                font-weight: 400 !important;
-                font-size: 20px !important;
-                line-height: 19px;
-                color: #6F6F6F !important;
-            }
-
-
-
-            .dash-title {
-                font-weight: 700 !important;
-
-            }
-
-            .card-count {
-
-                font-style: normal;
-                font-weight: 600 !important;
-                font-size: 42px !important;
-                line-height: 53px;
-            }
+        .col-md-4 {
+            margin-bottom: 16px;
         }
 
         @media (min-width: 1200px) {
@@ -83,22 +12,52 @@
     </style>
 
     <!--begin::Row-->
-    <div class="row gy-5 g-xl-4 mb-5" style="margin-top: 10%; ">
+    <div class="row gy-5 g-xl-4 mb-5" style="margin-top: 70px; ">
         <!--begin::Col-->
         <!-- <div class="col-md-1">
 
         </div> -->
         <div class="col-md-12">
-            <h1 class="dash-title font-neue">Start Filling</h1>
+            <h1 class="dash-title">Dashboard</h1>
         </div>
         <!--end::Col-->
     </div>
+    <!--end::Row-->
+    <!--begin::Row-->
+    <div class="row gy-5 g-md-4 ">
+        <!-- <div class="col-md-1">
 
+        </div> -->
+        <!--begin::Col-->
+        <div class="col-md-4">
+            {{ theme()->getView('partials/widgets/dashboard/_form-progess-count', array('icon' =>  asset(theme()->getMediaUrlPath() . 'svg/misc/clock.svg') , 'text' => 'Form in Progress' , 'count' => '12345')) }}
+
+        </div>
+        <!--end::Col-->
+
+        <!--begin::Col-->
+        <div class="col-md-4">
+            {{ theme()->getView('partials/widgets/dashboard/_form-progess-count', array('icon' => asset(theme()->getMediaUrlPath() . 'svg/misc/yellow_cart.svg') , 'text' => 'Form in Cart' , 'count' => '12345')) }}
+
+        </div>
+        <!--end::Col-->
+
+        <!--begin::Col-->
+        <div class="col-md-4">
+            {{ theme()->getView('partials/widgets/dashboard/_form-progess-count', array('icon' =>  asset(theme()->getMediaUrlPath() . 'svg/misc/green_tick.svg')  , 'text' => 'Field Forms' , 'count' => '12345')) }}
+
+        </div>
+        <!--end::Col-->
+        <!-- <div class="col-md-1">
+
+        </div> -->
+    </div>
+    <!--end::Row-->
 
     <!--begin::Row-->
-    <div class="row gy-5 gx-md-4">
+    <div class="row gy-5 gx-md-4" style="margin-top: 70px; ">
         <div class="col-md-12">
-            <p class="dash-description-secondry font-questrial">Filing your forms is quick, easy and secure. Start by selecting how you want to enter your form data. After, your form will be moved to In Progress where you can make edits before filing.</p>
+            <h4 class="dash-title-secondry">Ready to file a new form?</h4>
         </div>
     </div>
     <!--end::Row-->

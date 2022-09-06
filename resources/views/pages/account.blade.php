@@ -87,6 +87,12 @@
     button {
       border-radius: 10px;
     }
+
+    @media (min-width: 1200px) {
+            .container {
+                max-width: 980px !important;
+            }
+        }
   </style>
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
 
@@ -192,7 +198,7 @@
                     <!--end::Items-->
                   </div>
                   <div class="">
-                    <a href="payer/add-payer">
+                    <a href="/account/verify">
                       <button class="btn font-neue" style="background: #F4B42A;  color:#fff;padding:14px; padding-left:30px;padding-right:30px;
                                         font-style: normal;
                                         font-weight: 700;

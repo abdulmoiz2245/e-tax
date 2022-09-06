@@ -193,7 +193,7 @@
         <!--begin::Col-->
 
         <div class="col-md-12">
-            <span><a href="/index"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
+            <span><a href="/dashboard"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
             <span class="pr-2" style="color:#6F6F6F;padding-left: 7px;">Back To Dashboard</span>
         </div>
         <!--end::Col--> 
@@ -229,7 +229,7 @@
 
                         <!--begin::Items-->
                         <div class="text-left" >
-                            <p style="color:#6f6f6f">Add your business' billing information now to save time when filing forms. <a href="http://" style="color:#F4B42A; font-weight:400">Get Started</a> </p>  
+                            <p style="color:#6f6f6f">Add your business' billing information now to save time when filing forms. <a href="/billing/billing-information" style="color:#F4B42A; font-weight:400">Get Started</a> </p>  
                             
                         </div>
                         <!--end::Items-->
