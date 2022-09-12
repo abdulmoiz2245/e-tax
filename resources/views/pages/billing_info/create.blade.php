@@ -255,7 +255,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-    <form action=""  id="billing_form" method="post">
+    <form action="" id="billing_form" method="post">
         @csrf
         <div class="row verify_info">
             <div class="col-12">
@@ -369,7 +369,7 @@
             <!--begin::Col-->
 
             <div class="col-md-12">
-                <span><a href="/billing-invoice"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
+                <span><a href="/billing/billing-invoice"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
                 <span class="pr-2" style="color:#6F6F6F;padding-left: 7px;">Back to Billing & Invoice</span>
             </div>
             <!--end::Col-->
@@ -403,6 +403,8 @@
                                         array( 
                                                 'type' => 'text' ,
                                                 'name' => 'first_name' ,
+                                                'value' => $user->first_name,
+                                                'readonly' => $user->first_name == '' ? false : true,
                                                 'placeholder' => 'First Name' ,
                                                 'required'=> true , 'id' => ''
                                             )
@@ -415,6 +417,8 @@
                                             array( 
                                                     'type' => 'text' ,
                                                     'name' => 'last_name' ,
+                                                    'value' => $user->last_name,
+                                                    'readonly' => $user->last_name == '' ? false : true,
                                                     'placeholder' => 'Last Name' ,
                                                     'required'=> true , 'id' => ''
                                                 )
@@ -427,6 +431,8 @@
                                             array( 
                                                     'type' => 'email' ,
                                                     'name' => 'email' ,
+                                                    'value' => $user->email,
+                                                    'readonly' => $user->email == '' ? false : true,
                                                     'placeholder' => 'Email' ,
                                                     'required'=> true , 'id' => ''
                                                 )
@@ -438,6 +444,7 @@
                                             array( 
                                                     'type' => 'number' ,
                                                     'name' => 'phone_number' ,
+                                                   
                                                     'placeholder' => 'Phone Number' ,
                                                     'required'=> true , 'id' => ''
                                                 )
@@ -550,17 +557,7 @@
                         <div>
                             <h4 style="margin-top:30px">Payment Method</h4>
                             <div class="row">
-                                <div class="col-md-6">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="creditcard" style="margin-right:5px">Credit Card
-                                    </label>
 
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="paypal" disabled style="margin-right:5px">Pay Pal
-                                    </label>
-                                </div>
 
                                 <div class="col-md-12">
                                     {{ theme()->getView('partials/widgets/form/input/_text',

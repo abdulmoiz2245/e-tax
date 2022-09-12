@@ -300,17 +300,23 @@
                     </div>
 
                     <div style="padding-bottom: 30px;">
-                        <button class="btn w-100" style="background:#BFBFBF;
-                        border-radius: 10px;color: #000000;
-                        font-style: normal;
-                        font-weight: 700;
-                        font-size: 16px;
-                        line-height: 20px;
-                        padding-top:14px !important;
-                        padding-bottom:14px !important;
-                        opacity:0.5">
-                            Current Plan
-                        </button>
+                        @if($user->active_plan == '2')
+                            <button class="btn w-100" style="background:#BFBFBF;
+                                border-radius: 10px;color: #000000;
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 16px;
+                                line-height: 20px;
+                                padding-top:14px !important;
+                                padding-bottom:14px !important;
+                                opacity:0.5">
+                                Current Plan
+                            </button>
+                            @else($user->active_plan == 0)
+                            <a href="{{ route('checkout') }}/2">
+                                <button class=" btn w-100  mt-3" style="background: #F4B42A;  color:#fff">Buy Now</button>
+                            </a>
+                            @endif
                     </div>
 
                     <div class="separator my-2 "></div>
@@ -400,7 +406,24 @@
                         </div>
 
                         <div style="padding-bottom: 30px;">
-                            <button class=" btn w-100  mt-3" style="background: #F4B42A;  color:#fff">Buy Now</button>
+                            @if($user->active_plan == '1')
+                            <button class="btn w-100" style="background:#BFBFBF;
+                                border-radius: 10px;color: #000000;
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 16px;
+                                line-height: 20px;
+                                padding-top:14px !important;
+                                padding-bottom:14px !important;
+                                opacity:0.5">
+                                Current Plan
+                            </button>
+                            @else($user->active_plan == 0)
+                            <a href="{{ route('checkout') }}/1">
+                                <button class=" btn w-100  mt-3" style="background: #F4B42A;  color:#fff">Buy Now</button>
+                            </a>
+                            @endif
+
                         </div>
 
                         <div class="separator my-2 "></div>
@@ -576,6 +599,80 @@
             <p class="f-16-fig" style="color:#6F6F6F">SOC‑2 certified facility</p>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.32/sweetalert2.min.js" integrity="sha512-yc+tEbvC4kiy3J6e0aZogFVr8AZhMtJTof2z+fGPaJgjehpIPzguZxfRRTiQcXlSHbJsB3Bborvv++81TMLZ2w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.32/sweetalert2.min.css" integrity="sha512-doewDSLNwoD1ZCdA1D1LXbbdNlI4uZv7vICMrzxfshHmzzyFNhajLEgH/uigrbOi8ETIftUGBkyLnbyDOU5rpA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        document.getElementById("plus-plan").addEventListener("click", (event) => {
+
+            fetch('{{ route("create_payment") }}', {
+
+                    // Adding method type
+                    method: "POST",
+
+                    // Adding body or contents to send
+                    body: JSON.stringify({
+                        plan_id: '1',
+                        amount: '149',
+                        currency: 'usd',
 
 
+                        "_token": "{{ csrf_token() }}"
+                    }),
+
+                    // Adding headers to the request
+                    headers: {
+                        "Content-type": "application/json; charset=UTF-8"
+                    }
+                })
+                .then(
+                    function(response) {
+                        if (response.status !== 200) {
+                            console.log('Looks like there was a problem. Status Code: ' +
+                                response.status);
+                            return response.json();
+                        } else {
+                            return response.json();
+
+                        }
+
+
+                    }
+                ).then(function(data) {
+                    if (data.status) {
+                        Swal.fire({
+                            title: 'Payment Successfull',
+                            text: "",
+                            icon: 'success',
+                            showCancelButton: false,
+                            confirmButtonColor: '#3085d6',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Continue',
+                            allowOutsideClick: false
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = 'http://' + window.location.hostname + '/billing/billing-invoice';
+
+                            }
+                        })
+                    } else {
+                        Swal.fire({
+                            title: 'Error!',
+                            html: 'Recheck the billing Info and Card</br>Developer Note : ' + data.data,
+                            icon: 'error',
+                            confirmButtonText: 'OK'
+                        })
+                    }
+                })
+                .catch(function(err) {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Api Response Fail',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    })
+                });
+
+
+        });
+    </script>
 </x-base-layout>

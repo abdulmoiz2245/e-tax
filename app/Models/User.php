@@ -8,12 +8,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
-
+use Laravel\Cashier\Billable;
 class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory, Notifiable;
     use SpatieLogsActivity;
     use HasRoles;
+    use Billable;
 
     /**
      * The attributes that are mass assignable.
@@ -21,10 +22,10 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'first_name',
-        'last_name',
+        
         'email',
         'password',
+        'username'
     ];
 
     /**
@@ -78,5 +79,16 @@ class User extends Authenticatable implements MustVerifyEmail
     public function info()
     {
         return $this->hasOne(UserInfo::class);
+    }
+
+    public function cronjob_payment()
+    {
+        return $this->hasOne(Cronjob_payment::class);
+    }
+
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
     }
 }

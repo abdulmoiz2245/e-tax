@@ -209,7 +209,7 @@ return array(
 
         // Fling
         array(
-            'title'      => 'Fillings',
+            'title'      => 'Filings',
             'icon'       => array(
                 'svg'  => theme()->getSvgIcon("demo1/media/icons/filings.svg", "svg-icon-2"),
                 'font' => '<i class="bi bi-layers fs-3"></i>',

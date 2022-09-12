@@ -6,6 +6,8 @@ use App\Http\Controllers\Documentation\ReferencesController;
 use App\Http\Controllers\Logs\AuditLogsController;
 use App\Http\Controllers\Logs\SystemLogsController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PaymentController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,12 +21,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect('index');
-});
+
 
 Route::get('/lets-help', [PagesController::class, 'lets_help'])
 ->name('lets-help');
+
+Route::get('migrate', function () {
+
+    \Artisan::call('migrate');
+
+    dd("Data Migrated");
+
+});
 
 $menu = theme()->getMenu();
 array_walk($menu, function ($val) {
@@ -47,6 +55,13 @@ Route::prefix('documentation')->group(function () {
 Route::middleware('auth')->group(function () {
 
     //form_in_progress
+    Route::get('/', function () {
+        return redirect('index');
+    });
+
+
+    Route::get('/index',[PagesController::class, 'index']);
+
     Route::get('fillings/form-in-progress', [PagesController::class, 'form_in_progress'])->name('form_in_progress');
     Route::get('fillings/field-forms', [PagesController::class, 'field_forms'])->name('field_forms');
     Route::get('fillings/start-filling', [PagesController::class, 'start_filling'])->name('start_filling');
@@ -75,7 +90,26 @@ Route::middleware('auth')->group(function () {
 
     Route::get('dashboard', [PagesController::class, 'dashboard'])->name('dashboard');
 
+    Route::post('create-customer-payment-method', [PaymentController::class, 'create_customer_payment_method'])->name('create_customer_payment_method');
+    Route::post('update-customer-payment-method', [PaymentController::class, 'update_customer_payment_method'])->name('update_customer_payment_method');
 
+
+    Route::get('send-mail', function () {
+   
+        $details = [
+            'title' => 'Mail from ItSolutionStuff.com',
+            'body' => 'This is for testing email using smtp',
+            'code' => '34324'
+        ];
+       
+       $respose =  \Mail::to('seday75692@oncebar.com')->send(new \App\Mail\VarificationMail($details));
+       
+        dd(\Mail::to('testemail224590@gmail.com')->send(new \App\Mail\VarificationMail($details)));
+    });
+
+    Route::post('emial-varification-code-sent',[PaymentController::class, 'emial_varification'])->name('emial_varification_code_sent');
+
+    Route::post('create-payment',[PaymentController::class, 'create_payment'])->name('create_payment');
 
 
     
@@ -83,7 +117,11 @@ Route::middleware('auth')->group(function () {
 
     Route::get('billing/billing-invoice', [PagesController::class, 'billing_invoice'])->name('billing_invoice');
     Route::get('billing/billing-information', [PagesController::class, 'billing_information'])->name('billing_information');
-    Route::get('billing/checkout', [PagesController::class, 'checkout'])->name('checkout');
+    Route::get('billing/checkout/{plan_id?}', [PagesController::class, 'checkout'])->name('checkout');
+
+    Route::get('billing/billing-information/edit', [PagesController::class, 'edit_billing_information'])->name('edit_billing_information');
+    Route::get('billing/billing-information/view', [PagesController::class, 'view_billing_information'])->name('view_billing_information');
+
 
     Route::get('payer', [PagesController::class, 'payer'])->name('payer');
 
@@ -100,6 +138,8 @@ Route::middleware('auth')->group(function () {
     // Account pages
     Route::prefix('account')->group(function () {
         Route::get('settings', [SettingsController::class, 'index'])->name('settings.index');
+        Route::post('update', [SettingsController::class, 'accountUpdate'])->name('settings.accountUpdate');
+
         Route::get('verify', [PagesController::class, 'account_verify'])->name('account_verify');
 
         Route::get('account', [PagesController::class, 'account'])->name('account');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\UserInfo;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
@@ -34,19 +35,25 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'first_name' => 'required|string|max:255',
-            'last_name'  => 'required|string|max:255',
-            'email'      => 'required|string|email|max:255|unique:users',
-            'password'   => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+        // dd($request);
+
+        // $request->validate([
+        //     'username'  => 'required|string|max:255',
+        //     'email'      => 'required|string|email|max:255|unique:users',
+        //     'password'   => ['required'],
+        // ]);
+
+
 
         $user = User::create([
-            'first_name' => $request->first_name,
-            'last_name'  => $request->last_name,
+            'username' => $request->username,
             'email'      => $request->email,
             'password'   => Hash::make($request->password),
         ]);
+
+        $userinfo = new UserInfo();
+        $userinfo->user_id =  $user->id;
+        $userinfo->save();
 
         event(new Registered($user));
 

@@ -6,8 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Account\SettingsEmailRequest;
 use App\Http\Requests\Account\SettingsInfoRequest;
 use App\Http\Requests\Account\SettingsPasswordRequest;
+use App\Models\User;
 use App\Models\UserInfo;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Auth;
+
 use Illuminate\Support\Facades\Storage;
 
 class SettingsController extends Controller
@@ -138,4 +142,35 @@ class SettingsController extends Controller
 
         return redirect()->intended('account/settings');
     }
+
+    public function accountUpdate(Request $request){
+        $data = $request->all();
+        $user =  Auth::user();
+        if($data['first_name']  != null){
+            $user->first_name = $data['first_name'] ;
+        }
+
+        if($data['last_name']  != null){
+            $user->last_name = $data['last_name'] ;
+        }
+
+        if($data['email']  != null){
+            $user->email = $data['email'] ;
+        }
+
+        if($data['new_password']  != null){
+            if (password_verify($data['current_password'], $user->password)) {
+                $user->password =  Hash::make($data['new_password']);
+            }else{
+                return redirect()->route('account')->with(['status' => 'error' , 'data' => 'Password missmatch']);
+            }
+        }
+
+        $user->save();
+
+        return redirect()->route('account')->with(['status' => 'success' , 'data' => 'Account updated']);
+        
+    }
+
+    
 }

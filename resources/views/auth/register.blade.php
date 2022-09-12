@@ -18,73 +18,8 @@
             color: #6F6F6F;
         }
 
-        .input{
-            border-radius: 6px;
-            margin: 20px 0px;
-            
-        }
-
-
-        .form__group {
-            position: relative;
-            padding: 15px 0 0;
-            margin-top: 10px;
-        }
-        
-        .form__field {
-            font-family: inherit;
-            
-            width: 100%;
-            border: 1px solid #BFBFBF;
-            padding-top: 3px;
-            padding-bottom: 3px;
-            outline: 0;
-            font-size: 14px;
-            font-weight: 300;
-            color: #000;
-            height: 44px;
-            border-radius: 8px;
-            padding-left: 20px;
-            background: transparent;
-            transition: border-color 0.2s;
-        }
-        
-        .form__field::placeholder {
-            color: transparent;
-           
-        }
-        
-        .form__field:placeholder-shown ~ .form__label {
-            font-size: 14px ;
-            cursor: text ;
-            font-weight: 300;
-            top: 25px ;
-            background: transparent;
-        }
-        
-        label,
-        .form__field:focus ~ .form__label {
-            position: absolute;
-            top: 6px;
-            left: 12px;
-            background: #fff;
-            display: block;
-            transition: 0.2s;
-            font-size: 14px;
-            font-weight: 300;
-            color: #BFBFBF;
-            padding: 0px 6px;
-            
-        }
-        
-        .form__field:focus ~ .form__label {
-            color: #6F6F6F;
-            
-        }
-        
-        .form__field:focus {
-            padding-bottom: 6px;
-            border-bottom: 1px solid #BFBFBF;
+        .form__field:placeholder-shown ~ .form__label{
+            z-index: 1;
         }
   
     </style>
@@ -132,7 +67,7 @@
                    
                     <div class="fv-row mb-10">
                         <div class="form__group">
-                            <input type="text" id="username" name="username" class="form__field" value="{{ old('username') }}" placeholder="Username"  autocomplete="off" required autofocus >
+                            <input type="text" id="username" name="name" class="form__field" value="{{ old('name') }}" placeholder="Username"  autocomplete="off" required autofocus >
                             <label for="username" class="form__label"> Username</label>
                         </div>
                     </div>

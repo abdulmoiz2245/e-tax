@@ -157,6 +157,10 @@
                                         array( 
                                                 'type' => 'text' ,
                                                 'name' => 'first_name' ,
+                                                'readonly' => true,
+
+                                                'value' => $user->first_name,
+
                                                 'placeholder' => 'First Name' ,
                                                 'required'=> true , 'id' => ''
                                             )
@@ -169,6 +173,10 @@
                                             array( 
                                                     'type' => 'text' ,
                                                     'name' => 'last_name' ,
+                                                'readonly' => true,
+
+                                                'value' => $user->last_name,
+
                                                     'placeholder' => 'Last Name' ,
                                                     'required'=> true , 'id' => ''
                                                 )
@@ -182,6 +190,10 @@
                                             array( 
                                                     'type' => 'email' ,
                                                     'name' => 'email' ,
+                                                'readonly' => true,
+
+                                                'value' => $user->email,
+
                                                     'placeholder' => 'Email' ,
                                                     'required'=> true , 'id' => ''
                                                 )
@@ -193,6 +205,10 @@
                                             array( 
                                                     'type' => 'number' ,
                                                     'name' => 'phone_number' ,
+                                                'value' => $user->info->phone,
+                                                'readonly' => true,
+
+
                                                     'placeholder' => 'Phone Number' ,
                                                     'required'=> true , 'id' => ''
                                                 )
@@ -209,6 +225,9 @@
                                         array( 
                                                 'type' => 'text' ,
                                                 'name' => 'company_name' ,
+                                                'value' => $user->info->company,
+                                                'readonly' => true,
+
                                                 'placeholder' => 'Company Name' ,
                                                 'required'=> true , 'id' => ''
                                             )
@@ -220,6 +239,9 @@
                                         array( 
                                                 'type' => 'text' ,
                                                 'name' => 'street_address_1' ,
+                                                'readonly' => true,
+
+                                                'value' => $user->info->street_address_1,
                                                 'placeholder' => 'Street Address 1' ,
                                                 'required'=> true , 'id' => ''
                                             )
@@ -230,6 +252,10 @@
                                         array( 
                                                 'type' => 'text' ,
                                                 'name' => 'street_address_2' ,
+                                                'readonly' => true,
+
+                                                'value' => $user->info->street_address_2,
+
                                                 'placeholder' => 'Street Address 2' ,
                                                 'required'=> true , 'id' => ''
                                             )
@@ -242,6 +268,10 @@
                                             array( 
                                                     'type' => 'text' ,
                                                     'name' => 'city' ,
+                                                'readonly' => true,
+
+                                                'value' => $user->info->city,
+
                                                     'placeholder' => 'City' ,
                                                     'required'=> true , 'id' => ''
                                                 )
@@ -253,6 +283,10 @@
                                             array( 
                                                     'type' => 'select' ,
                                                     'name' => 'conutry' ,
+                                                'readonly' => true,
+
+                                                'value' => $user->info->country,
+
                                                     'item' => array(
                                                      'united_state' =>  'United States',
                                                      'pakistan'=>   'Pakistan',
@@ -273,7 +307,11 @@
                                             {{ theme()->getView('partials/widgets/form/input/_select',
                                             array( 
                                                     'type' => 'select' ,
+                                                'readonly' => true,
+
                                                     'name' => 'state' ,
+                                                'value' => $user->info->state,
+
                                                     'item' => array(
                                                      'ak' =>  'AK',
                                                      'ir'=>   'IR',
@@ -292,6 +330,10 @@
                                             array( 
                                                     'type' => 'number' ,
                                                     'name' => 'zip' ,
+                                                'readonly' => true,
+
+                                                'value' => $user->info->zip,
+
                                                     'placeholder' => 'Zip' ,
                                                     'required'=> true , 'id' => ''
                                                 )
@@ -302,7 +344,7 @@
                                 </div>
 
                                 <div style="margin-top: 34px; margin-bottom:34px">
-                                    
+
                                 </div>
                             </div>
 
@@ -314,12 +356,21 @@
                                     <div>
                                         <h4 class=" billing-title" style="font-size: 18px">Summary</h4>
                                         <div class="row" style=" margin-top:12px">
+                                            @if($plan_id == 1)
                                             <div class="col-9">
                                                 <p class="f-16-fig" style="color:#6F6F6F"> Annual Plus Subscription - 10 Users</p>
                                             </div>
                                             <div class="col-3">
                                                 <p class="f-16-fig" style="color:#6F6F6F">$149.00</p>
                                             </div>
+                                            @elseif( $plan_id == 2)
+                                            <div class="col-9">
+                                                <p class="f-16-fig" style="color:#6F6F6F"> Basic Subscription - 1 Users</p>
+                                            </div>
+                                            <div class="col-3">
+                                                <p class="f-16-fig" style="color:#6F6F6F">$0</p>
+                                            </div>
+                                            @endif
                                         </div>
 
                                         <div class="row">
@@ -327,7 +378,7 @@
                                                 <p class="f-16-fig" style="color:#6F6F6F"> State Filing Fee</p>
                                             </div>
                                             <div class="col-3">
-                                                <p class="f-16-fig" style="color:#6F6F6F">$149.00</p>
+                                                <p class="f-16-fig" style="color:#6F6F6F">$0</p>
                                             </div>
                                         </div>
 
@@ -336,7 +387,7 @@
                                                 <p class="f-16-fig" style="color:#6F6F6F"> Other Fees</p>
                                             </div>
                                             <div class="col-3">
-                                                <p class="f-16-fig" style="color:#6F6F6F">$149.00</p>
+                                                <p class="f-16-fig" style="color:#6F6F6F">$0</p>
                                             </div>
                                         </div>
 
@@ -345,7 +396,7 @@
                                                 <p class="f-16-fig" style="color:#6F6F6F"> Estimated Tax</p>
                                             </div>
                                             <div class="col-3">
-                                                <p class="f-16-fig" style="color:#6F6F6F">$149.00</p>
+                                                <p class="f-16-fig" style="color:#6F6F6F">$0</p>
                                             </div>
                                         </div>
 
@@ -354,7 +405,14 @@
                                                 <p class="f-16-fig" style="color:#6F6F6F"> Subtotal</p>
                                             </div>
                                             <div class="col-3">
+                                                @if($plan_id == 1)
+
                                                 <p class="f-16-fig" style="color:#6F6F6F">$149.00</p>
+                                                @elseif( $plan_id == 2)
+                                                <p class="f-16-fig" style="color:#6F6F6F">$0</p>
+
+                                                @endif
+
                                             </div>
                                         </div>
 
@@ -365,7 +423,15 @@
                                                 <p class="f-16-fig" style="color:#0144F1"> Total</p>
                                             </div>
                                             <div class="col-3">
+
+                                                @if($plan_id == 1)
+
                                                 <p class="f-16-fig" style="color:#0144F1">$149.00</p>
+                                                @elseif( $plan_id == 2)
+                                                <p class="f-16-fig" style="color:#0144F1">$0</p>
+
+                                                @endif
+
                                             </div>
                                         </div>
                                     </div>
@@ -374,9 +440,9 @@
                                         <p style="max-width:370px">*Your subscription will automatically renew annually at the new total amount on the anniversary of your original purchase date using the credit card in your billing details.</p>
                                         <p>By placing your order, you agree to our Filing Terms.</p>
                                         <div class="row">
-                                            
+
                                             <div class="col-md-12">
-                                                <button class="btn w-100  mt-3" style="background: #F4B42A;  color:#fff">But Now</button>
+                                                <button class="btn w-100  mt-3"  type="button" id="checkoutbtn" style="background: #F4B42A;  color:#fff">Buy Now</button>
                                             </div>
                                         </div>
                                     </div>
@@ -399,5 +465,83 @@
 
     </div>
     <!--end::Row-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.32/sweetalert2.min.js" integrity="sha512-yc+tEbvC4kiy3J6e0aZogFVr8AZhMtJTof2z+fGPaJgjehpIPzguZxfRRTiQcXlSHbJsB3Bborvv++81TMLZ2w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.32/sweetalert2.min.css" integrity="sha512-doewDSLNwoD1ZCdA1D1LXbbdNlI4uZv7vICMrzxfshHmzzyFNhajLEgH/uigrbOi8ETIftUGBkyLnbyDOU5rpA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        document.getElementById("checkoutbtn").addEventListener("click", (event) => {
+
+            let amount = <?= $plan_id == '1' ? '149' : '0' ?>;
+            fetch('{{ route("create_payment") }}', {
+
+                    // Adding method type
+                    method: "POST",
+
+                    // Adding body or contents to send
+                    body: JSON.stringify({
+                        plan_id: '<?= $plan_id ?>',
+                        amount: amount,
+                        currency: 'usd',
+
+
+                        "_token": "{{ csrf_token() }}"
+                    }),
+
+                    // Adding headers to the request
+                    headers: {
+                        "Content-type": "application/json; charset=UTF-8"
+                    }
+                })
+                .then(
+                    function(response) {
+                        if (response.status !== 200) {
+                            console.log('Looks like there was a problem. Status Code: ' +
+                                response.status);
+                            return response.json();
+                        } else {
+                            return response.json();
+
+                        }
+
+
+                    }
+                ).then(function(data) {
+                    if (data.status) {
+                        Swal.fire({
+                            title: 'Payment Successfull',
+                            text: "",
+                            icon: 'success',
+                            showCancelButton: false,
+                            confirmButtonColor: '#3085d6',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Continue',
+                            allowOutsideClick: false
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = 'http://' + window.location.hostname + '/billing/billing-invoice';
+
+                            }
+                        })
+                    } else {
+                        Swal.fire({
+                            title: 'Error!',
+                            html: 'Recheck the billing Info and Card</br>Developer Note : ' + data.data,
+                            icon: 'error',
+                            confirmButtonText: 'OK'
+                        })
+                    }
+                })
+                .catch(function(err) {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Api Response Fail',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    })
+                });
+
+
+        });
+    </script>
 
 </x-base-layout>

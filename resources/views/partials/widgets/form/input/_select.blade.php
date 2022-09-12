@@ -1,14 +1,26 @@
+<?php 
+    if(!isset($value)){
+        $value = '';
+    }
+
+    if(!isset($readonly)){
+        $readonly = false;
+    }
+?>
+
 <div class="select-box" style="padding-top: 15px;">
     <div class="select-box__current" tabindex="1">
         <div class="select-box__value">
-            <input class="select-box__input" type="radio" id="0" value="1" name="{{ $name }}" checked="checked" />
-            <p class="select-box__input-text">Select Form</p>
+            <input class="select-box__input" type="radio" id="0"  name="{{ $name }}" <?= $value == '' ? 'checked="checked"': '' ?> />
+            <p class="select-box__input-text">Select {{$placeholder}}</p>
         </div>
+
+        
 
         @foreach($item as $key => $val)
 
         <div class="select-box__value">
-            <input class="select-box__input" type="radio" id="selct-id-{{ $key }}" value="{{ $key }}" name="{{ $name }}" />
+            <input class="select-box__input" type="radio" id="selct-id-{{ $key }}" value="{{ $key }}" <?= $value == $key ? 'checked="checked"' :'' ?> name="{{ $name }}" />
             <p class="select-box__input-text">{{ $val }}</p>
         </div>
 

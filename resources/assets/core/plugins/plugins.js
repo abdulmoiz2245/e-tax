@@ -97,6 +97,8 @@ require('es6-promise-polyfill/promise.min.js');
 // Sweetalert2 - a beautiful, responsive, customizable and accessible (WAI-ARIA) replacement for JavaScript's popup boxes: https://sweetalert2.github.io/
 window.Swal = window.swal = require('sweetalert2/dist/sweetalert2.min.js');
 require('../../core/js/vendors/plugins/sweetalert2.init.js');
+require('sweetalert2')
+const Swal = require('sweetalert2')
 
 // CountUp.js - is a dependency-free, lightweight JavaScript class that can be used to quickly create animations that display numerical data in a more interesting way.
 window.countUp = require('countup.js/dist/countUp.withPolyfill.min.js');

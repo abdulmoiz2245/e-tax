@@ -255,7 +255,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-    <form action=""  id="billing_form" method="post">
+    <form action="{{ route('update_customer_payment_method') }}" id="billing_form" method="post">
         @csrf
         <div class="row verify_info">
             <div class="col-12">
@@ -339,7 +339,7 @@
                                                             <button class="btn w-100  mt-3" type="button" id="cancel-btn-verify" style="color: #8C8C8C;border: 1px solid #6F6F6F;font-size: 14px;font-weight: 400;">Cancel</button>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <button class="btn w-100  mt-3" type="button" id="create-payment" style="background: #F4B42A;  color:#fff">Verify</button>
+                                                            <button class="btn w-100  mt-3" type="submit" style="background: #F4B42A;  color:#fff">Verify</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -369,7 +369,7 @@
             <!--begin::Col-->
 
             <div class="col-md-12">
-                <span><a href="/billing-invoice"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
+                <span><a href="/billing/billing-invoice"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
                 <span class="pr-2" style="color:#6F6F6F;padding-left: 7px;">Back to Billing & Invoice</span>
             </div>
             <!--end::Col-->
@@ -403,6 +403,7 @@
                                         array( 
                                                 'type' => 'text' ,
                                                 'name' => 'first_name' ,
+                                                'value' => $user->first_name,
                                                 'placeholder' => 'First Name' ,
                                                 'required'=> true , 'id' => ''
                                             )
@@ -415,6 +416,8 @@
                                             array( 
                                                     'type' => 'text' ,
                                                     'name' => 'last_name' ,
+                                                    'value' => $user->last_name,
+
                                                     'placeholder' => 'Last Name' ,
                                                     'required'=> true , 'id' => ''
                                                 )
@@ -427,6 +430,8 @@
                                             array( 
                                                     'type' => 'email' ,
                                                     'name' => 'email' ,
+                                                    'value' => $user->email,
+
                                                     'placeholder' => 'Email' ,
                                                     'required'=> true , 'id' => ''
                                                 )
@@ -438,6 +443,8 @@
                                             array( 
                                                     'type' => 'number' ,
                                                     'name' => 'phone_number' ,
+                                                    'value' =>$user->info->phone,
+
                                                     'placeholder' => 'Phone Number' ,
                                                     'required'=> true , 'id' => ''
                                                 )
@@ -455,6 +462,8 @@
                                         array( 
                                                 'type' => 'text' ,
                                                 'name' => 'company_name' ,
+                                                'value' =>$user->info->company,
+
                                                 'placeholder' => 'Company Name' ,
                                                 'required'=> false , 'id' => ''
                                             )
@@ -466,6 +475,8 @@
                                         array( 
                                                 'type' => 'text' ,
                                                 'name' => 'street_address_1' ,
+                                                'value' =>$user->info->street_address_1,
+
                                                 'placeholder' => 'Street Address 1' ,
                                                 'required'=> true , 'id' => ''
                                             )
@@ -477,6 +488,8 @@
                                                 'type' => 'text' ,
                                                 'name' => 'street_address_2' ,
                                                 'placeholder' => 'Street Address 2' ,
+                                                'value' =>$user->info->street_address_2,
+
                                                 'required'=> false , 'id' => ''
                                             )
                                         )
@@ -488,6 +501,8 @@
                                             array( 
                                                     'type' => 'text' ,
                                                     'name' => 'city' ,
+                                                    'value' =>$user->info->city,
+
                                                     'placeholder' => 'City' ,
                                                     'required'=> true , 'id' => ''
                                                 )
@@ -499,6 +514,8 @@
                                             array( 
                                                     'type' => 'select' ,
                                                     'name' => 'country' ,
+                                                    'value' =>$user->info->country,
+
                                                     'item' => array(
                                                      'united_state' =>  'United States',
                                                      'pakistan'=>   'Pakistan',
@@ -520,6 +537,8 @@
                                             array( 
                                                     'type' => 'select' ,
                                                     'name' => 'state' ,
+                                                    'value' =>$user->info->state,
+
                                                     'item' => array(
                                                      'ak' =>  'AK',
                                                      'ir'=>   'IR',
@@ -538,6 +557,8 @@
                                             array( 
                                                     'type' => 'number' ,
                                                     'name' => 'zip' ,
+                                                    'value' =>$user->info->zip,
+
                                                     'placeholder' => 'Zip' ,
                                                     'required'=> true , 'id' => ''
                                                 )
@@ -549,18 +570,9 @@
 
                         <div>
                             <h4 style="margin-top:30px">Payment Method</h4>
+                            <p>Leave this if dont you dont want to update payment method</p>
                             <div class="row">
-                                <div class="col-md-6">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="creditcard" style="margin-right:5px">Credit Card
-                                    </label>
-
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="paypal" disabled style="margin-right:5px">Pay Pal
-                                    </label>
-                                </div>
+                                
 
                                 <div class="col-md-12">
                                     {{ theme()->getView('partials/widgets/form/input/_text',
@@ -568,7 +580,7 @@
                                                     'type' => 'text' ,
                                                     'name' => 'cardholder_name' ,
                                                     'placeholder' => 'Cardholder name' ,
-                                                    'required'=> true , 'id' => ''
+                                                    'required'=> false , 'id' => ''
                                                 )
                                             )
                                         }}
@@ -580,7 +592,7 @@
                                                     'type' => 'text' ,
                                                     'name' => 'cardholder_number' ,
                                                     'placeholder' => 'Cardholder Number' ,
-                                                    'required'=> true , 'id' => ''
+                                                    'required'=> false , 'id' => ''
                                                 )
                                             )
                                         }}
@@ -591,7 +603,7 @@
                                                     'type' => 'month' ,
                                                     'name' => 'card_expiry' ,
                                                     'placeholder' => 'MM/YY' ,
-                                                    'required'=> true , 'id' => ''
+                                                    'required'=> false , 'id' => ''
                                                 )
                                             )
                                         }}
@@ -602,7 +614,7 @@
                                                     'type' => 'number' ,
                                                     'name' => 'cvc' ,
                                                     'placeholder' => 'CVC' ,
-                                                    'required'=> true , 'id' => ''
+                                                    'required'=> false , 'id' => ''
                                                 )
                                             )
                                         }}
@@ -617,7 +629,7 @@
                                     <button type="button" class="btn w-100  mt-3" style="color: #8C8C8C;border: 1px solid #6F6F6F;font-size: 14px;font-weight: 400;">Cancel</button>
                                 </div>
                                 <div class="col-md-6">
-                                    <button type="button" class="btn w-100  mt-3 verify-btn" style="background: #F4B42A;  color:#fff">Next</button>
+                                    <button type="submit" class="btn w-100  mt-3 " style="background: #F4B42A;  color:#fff">Next</button>
                                 </div>
                             </div>
                         </div>
@@ -641,6 +653,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.32/sweetalert2.min.css" integrity="sha512-doewDSLNwoD1ZCdA1D1LXbbdNlI4uZv7vICMrzxfshHmzzyFNhajLEgH/uigrbOi8ETIftUGBkyLnbyDOU5rpA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <script>
+
         let verify = document.getElementsByClassName('verify_info');
         let info = document.getElementsByClassName('billing-info');
         for (var i = 0; i < verify.length; i += 1) {
@@ -661,20 +674,20 @@
 
                     // Adding body or contents to send
                     body: JSON.stringify({
-                        first_name: data.get('first_name'),
-                        last_name: data.get('last_name'),
-                        phone_number: data.get('phone_number'),
-                        street_address_1: data.get('street_address_1'),
-                        street_address_2: data.get('street_address_2'),
-                        city: data.get('city'),
-                        country: data.get('country'),
-                        state: data.get('state'),
-                        state: data.get('state'),
-                        zip: data.get('zip'),
-                        cardholder_name: data.get('cardholder_name'),
-                        cardholder_number: data.get('cardholder_number'),
-                        card_expiry: data.get('card_expiry'),
-                        cvc: data.get('cvc'),
+                        first_name : data.get('first_name'),
+                        last_name : data.get('last_name'),
+                        phone_number : data.get('phone_number'),
+                        street_address_1 : data.get('street_address_1'),
+                        street_address_2 : data.get('street_address_2'),
+                        city : data.get('city'),
+                        country : data.get('country'),
+                        state : data.get('state'),
+                        state : data.get('state'),
+                        zip : data.get('zip'),
+                        cardholder_name : data.get('cardholder_name'),
+                        cardholder_number : data.get('cardholder_number'),
+                        card_expiry : data.get('card_expiry'),
+                        cvc : data.get('cvc'),
                         email: $("input[type = 'email']").val(),
                         "_token": "{{ csrf_token() }}"
                     }),
@@ -693,10 +706,10 @@
                         }
 
                         return response.json();
-
+                        
                     }
                 ).then(function(data) {
-                    if (data.status) {
+                    if(data.status){
                         for (var i = 0; i < verify.length; i += 1) {
                             verify[i].style.display = 'block';
                         }
@@ -706,7 +719,7 @@
                         for (var i = 0; i < info.length; i += 1) {
                             info[i].style.display = 'none';
                         }
-                    } else {
+                    }else{
                         Swal.fire({
                             title: 'Error!',
                             text: data.data,
@@ -732,88 +745,6 @@
             for (var i = 0; i < info.length; i += 1) {
                 info[i].style.display = 'block';
             }
-        });
-
-        document.getElementById("create-payment").addEventListener("click", (event) => {
-
-            var f = document.getElementById('billing_form');
-            var data = new FormData(f);
-            fetch('{{ route("create_customer_payment_method")}}', {
-
-                    // Adding method type
-                    method: "POST",
-
-                    // Adding body or contents to send
-                    body: JSON.stringify({
-                        first_name: data.get('first_name'),
-                        last_name: data.get('last_name'),
-                        phone_number: data.get('phone_number'),
-                        street_address_1: data.get('street_address_1'),
-                        company_name: data.get('company_name'),
-                        verification_code: data.get('verification_code'),
-
-
-                        street_address_2: data.get('street_address_2'),
-                        city: data.get('city'),
-                        country: data.get('country'),
-                        state: data.get('state'),
-                        state: data.get('state'),
-                        zip: data.get('zip'),
-                        cardholder_name: data.get('cardholder_name'),
-                        cardholder_number: data.get('cardholder_number'),
-                        card_expiry: data.get('card_expiry'),
-                        cvc: data.get('cvc'),
-                        email: $("input[type = 'email']").val(),
-                        "_token": "{{ csrf_token() }}"
-                    }),
-
-                    // Adding headers to the request
-                    headers: {
-                        "Content-type": "application/json; charset=UTF-8"
-                    }
-                })
-                .then(
-                    function(response) {
-                        if (response.status !== 200) {
-                            console.log('Looks like there was a problem. Status Code: ' +
-                                response.status);
-                            return response.json();
-                        }
-
-                        return response.json();
-
-                    }
-                ).then(function(data) {
-                    if (data.status) {
-                        Swal.fire({
-                            title: 'Payment Method Added Successfully',
-                            text: "",
-                            icon: 'success',
-                            showCancelButton: false,
-                            confirmButtonColor: '#3085d6',
-                            cancelButtonColor: '#d33',
-                            confirmButtonText: 'Continue',
-                            allowOutsideClick: false
-                        }).then((result) => {
-                            if (result.isConfirmed) {
-                                window.location.href = 'http://' + window.location.hostname + '/billing/billing-invoice';
-
-                            }
-                        })
-                    } else {
-                        Swal.fire({
-                            title: 'Error!',
-                            text: data.data,
-                            icon: 'error',
-                            confirmButtonText: 'OK'
-                        })
-                    }
-
-
-                })
-                .catch(function(err) {
-                    console.log('Fetch Error :-S', err);
-                })
         });
     </script>
 </x-base-layout>
