@@ -1,4 +1,10 @@
 <?php
+
+if(isset($_SESSION['app']) &&  $_SESSION['app'] == 'crypto'){
+    $aside = false;
+}else{
+    $aside = true;
+}
 return array(
     // Refer to config/global/general.php
 
@@ -106,7 +112,7 @@ return array(
 
         // Aside
         'aside'      => array(
-            'display'   => true, // Display aside
+            'display'   => $aside, // Display aside
             'theme'     => 'light', // Set aside theme(dark|light)
             'menu'      => 'main', // Set aside menu(main|documentation)
             'fixed'     => true,  // Enable aside fixed mode

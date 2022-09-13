@@ -3,6 +3,9 @@
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
+session_start();
+
+
 define('LARAVEL_START', microtime(true));
 
 /*

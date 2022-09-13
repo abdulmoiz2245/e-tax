@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Session;
 use Auth;
 
 
@@ -226,6 +226,9 @@ class PagesController extends Controller
 
     public function dashboard()
     {
+      
+        $_SESSION['app'] = 'e-tax';
+                
         return view('pages.dashboard');
     }
 }

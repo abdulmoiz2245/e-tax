@@ -93,6 +93,22 @@ body {
 	line-height: 20px !important;
 }
 
+.f-18-fig-questrial{
+	font-family: 'Questrial' ,sans-serif !important;
+	font-style: normal !important;
+	font-weight: 400 !important;
+	font-size: 18px !important;
+	line-height: 29px !important;
+}
+
+.f-20-fig-questrial{
+	font-family: 'Questrial' ,sans-serif !important;
+	font-style: normal !important;
+	font-weight: 400 !important;
+	font-size: 20px !important;
+	line-height: 20px !important;
+}
+
 .f-16-neu-fig{
 	font-family: 'Neue Haas Grotesk Text Pro' ,sans-serif !important;
 	font-style: normal !important;
@@ -110,14 +126,30 @@ body {
 	line-height: 20px !important;
 	color: #6F6F6F;
 }
+.f-14-neu-400-fig{
+	font-family: 'Neue Haas Grotesk Text Pro' ,sans-serif !important;
+	font-style: normal !important;
+	font-weight: 400 ;
+	font-size: 14px !important;
+	line-height: 17px !important;
+}
 
 
 .f-20-fig{
 	font-family: 'Neue Haas Grotesk Text Pro' ,sans-serif !important;
 	font-style: normal !important;
-	font-weight: 400 !important;
+	font-weight: 400 ;
 	font-size: 20px !important;
 	line-height: 20px !important;
+	color: #000;
+}
+
+.f-18-fig-neue{
+	font-family: 'Neue Haas Grotesk Text Pro' ,sans-serif !important;
+	font-style: normal !important;
+	font-weight: 700 ;
+	font-size: 18px !important;
+	line-height:23px !important;
 	color: #000;
 }
 
@@ -481,4 +513,12 @@ body {
   .card .card-body{
 	position: relative;
     z-index: 1;
+  }
+
+  .menu-state-title-primary .menu-item .menu-link.active .menu-title{
+	color: #2B014C;
+  }
+
+  .menu-state-bg .menu-item .menu-link.active{
+	background-color: transparent;
   }

@@ -134,9 +134,14 @@
                         </a>
 
 
-                        <button type="button" id="" class="btn btn-lg  w-100 mb-5" style="background:#F4B42A; color:#fff">
-                            <a href="" style="color:#fff">Crypto Tax Calculator</a>
-                        </button>
+                        
+
+                        <a href="{{ route('crypto.dashboard') }}" style="color:#fff">
+                            <button type="button" class="btn btn-lg  w-100 mb-5" style="background:#F4B42A; color:#fff">
+                                Crypto Tax Calculator
+                            </button>
+                        </a>
+
 
 
                     </div>

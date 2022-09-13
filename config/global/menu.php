@@ -179,7 +179,7 @@ return array(
     ),
 
     // Main menu
-    'main'          => array(
+    'main'  => array(
         //// Dashboard
         array(
             'title' => 'Dashboard',

@@ -169,3 +169,5 @@ Route::middleware('auth')->group(function () {
 Route::get('/auth/redirect/{provider}', [SocialiteLoginController::class, 'redirect']);
 
 require __DIR__.'/auth.php';
+require __DIR__.'/crypto.php';
+
