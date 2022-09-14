@@ -12,7 +12,7 @@
     <div class="select-box__current" tabindex="1">
         <div class="select-box__value">
             <input class="select-box__input" type="radio" id="0"  name="{{ $name }}" <?= $value == '' ? 'checked="checked"': '' ?> />
-            <p class="select-box__input-text"> {{$placeholder}}</p>
+            <p class="select-box__input-text">{{$placeholder}}</p>
         </div>
 
         

@@ -157,13 +157,40 @@ body {
 	line-height: 20px !important;
 	color: #000;
 }
+.f-20-fig-700-neue{
+	font-family: 'Neue Haas Grotesk Text Pro' ,sans-serif !important;
+	font-style: normal !important;
+	font-weight: 700;
+	font-size: 20px !important;
+	line-height: 25px !important;
+	color: #000;
+}
 
 .f-18-fig-neue {
 	font-family: 'Neue Haas Grotesk Text Pro', sans-serif !important;
 	font-style: normal !important;
 	font-weight: 700;
 	font-size: 18px !important;
-	line-height: 23px !important;
+	line-height:28px !important;
+	color: #000;
+	
+}
+
+.f-26-fig-neue{
+	font-family: 'Neue Haas Grotesk Text Pro' ,sans-serif !important;
+	font-style: normal !important;
+	font-weight: 700 ;
+	font-size: 26px !important;
+	line-height:33px !important;
+	color: #000;
+}
+
+.f-30-fig-neue{
+	font-family: 'Neue Haas Grotesk Text Pro' ,sans-serif !important;
+	font-style: normal !important;
+	font-weight: 700 ;
+	font-size: 30px !important;
+	line-height:38px !important;
 	color: #000;
 }
 
@@ -589,3 +616,181 @@ body {
 
 }
 
+
+// tax reports
+
+
+.tax_report_top_dropdown>div>div {
+	border: none;
+	box-shadow: 2px 2px 10px rgba(210, 209, 223, 0.3);
+	color: #6F6F6F;
+}
+
+.tax_report_top_dropdown .select-box{
+	padding-top: 0px !important;
+}
+
+.tax_report_top_dropdown .select-box__input-text {
+	font-family: 'Neue Haas Grotesk Text Pro', sans-serif !important;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 20px;
+	color: #6F6F6F;
+}
+
+/* .tax-report-tags{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 8px 12px;
+	gap: 12px;
+} */
+
+.tax_reports_main{
+	padding-top: 54px;
+}
+
+.tax-report-tags {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 12px;
+}
+
+.tax-report-tags .btn1 {
+	color: #13BF44;
+	background: rgba(19, 191, 68, 0.12);
+	padding: 8px 12px;
+	border-radius: 8px;
+}
+
+.tax-report-tags .btn2 {
+	color: #646464;
+	background: rgba(111, 111, 111, 0.12);
+	padding: 8px 12px;
+	border-radius: 8px;
+}
+
+.tax-report-table tr td:nth-child(2) {
+	color: black;
+}
+
+.tax-report-accordion div {
+	border: none;
+}
+
+.tax-report-accordion div button {
+	padding-left: 0px;
+	padding-right: 0px;
+	color: #0060FF;
+}
+
+.tax_report_type_dropdown .select-box__input-text {
+	background-color: transparent;
+}
+
+.tax_report_type_dropdown .select-box__value {
+	background: rgba(111, 111, 111, 0.08);
+}
+
+.tax_report_type_dropdown>div>div {
+	border: none;
+	color: #6F6F6F;
+}
+@media screen and (max-width: 770px){
+	.tax-card-3{
+		margin-top:16px;
+	}
+}
+
+
+//tax plan 
+
+
+.tax_plan_top_dropdown .select-box__current {
+	border: none;
+	box-shadow: 2px 2px 10px rgba(210, 209, 223, 0.3);
+}
+
+.tax_plan_title {
+	padding-bottom: 20px;
+}
+
+.tax_plan_top_dropdown .select-box {
+	padding-top: 0px !important;
+}
+
+.tax_plan_top_bars {
+	flex-wrap: wrap;
+}
+
+.tax_plan_top_bars>div {
+	flex-basis: 262px;
+	margin-top: 25px;
+}
+
+.tax_plan_top_bars .card-body {
+	padding-left: 24px;
+	padding-right: 17px;
+}
+
+.tax_plan_list {
+	padding: 24px;
+}
+
+.tax_plan_list label {
+	max-width: 700px;
+}
+
+.tax_plan_list input {
+	margin-bottom: 10px !important;
+}
+
+.tax_plan_list>div>div:nth-child(2) {
+	align-self: center;
+}
+
+.tax_plan_list .bottom_hr {
+	margin-top: 42px;
+}
+
+.tax_plan_list .total_cost {
+	padding: 30px auto 30px 60px;
+	margin: 0px;
+}
+
+.tax_plan_card_list{
+	margin-top: 25px;
+}
+
+.tax_plan_card_list .card-header{
+	justify-content: center;
+	background: #2B014C; 
+	color:#fff;
+}
+
+.tax_plan_card_list .list-group-item{
+	border: none;
+}
+
+//checkout type
+
+.checkout_type{
+	max-width: 380px;
+}
+
+.checkout_type .checkout_type_title{
+	margin: 15px auto;
+}
+
+.checkout_type .payment_options > span{
+	padding: 4.5px;
+}
+
+.checkout_type .add_transaction_btn{
+	margin-top: 36px;
+	background: #EDEDED;
+}

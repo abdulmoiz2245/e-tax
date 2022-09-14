@@ -62,6 +62,21 @@ class CryptoPagesController extends Controller
 
         $user = Auth::user();
         return view('pages.crypto.setting.setting' , ['user' => $user]);
+    }
 
+    public function taxReports(){
+        return view('pages.crypto.tax_reports.index');
+    }
+
+    public function freePlan(){
+        return view('pages.crypto.free_plan.index');
+    }
+
+    public function checkoutType(){
+        return view('pages.crypto.checkout_type.index');
+    }
+
+    public function paymentWithCard(){
+        return view('pages.crypto.payment_with_card.index');
     }
 }
