@@ -39,9 +39,15 @@
 
      <!--begin::Menu item-->
      <div class="menu-item px-5">
-        <a href="/account/account" class="menu-link px-5 justify-content-center" style="color:black">
-            My Account
-        </a>
+         <?php if (isset($_SESSION['app']) && $_SESSION['app'] == 'crypto') { ?>
+            <a href="{{ route('crypto.account') }}" class="menu-link px-5 justify-content-center" style="color:black">
+                My Account
+            </a>
+        <?php  } else { ?>
+            <a href="/account/account" class="menu-link px-5 justify-content-center" style="color:black">
+                My Account
+            </a>
+        <?php } ?>
     </div>
     <!--end::Menu item-->
 
@@ -50,19 +56,36 @@
     <!--end::Menu separator-->
 
     <!--begin::Menu item-->
+    
+
     <div class="menu-item px-5">
-        <a href="/billing/billing-invoice" class="menu-link px-5 justify-content-center" style="color:black">
-            Billing & Invoice
-        </a>
+         <?php if (isset($_SESSION['app']) && $_SESSION['app'] == 'crypto') { ?>
+            <div class="menu-item px-5">
+                <a href="{{ route('crypto.setting') }}" class="menu-link px-5 justify-content-center" style="color:black">
+                    Setting
+                </a>
+            </div>
+        <?php  } else { ?>
+            <div class="menu-item px-5">
+                <a href="/billing/billing-invoice" class="menu-link px-5 justify-content-center" style="color:black">
+                    Billing & Invoice
+                </a>
+            </div>
+        <?php } ?>
     </div>
     <!--end::Menu item-->
 
     <!--begin::Menu item-->
     <div class="menu-item px-5">
-        <a href="/contact" class="menu-link px-5 justify-content-center"style="color:black" >
-            <span class="menu-text">Contact Us</span>
-           
-        </a>
+       
+
+        <?php if (isset($_SESSION['app']) && $_SESSION['app'] == 'crypto') { ?>
+            
+        <?php  } else { ?>
+            <a href="/contact" class="menu-link px-5 justify-content-center"style="color:black" >
+                <span class="menu-text">Contact Us</span>
+            </a>
+        <?php } ?>
     </div>
     <!--end::Menu item-->
 

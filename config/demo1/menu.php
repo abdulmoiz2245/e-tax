@@ -19,12 +19,12 @@ if (isset($_SESSION['app']) && $_SESSION['app'] == 'crypto') {
 
             array(
                 'title'   => 'Wallets',
-                'path'    => 'crypto/dashboard',
+                'path'    => 'crypto/wallet',
                 'classes' => array('item' => 'me-lg-1 f-20-fig-questrial'),
             ),
             array(
                 'title'   => 'Transactions',
-                'path'    => 'crypto/dashboard',
+                'path'    => 'crypto/transaction/transaction',
                 'classes' => array('item' => 'me-lg-1 f-20-fig-questrial'),
             ),
 
@@ -36,7 +36,7 @@ if (isset($_SESSION['app']) && $_SESSION['app'] == 'crypto') {
 
             array(
                 'title'   => 'Markets',
-                'path'    => 'crypto/dashboard',
+                'path'    => 'crypto/market',
                 'classes' => array('item' => 'me-lg-1 f-20-fig-questrial'),
             ),
 
