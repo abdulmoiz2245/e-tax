@@ -30,7 +30,7 @@ if (isset($_SESSION['app']) && $_SESSION['app'] == 'crypto') {
 
             array(
                 'title'   => 'Tax Reports',
-                'path'    => 'crypto/dashboard',
+                'path'    => 'crypto/tax-reports',
                 'classes' => array('item' => 'me-lg-1 f-20-fig-questrial'),
             ),
 
