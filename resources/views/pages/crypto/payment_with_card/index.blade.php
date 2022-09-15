@@ -13,6 +13,7 @@
             margin: 9px 0px 24px 24px;
             border-right: 1px solid #EDEDED;
             padding-right: 24px;
+            
         }
 
         .payment_with_card_order_details{
@@ -123,7 +124,19 @@
                 
                 <div class="col-md-4 col-12 ">
                     <div class="payment_with_card_order_details">
-                        <h5>Order #INDA9AFD13</h5>
+                        <h5 class="f-18-fig-neue">Order #INDA9AFD13</h5>
+                        <p class="f-16-fig" style="color: #6F6F6F;">Includes 1x Newbie (For 2021)</p>
+                        <div class="d-flex justify-content-between f-18-fig-questrial" style="color: #6F6F6F;">
+                            <span>Subtotal:</span>
+                            <span>$120</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span class="f-18-fig-questrial" style="color: #6F6F6F;">Total:</span>
+                            <span class="f-24-fig-700-questrial" style="color: black;">$52</span>
+                        </div>
+                        <hr>
+                        <p class="f-16-fig" style="color: #6F6F6F;">Do you have a promo code?</p>
+
                     </div>
                     
                 </div>
