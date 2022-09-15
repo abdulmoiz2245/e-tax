@@ -5,23 +5,8 @@
             background: transparent;
         }
 
-        .select-box {
-            padding-top: 0px !important;
-        }
-
         table {
             table-layout: fixed;
-        }
-
-        .select-box__current {
-            border: none;
-        }
-
-        .select-box__input-text {
-            color: black;
-            padding: 2px;
-            padding-left: 9px;
-            font-size: 16px;
         }
 
         .tbody tr:hover {

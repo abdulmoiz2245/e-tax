@@ -11,8 +11,8 @@ $toolbarButtonIconSizeClass = "svg-icon-1";
 <div class="d-flex align-items-stretch flex-shrink-0">
 
     <div class="topbar-item align-self-center" data-offset="10px,0px" style="margin-right:30px">
-        <a href="">
-            <h4 class="f-16-neu-fig" style="color:#2B014C">Free Plan</h4>
+        <a href="{{ route('crypto.free-plan') }}">
+            <h4 class="f-16-neu-fig" style="color:#2B014C" >Free Plan</h4>
 
         </a>
     </div>
