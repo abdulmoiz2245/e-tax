@@ -143,7 +143,7 @@
             </div>
         </div>
         <div class="d-grid add_transaction_btn">
-            <button class="btn" type="button" style="color: #FFF;">Add transaction</button>
+            <a href="{{route('crypto.payment-with-card')}}" class="btn" type="button" style="color: #FFF;">Add transaction</a>
         </div>
     </div>
 </x-base-layout>

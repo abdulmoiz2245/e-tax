@@ -79,4 +79,8 @@ class CryptoPagesController extends Controller
     public function paymentWithCard(){
         return view('pages.crypto.payment_with_card.index');
     }
+
+    public function paymentWithCrypto(){
+        return view('pages.crypto.payment_with_crypto.index');
+    }
 }
