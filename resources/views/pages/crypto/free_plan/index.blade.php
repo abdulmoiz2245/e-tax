@@ -1,6 +1,14 @@
 <x-base-layout>
 
-    <div>
+    <style>
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1507px;
+            }
+        }
+    </style>
+
+    <div style="margin-top: 4%;">
         <h1 class="f-30-fig-neue tax_plan_title">Choose your tax plan</h1>
     </div>
     <div class="d-md-flex justify-content-between col-8">
@@ -26,7 +34,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-8 col-12">
+        <div class="col-md-9 col-12">
             <div class="d-md-flex justify-content-between tax_plan_top_bars">
                 <div class="card ">
                     <div class="card-body">
@@ -118,7 +126,7 @@
                         <p class="f-18-fig-questrial" style="color: #219653;">Included</p>
                     </div>
                 </div>
-                <hr>
+                <hr style="color:#BFBFBF ;">
                 <div class="d-flex justify-content-between">
                     <div>
                         <input type="checkbox" name="" id="">
@@ -131,7 +139,7 @@
                         <p class="f-18-fig-questrial">$120</p>
                     </div>
                 </div>
-                <hr>
+                <hr style="color:#BFBFBF ;">
                 <div class="d-flex justify-content-between">
                     <div>
                         <input type="checkbox" name="" id="">
@@ -144,7 +152,7 @@
                         <p class="f-18-fig-questrial">$120</p>
                     </div>
                 </div>
-                <hr>
+                <hr style="color:#BFBFBF ;">
                 <div class="d-flex justify-content-between">
                     <div>
                         <input type="checkbox" name="" id="">
@@ -157,10 +165,10 @@
                         <p class="f-18-fig-questrial">$120</p>
                     </div>
                 </div>
-                <hr class="bottom_hr">
+                <hr class="bottom_hr" style="color:#BFBFBF ;">
                 <div class="d-flex justify-content-between">
-                    <div class="total_cost">
-                        <p class="f-18-fig-questrial " style="color: #6F6F6F;">Total cost: <span class="f-18-fig-neue">$320</span></p>
+                    <div class="total_cost" style="align-self:center;">
+                        <span class="f-18-fig-questrial ps-10" style="color: #6F6F6F;">Total cost: <span class="f-18-fig-neue">$320</span></span>
                     </div>
                     <div>
                         <a href="{{ route('crypto.checkout-type') }}" class="btn" style="background: #F4B42A;  color:#fff" type="button">Checkout</a>
@@ -168,61 +176,61 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 col-12 tax_plan_card_list">
+        <div class="col-md-3 col-12 tax_plan_card_list">
             <div class="card">
                 <div class="card-header f-20-fig">
-                All Plans Include
+                    All Plans Include
                 </div>
                 <ul class="list-group list-group-flush f-18-fig-questrial p-4">
                     <li class="list-group-item">
                         <span class="pe-3"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM9.003 14L16.073 6.929L14.659 5.515L9.003 11.172L6.174 8.343L4.76 9.757L9.003 14Z" fill="#F4B42A"/>
-                        </svg></span>
+                                <path d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM9.003 14L16.073 6.929L14.659 5.515L9.003 11.172L6.174 8.343L4.76 9.757L9.003 14Z" fill="#F4B42A" />
+                            </svg></span>
                         Unlimited revisions
                     </li>
                     <li class="list-group-item">
                         <span class="pe-3"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM9.003 14L16.073 6.929L14.659 5.515L9.003 11.172L6.174 8.343L4.76 9.757L9.003 14Z" fill="#F4B42A"/>
-                        </svg></span>
+                                <path d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM9.003 14L16.073 6.929L14.659 5.515L9.003 11.172L6.174 8.343L4.76 9.757L9.003 14Z" fill="#F4B42A" />
+                            </svg></span>
                         Unlimited wallets
                     </li>
                     <li class="list-group-item">
                         <span class="pe-3"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM9.003 14L16.073 6.929L14.659 5.515L9.003 11.172L6.174 8.343L4.76 9.757L9.003 14Z" fill="#F4B42A"/>
-                        </svg></span>
+                                <path d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM9.003 14L16.073 6.929L14.659 5.515L9.003 11.172L6.174 8.343L4.76 9.757L9.003 14Z" fill="#F4B42A" />
+                            </svg></span>
                         Form 8949 & Schedule D
                     </li>
                     <li class="list-group-item">
                         <span class="pe-3"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM9.003 14L16.073 6.929L14.659 5.515L9.003 11.172L6.174 8.343L4.76 9.757L9.003 14Z" fill="#F4B42A"/>
-                        </svg></span>
+                                <path d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM9.003 14L16.073 6.929L14.659 5.515L9.003 11.172L6.174 8.343L4.76 9.757L9.003 14Z" fill="#F4B42A" />
+                            </svg></span>
                         TurboTax, TaxAct Export
                     </li>
                     <li class="list-group-item">
                         <span class="pe-3"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM9.003 14L16.073 6.929L14.659 5.515L9.003 11.172L6.174 8.343L4.76 9.757L9.003 14Z" fill="#F4B42A"/>
-                        </svg></span>
+                                <path d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM9.003 14L16.073 6.929L14.659 5.515L9.003 11.172L6.174 8.343L4.76 9.757L9.003 14Z" fill="#F4B42A" />
+                            </svg></span>
                         Comprehensive tax reports
                     </li>
                     <li class="list-group-item">
                         <span class="pe-3"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM9.003 14L16.073 6.929L14.659 5.515L9.003 11.172L6.174 8.343L4.76 9.757L9.003 14Z" fill="#F4B42A"/>
-                        </svg></span>
+                                <path d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM9.003 14L16.073 6.929L14.659 5.515L9.003 11.172L6.174 8.343L4.76 9.757L9.003 14Z" fill="#F4B42A" />
+                            </svg></span>
                         Basic portfolio tracking
                     </li>
                     <li class="list-group-item">
                         <span class="pe-3"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM9.003 14L16.073 6.929L14.659 5.515L9.003 11.172L6.174 8.343L4.76 9.757L9.003 14Z" fill="#F4B42A"/>
-                        </svg></span>
+                                <path d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM9.003 14L16.073 6.929L14.659 5.515L9.003 11.172L6.174 8.343L4.76 9.757L9.003 14Z" fill="#F4B42A" />
+                            </svg></span>
                         Email support
                     </li>
                 </ul>
-                <hr class="" style="margin: 26px 26px 13px 26px;">
+                <hr class="" style="margin: 26px 26px 13px 26px; color:#BFBFBF ;">
                 <div>
                     <p class="text-center f-14-fig-questrial" style="color: #BFBFBF;"><span class="pe-1"><svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8.00027 12.1733L3.29827 14.8053L4.34827 9.51998L0.391602 5.86131L5.74294 5.22665L8.00027 0.333313L10.2576 5.22665L15.6089 5.86131L11.6523 9.51998L12.7023 14.8053L8.00027 12.1733Z" fill="#BFBFBF"/>
-                    </svg>
-                    </span> E600+ reviews on Trustpilot</p>
+                                <path d="M8.00027 12.1733L3.29827 14.8053L4.34827 9.51998L0.391602 5.86131L5.74294 5.22665L8.00027 0.333313L10.2576 5.22665L15.6089 5.86131L11.6523 9.51998L12.7023 14.8053L8.00027 12.1733Z" fill="#BFBFBF" />
+                            </svg>
+                        </span> E600+ reviews on Trustpilot</p>
                 </div>
             </div>
         </div>

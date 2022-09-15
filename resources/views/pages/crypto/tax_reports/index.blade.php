@@ -1,6 +1,6 @@
 <x-base-layout>
 
-    <div class="d-md-flex justify-content-between">
+    <div class="d-md-flex justify-content-between" style="margin-top: 4.8%; ">
         <div>
             <h1 class="f-30-fig-neue">Tax Reports</h1>
         </div>

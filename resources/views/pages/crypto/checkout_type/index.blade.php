@@ -1,16 +1,16 @@
 <x-base-layout>
 
     <div class="checkout_type mx-auto">
-        <div class="f-16-neu-400-fig">
+        <div class="f-16-neu-400-fig" style="padding-bottom: 3%; padding-top:3%;">
                 <a href="{{route('crypto.free-plan')}}"><span class="pe-2">
                 <i class="fa fa-arrow-left" aria-hidden="true"></i>
                 </span>
                 <span style="color: #6F6F6F;"> Back to Tax Plan</span>
             </a>
         </div>
-        <h1 class="checkout_type_title f-30-fig-neue pt-3">Choose Checkout Type</h1>
+        <h1 class="checkout_type_title f-30-fig-neue">Choose Checkout Type</h1>
         <p class="f-16-fig" style="color: #6F6F6F;">Your can pay with Debit, Credit Card or with Crypto </p>
-        <div class="card">
+        <div class="card" id="card_payment">
             <div class="card-body text-center">
                 <p class="body-text f-16-fig mb-5" style="color: #6F6F6F;"> Debit or Credit Card </p>
                 <div class="payment_options mb-2">
@@ -62,7 +62,7 @@
                 </div>
             </div>
         </div>
-        <div class="card mt-5">
+        <div class="card mt-5" id="crypto_payment">
             <div class="card-body text-center">
                 <p class="body-text f-16-fig mb-5" style="color: #6F6F6F;"> Cryptocurrency  </p>
                 <div class="payment_options mb-2">
@@ -143,7 +143,29 @@
             </div>
         </div>
         <div class="d-grid add_transaction_btn">
-            <a href="{{route('crypto.payment-with-card')}}" class="btn" type="button" style="color: #FFF;">Add transaction</a>
+            <a href="" class="btn" id="add_transaction_anchor" type="button" style="color: #FFF;">Add transaction</a>
         </div>
     </div>
+    <script>
+        let trans_btn = document.getElementById('add_transaction_anchor');
+        let card_pay = document.getElementById("card_payment");
+        let crypto_pay = document.getElementById("crypto_payment");
+
+        card_pay.onclick = function() {
+            card_pay.style.border = "1px solid black";
+            crypto_pay.style.border = "none";
+            trans_btn.href = "{{route('crypto.payment-with-card')}}";
+            trans_btn.style.background = "#F4B42A";
+            trans_btn.innerText = "Next";
+        }
+
+
+        crypto_pay.onclick = function() {
+            crypto_pay.style.border = "1px solid black";
+            card_pay.style.border = "none";
+            trans_btn.href = "{{route('crypto.payment-with-crypto')}}";
+            trans_btn.style.background = "#F4B42A";
+            trans_btn.innerText = "Next";
+        }
+    </script>
 </x-base-layout>

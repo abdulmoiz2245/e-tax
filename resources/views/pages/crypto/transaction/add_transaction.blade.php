@@ -18,13 +18,15 @@
 
         }
     </style>
-    <div class="row gy-5 g-xl-4 mb-5" style="margin-top: 50px; ">
-        <div class="col-md-12">
-            <span><a href="{{ route('crypto.transaction.transaction') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
-            <span class="pr-2" style="color:#6F6F6F;padding-left: 7px;">Back to Transactions</span>
+    <div class="row gy-5 g-xl-4 mb-5" style="margin-top: 1.2%; ">
+        <div class="col-md-12 f-16-neu-400-fig">
+            <a href="{{ route('crypto.transaction.transaction') }}">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                <span class="ps-2" style="color:#6F6F6F">Back to Transactions</span>
+            </a>
         </div>
-        <div class="col-md-12" style="margin-bottom: 26px;">
-            <h1 class="dash-title" style="margin-bottom: 18px; font-size:30px !important">
+        <div class="col-md-12" style="margin-bottom: 3.5%;">
+            <h1 class="f-30-fig-neue">
                 Add Transaction
             </h1>
         </div>
@@ -102,7 +104,7 @@
                         )
                 }}
 
-                <button class=" btn w-100  mt-7" style="background: #F4B42A;  color:#fff">Save</button>
+                <button class=" btn w-100  mt-7 mb-8" style="background: #F4B42A;  color:#fff">Save</button>
             </form>
         </div>
     </div>
