@@ -35,6 +35,7 @@ Route::middleware('auth')->group(function () {
         Route::get('free-plan',[CryptoPagesController::class, 'freePlan'])->name('free-plan');
         Route::get('checkout-type',[CryptoPagesController::class, 'checkoutType'])->name('checkout-type');
         Route::get('payment-with-card',[CryptoPagesController::class, 'paymentWithCard'])->name('payment-with-card');
+        Route::get('payment-with-crypto',[CryptoPagesController::class, 'paymentWithCrypto'])->name('payment-with-crypto');
     });
 
   
