@@ -910,5 +910,90 @@ body {
 	border-radius: 8px;	
 	color: #219653;
 	padding: 8px 12px;
+}
 
+//payment with card
+
+.payment_with_card .payment_with_card_title{
+	margin: 15px auto;
+}
+
+.payment_with_card .payment_with_card_checkbox{
+	padding-top: 25px;
+	padding-bottom: 37px;
+}
+
+.payment_with_card .payment_with_card_body{     
+	padding-left: 24px;
+	padding-right: 24px;
+	padding-top: 9px;
+}
+
+.payment_with_card .payment_with_card_form{
+	border-right: 1px solid #EDEDED;
+	padding-right: 24px;
+	
+}
+
+@media screen and (max-width: 770px) {
+	.payment_with_card .payment_with_card_form {
+		border-right: none;
+		padding-right: 0px;
+		border-bottom: 1px solid #EDEDED;
+		padding-bottom: 23px;
+		margin-bottom: 23px;
+	}
+}
+
+.payment_with_card_order_details{
+	padding-top: 12px;
+}
+
+.payment_with_card_order_details .subtotal{
+	padding-top: 30px;
+}
+
+.payment_with_card_order_details .apply_btn{
+	background: #2B014C;
+	color: #FFFFFF;
+	width: -webkit-fill-available;
+}
+
+
+//payment with crypto
+
+.payment_with_crypto .payment_with_crypto_title {
+	margin: 15px auto;
+}
+
+.payment_with_crypto .payment_with_crypto_checkbox {
+	padding-top: 25px;
+	padding-bottom: 37px;
+}
+
+.payment_with_crypto .payment_with_crypto_body {
+	padding-left: 24px;
+	padding-right: 24px;
+	padding-top: 24px;
+	padding-bottom: 10px !important;
+}
+
+.payment_with_crypto .payment_with_crypto_form {
+	border-right: 1px solid #EDEDED;
+	padding-right: 23px;
+
+}
+
+@media screen and (max-width: 770px) {
+	.payment_with_crypto .payment_with_crypto_form {
+		border-right: none;
+		padding-right: 0px;
+		border-bottom: 1px solid #EDEDED;
+		padding-bottom: 23px;
+		margin-bottom: 23px;
+	}
+}
+
+.payment_with_crypto_order_details .subtotal {
+	padding-top: 30px;
 }
