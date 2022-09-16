@@ -28,6 +28,12 @@
                 max-width: 980px !important;
             }
         }
+
+        @media (min-width: 576px) {
+            .modal-dialog {
+                max-width: 600px;
+            }
+        }
     </style>
     <div class="d-md-flex justify-content-between" style="margin-bottom: 60px; margin-top:7%">
         <div>
@@ -129,7 +135,6 @@
                                         </clipPath>
                                     </defs>
                                 </svg>
-
                             </span>
 
                             <span>
@@ -182,11 +187,55 @@
 
                             </span>
                         </td>
-                        <td>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 10C2.9 10 2 10.9 2 12C2 13.1 2.9 14 4 14C5.1 14 6 13.1 6 12C6 10.9 5.1 10 4 10ZM20 10C18.9 10 18 10.9 18 12C18 13.1 18.9 14 20 14C21.1 14 22 13.1 22 12C22 10.9 21.1 10 20 10ZM12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10Z" fill="black" />
-                            </svg>
-
+                        <td class="dropdown">
+                            <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 10C2.9 10 2 10.9 2 12C2 13.1 2.9 14 4 14C5.1 14 6 13.1 6 12C6 10.9 5.1 10 4 10ZM20 10C18.9 10 18 10.9 18 12C18 13.1 18.9 14 20 14C21.1 14 22 13.1 22 12C22 10.9 21.1 10 20 10ZM12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10Z" fill="black" />
+                                </svg>
+                            </button>
+                            <ul class="dropdown-menu f-16-neu-400-fig">
+                                <li>
+                                    <a class="dropdown-item" href="#" style="color: rgba(111, 111, 111, 0.8);">
+                                        <span>
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3.6 16.7222H16.4V10.5H18V17.6111C18 17.8469 17.9157 18.073 17.7657 18.2397C17.6157 18.4064 17.4122 18.5 17.2 18.5H2.8C2.58783 18.5 2.38434 18.4064 2.23431 18.2397C2.08429 18.073 2 17.8469 2 17.6111V10.5H3.6V16.7222ZM8.4 8.72222H4.4L10 2.5L15.6 8.72222H11.6V14.0556H8.4V8.72222Z" fill="#6F6F6F" fill-opacity="0.8" />
+                                            </svg>
+                                        </span> Import
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#" style="color: rgba(111, 111, 111, 0.8);">
+                                        <span>
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_388_275)">
+                                                    <path d="M10.0001 18.3334C5.39758 18.3334 1.66675 14.6026 1.66675 10.0001C1.66675 5.39758 5.39758 1.66675 10.0001 1.66675C14.6026 1.66675 18.3334 5.39758 18.3334 10.0001C18.3334 14.6026 14.6026 18.3334 10.0001 18.3334ZM10.0001 16.6667C11.7682 16.6667 13.4639 15.9644 14.7141 14.7141C15.9644 13.4639 16.6667 11.7682 16.6667 10.0001C16.6667 8.23197 15.9644 6.53628 14.7141 5.28604C13.4639 4.03579 11.7682 3.33341 10.0001 3.33341C8.23197 3.33341 6.53628 4.03579 5.28604 5.28604C4.03579 6.53628 3.33341 8.23197 3.33341 10.0001C3.33341 11.7682 4.03579 13.4639 5.28604 14.7141C6.53628 15.9644 8.23197 16.6667 10.0001 16.6667V16.6667ZM9.16675 12.5001H10.8334V14.1667H9.16675V12.5001ZM9.16675 5.83341H10.8334V10.8334H9.16675V5.83341Z" fill="#6F6F6F" fill-opacity="0.8" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_388_275">
+                                                        <rect width="20" height="20" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span> Troubleshoot
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#deleteWalletModal" style="color: rgba(111, 111, 111, 0.8);">
+                                        <span>
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_388_272)">
+                                                    <path d="M14.1667 3.33341H18.3334V5.00008H16.6667V17.5001C16.6667 17.7211 16.579 17.9331 16.4227 18.0893C16.2664 18.2456 16.0544 18.3334 15.8334 18.3334H4.16675C3.94573 18.3334 3.73377 18.2456 3.57749 18.0893C3.42121 17.9331 3.33341 17.7211 3.33341 17.5001V5.00008H1.66675V3.33341H5.83341V1.66675H14.1667V3.33341ZM7.50008 7.50008V14.1667H9.16675V7.50008H7.50008ZM10.8334 7.50008V14.1667H12.5001V7.50008H10.8334Z" fill="#6F6F6F" fill-opacity="0.8" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_388_272">
+                                                        <rect width="20" height="20" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span> Delete
+                                    </a>
+                                </li>
+                            </ul>
                         </td>
                     </tr>
                     <tr>
@@ -220,15 +269,81 @@
 
 
                         </td>
-                        <td>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 10C2.9 10 2 10.9 2 12C2 13.1 2.9 14 4 14C5.1 14 6 13.1 6 12C6 10.9 5.1 10 4 10ZM20 10C18.9 10 18 10.9 18 12C18 13.1 18.9 14 20 14C21.1 14 22 13.1 22 12C22 10.9 21.1 10 20 10ZM12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10Z" fill="black" />
-                            </svg>
-
+                        <td class="dropdown">
+                            <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 10C2.9 10 2 10.9 2 12C2 13.1 2.9 14 4 14C5.1 14 6 13.1 6 12C6 10.9 5.1 10 4 10ZM20 10C18.9 10 18 10.9 18 12C18 13.1 18.9 14 20 14C21.1 14 22 13.1 22 12C22 10.9 21.1 10 20 10ZM12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10Z" fill="black" />
+                                </svg>
+                            </button>
+                            <ul class="dropdown-menu f-16-neu-400-fig">
+                                <li>
+                                    <a class="dropdown-item" href="#" style="color: rgba(111, 111, 111, 0.8);">
+                                        <span>
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3.6 16.7222H16.4V10.5H18V17.6111C18 17.8469 17.9157 18.073 17.7657 18.2397C17.6157 18.4064 17.4122 18.5 17.2 18.5H2.8C2.58783 18.5 2.38434 18.4064 2.23431 18.2397C2.08429 18.073 2 17.8469 2 17.6111V10.5H3.6V16.7222ZM8.4 8.72222H4.4L10 2.5L15.6 8.72222H11.6V14.0556H8.4V8.72222Z" fill="#6F6F6F" fill-opacity="0.8" />
+                                            </svg>
+                                        </span> Import
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#" style="color: rgba(111, 111, 111, 0.8);">
+                                        <span>
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_388_275)">
+                                                    <path d="M10.0001 18.3334C5.39758 18.3334 1.66675 14.6026 1.66675 10.0001C1.66675 5.39758 5.39758 1.66675 10.0001 1.66675C14.6026 1.66675 18.3334 5.39758 18.3334 10.0001C18.3334 14.6026 14.6026 18.3334 10.0001 18.3334ZM10.0001 16.6667C11.7682 16.6667 13.4639 15.9644 14.7141 14.7141C15.9644 13.4639 16.6667 11.7682 16.6667 10.0001C16.6667 8.23197 15.9644 6.53628 14.7141 5.28604C13.4639 4.03579 11.7682 3.33341 10.0001 3.33341C8.23197 3.33341 6.53628 4.03579 5.28604 5.28604C4.03579 6.53628 3.33341 8.23197 3.33341 10.0001C3.33341 11.7682 4.03579 13.4639 5.28604 14.7141C6.53628 15.9644 8.23197 16.6667 10.0001 16.6667V16.6667ZM9.16675 12.5001H10.8334V14.1667H9.16675V12.5001ZM9.16675 5.83341H10.8334V10.8334H9.16675V5.83341Z" fill="#6F6F6F" fill-opacity="0.8" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_388_275">
+                                                        <rect width="20" height="20" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span> Troubleshoot
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#deleteWalletModal" style="color: rgba(111, 111, 111, 0.8);">
+                                        <span>
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_388_272)">
+                                                    <path d="M14.1667 3.33341H18.3334V5.00008H16.6667V17.5001C16.6667 17.7211 16.579 17.9331 16.4227 18.0893C16.2664 18.2456 16.0544 18.3334 15.8334 18.3334H4.16675C3.94573 18.3334 3.73377 18.2456 3.57749 18.0893C3.42121 17.9331 3.33341 17.7211 3.33341 17.5001V5.00008H1.66675V3.33341H5.83341V1.66675H14.1667V3.33341ZM7.50008 7.50008V14.1667H9.16675V7.50008H7.50008ZM10.8334 7.50008V14.1667H12.5001V7.50008H10.8334Z" fill="#6F6F6F" fill-opacity="0.8" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_388_272">
+                                                        <rect width="20" height="20" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span> Delete
+                                    </a>
+                                </li>
+                            </ul>
                         </td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+
+    <!-- Delete Wallet Modal -->
+    <div class="modal fade" id="deleteWalletModal" tabindex="-1" aria-labelledby="deleteWalletModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content ps-4 pe-4">
+                <div class="modal-header" style="border-bottom-width: 0px;">
+                    <h5 class="modal-title f-30-fig-neue" style="padding-top: 6%;" id="deleteWalletModalLabel">Delete Wallet</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="padding-top: 0px; padding-bottom:0px;">
+                    <p class="f-18-fig-questrial" style="color: #555555;">You are about to delete this wallet.</p>
+                    <p class="f-18-fig-questrial" style="color: #555555;">This action cannot be reversed.</p>
+                </div>
+
+                <div class="d-grid gap-3 m-7" style="padding-bottom:35px;">
+                    <button type="button" class="btn f-16-neu-400-fig pb-2" style="background: #F4B42A; color:#fff; font-weight:700 !important;">Confirm</button>
+                    <button type="button" class="btn f-16-neu-400-fig" style="border: 1px solid #BFBFBF; background: #FFFFFF; color: #BFBFBF" data-bs-dismiss="modal">Close</button>
+                </div>
+
+            </div>
         </div>
     </div>
 
