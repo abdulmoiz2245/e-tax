@@ -106,7 +106,7 @@
         table {
             min-width: 800px;
             overflow-x: auto;
-            table-layout:auto;
+            table-layout: auto;
         }
 
         #transaction_table tbody tr td {
@@ -118,6 +118,12 @@
         table thead tr {
             height: 60px;
             background: transparent;
+        }
+
+        @media (min-width: 576px) {
+            .modal-dialog {
+                max-width: 600px;
+            }
         }
     </style>
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
@@ -372,12 +378,12 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form__group">
-                                        <button type="submit">Save</button>
+                                        <button class="btn f-16-neu-400-fig" type="submit" style="background: #F4B42A; color:#fff; font-weight:700 !important;">Save</button>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form__group">
-                                        <button type="btn">Delete cash</button>
+                                        <button class="btn f-16-neu-400-fig" data-bs-toggle="modal" data-bs-target="#deleteCashModal" style="border: 1px solid #BFBFBF; background: #FFFFFF; color: #BFBFBF">Delete cash</button>
                                     </div>
                                 </div>
                             </div>
@@ -428,21 +434,16 @@
             </div>
             <div class="tab-pane" id="3">
                 <div class="d-flex justify-content-end">
-                    <a href="{{ route('crypto.add_wallet') }}">
-                        <button class="btn p-2" style="background: #F4B42A;  color:#fff;padding-left:22px !important;padding-right:17px !important;padding-top:13px !important;padding-bottom:11px !important;width: auto;">
-                            <span>
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="
+                    <button class="btn p-2" data-bs-toggle="modal" data-bs-target="#inviteFriendsModal" style="background: #F4B42A;  color:#fff;padding-left:22px !important;padding-right:17px !important;padding-top:13px !important;padding-bottom:11px !important;width: auto;">
+                        <span>
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="
                                         align-self: center;
                                     ">
-                                    <path d="M6 6V0H8V6H14V8H8V14H6V8H0V6H6Z" fill="white" />
-                                </svg>
-                            </span>
-
-
-                            <span class="f-16-neu-400-fig" style="color:#fff;padding-left:10px">Invate Friends</span>
-
-                        </button>
-                    </a>
+                                <path d="M6 6V0H8V6H14V8H8V14H6V8H0V6H6Z" fill="white" />
+                            </svg>
+                        </span>
+                        <span class="f-16-neu-400-fig" style="color:#fff;padding-left:10px">Invite Friends</span>
+                    </button>
                 </div>
                 <div class="table-wapper-crypto" style="
                         border-radius: 10px;
@@ -609,7 +610,7 @@
                                         <span class="badge-danger f-14-neu-400-fig">Pending</span>
                                     </p>
                                 </td>
-                               
+
                             </tr>
 
 
@@ -642,4 +643,117 @@
 
     </div>
 
+    <!-- Delete Cash Modal -->
+    <div class="modal fade" id="deleteCashModal" tabindex="-1" aria-labelledby="deleteCashModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content ps-4 pe-4">
+                <div class="modal-header" style="border-bottom-width: 0px;">
+                    <h5 class="modal-title f-30-fig-neue" style="padding-top: 6%;" id="deleteCashModalLabel">Delete Cash</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="padding-top: 0px; padding-bottom:0px;">
+                    <p class="f-18-fig-questrial" style="color: #555555;">This will result in your gains being recalculated from scratch. Are you sure you want to continue?</p>
+                </div>
+
+                <div class="d-grid gap-3 m-7" style="padding-bottom:35px;">
+                    <button type="button" class="btn f-16-neu-400-fig pb-2" style="background: #F4B42A; color:#fff; font-weight:700 !important;">Confirm</button>
+                    <button type="button" class="btn f-16-neu-400-fig" style="border: 1px solid #BFBFBF; background: #FFFFFF; color: #BFBFBF" data-bs-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Invite Friends Modal -->
+    <div class="modal fade" id="inviteFriendsModal" tabindex="-1" aria-labelledby="inviteFriendsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content ps-4 pe-4">
+                <div class="modal-header" style="border-bottom-width: 0px;">
+                    <h5 class="modal-title f-30-fig-neue" style="padding-top: 6%;" id="inviteFriendsModalLabel">Share access</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="padding-top: 0px; padding-bottom:0px;">
+                    <p class="f-18-fig-questrial" style="color: #555555;">Type in the details for the person you want to share access with. They will receive full access to your portfolio.</p>
+                    <div>
+                        <form action="">
+                            <label class="mt-7 f-20-fig-questrial" style="color: #555555;" for="">Who are you inviting?</label>
+                            <div>
+                                {{ theme()->getView('partials/widgets/form/input/_select',
+                                    array( 
+                                            'type' => 'select' ,
+                                            'name' => 'access_type' ,
+                                            'item' => array(
+                                                'access_type1' => 'Accountant A',
+                                                'access_type2' => 'Accountant B',
+                                                'access_type3' => 'Accountant C',
+                                                'access_type4' => 'Accountant D'
+                                            ),
+                                            'placeholder' => 'Accountant' ,
+                                            'required'=> true , 'id' => ''
+                                        )
+                                    )
+                                }}
+                            </div>
+                            <label class="mt-7 f-20-fig-questrial" style="color: #555555;" for="">What's their email address?</label>
+                            <div>
+                                {{ theme()->getView('partials/widgets/form/input/_text',
+                                    array( 
+                                            'type' => 'email' ,
+                                            'name' => 'email' ,
+                                            'placeholder' => 'Email' ,
+                                            'required'=> true , 'id' => ''
+                                        )
+                                    )
+                                }}
+                            </div>
+                            <div style="margin-bottom:10%; margin-top:28px;">
+                                <button type="button" data-bs-toggle="modal" id="send_invitation" data-bs-target="#successModal" class="btn f-16-neu-400-fig" style="background: #F4B42A; color:#fff; font-weight:700 !important;">Send Invitations</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content ps-4 pe-4">
+                <div class="modal-header" style="border-bottom-width: 0px;">
+                    <h5 class="modal-title f-30-fig-neue" style="padding-top: 6%;" id="successModalLabel">Your request successful send</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="padding-top: 0px; padding-bottom:0px;">
+                    <p class="f-18-fig-questrial" style="color: #555555;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                </div>
+
+                <div>
+                    <svg width="101" height="101" viewBox="0 0 101 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50.5" cy="50.5" r="40.5" fill="#FAB60C" />
+                        <g clip-path="url(#clip0_390_13)">
+                            <path d="M47.6672 55.2868L62.9872 39.9651L65.3455 42.3218L47.6672 60.0001L37.0605 49.3934L39.4172 47.0368L47.6672 55.2868Z" fill="white" />
+                        </g>
+                        <path d="M50.5 0C61.7073 1.33646e-07 72.5963 3.72812 81.4518 10.5972C90.3073 17.4662 96.6263 27.0859 99.4135 37.9412C102.201 48.7964 101.298 60.2704 96.8466 70.556C92.3956 80.8416 84.6496 89.3543 74.8286 94.7535C65.0075 100.153 53.6694 102.131 42.6001 100.378C31.5307 98.625 21.359 93.2394 13.6871 85.0696C6.01513 76.8998 1.27882 66.4101 0.22412 55.2525C-0.830582 44.0949 1.85625 32.9034 7.86145 23.4407L9.56699 24.5231C3.802 33.6073 1.22264 44.3511 2.23516 55.0624C3.24767 65.7737 7.79452 75.8438 15.1596 83.6868C22.5247 91.5298 32.2895 96.7 42.916 98.3831C53.5426 100.066 64.4272 98.1666 73.8554 92.9834C83.2836 87.8001 90.7198 79.6279 94.9927 69.7537C99.2657 59.8796 100.133 48.8645 97.4569 38.4435C94.7812 28.0225 88.715 18.7876 80.2137 12.1933C71.7124 5.59899 61.259 2.02 50.5 2.02V0Z" fill="#FAB60C" />
+                        <defs>
+                            <clipPath id="clip0_390_13">
+                                <rect width="40" height="40" fill="white" transform="translate(31 30)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('send_invitation').onclick = function(){
+            //document.getElementById('inviteFriendsModal').hide();
+            console.log("hassan");
+        };
+    </script>
 </x-base-layout>
