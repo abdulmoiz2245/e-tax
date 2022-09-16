@@ -16,7 +16,6 @@ Route::middleware('auth')->group(function () {
         Route::get('wallet-coin',[CryptoPagesController::class, 'walletCoin'])->name('wallet_coin');
         Route::get('wallet-import',[CryptoPagesController::class, 'walletCoinImport'])->name('wallet_coin_import');
 
-
         Route::group(['prefix'=>'transaction','as'=>'transaction.'], function(){
             Route::get('transaction',[CryptoPagesController::class, 'transaction'])->name('transaction');
             Route::get('add',[CryptoPagesController::class, 'addTransaction'])->name('add');
@@ -27,9 +26,6 @@ Route::middleware('auth')->group(function () {
 
         Route::get('account',[CryptoPagesController::class, 'account'])->name('account');
         Route::get('setting',[CryptoPagesController::class, 'setting'])->name('setting');
-
-
-
 
         Route::get('tax-reports',[CryptoPagesController::class, 'taxReports'])->name('tax-reports');
         Route::get('free-plan',[CryptoPagesController::class, 'freePlan'])->name('free-plan');

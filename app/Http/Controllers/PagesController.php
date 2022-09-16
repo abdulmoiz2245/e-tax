@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Session;
 use Auth;
 
+use Illuminate\Support\Facades\URL;
 
 class PagesController extends Controller
 {
@@ -12,6 +14,20 @@ class PagesController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
+
+    public function __construct()
+    {
+        // $currentURL = URL::current();
+
+        // if (str_contains($currentURL, 'crypto')) { 
+        //     $_SESSION['app'] = 'crypto';
+        // }elseif(str_contains($currentURL, 'index')){
+
+        // }else{
+        //     $_SESSION['app'] = 'e-tax';
+        // }
+        // var_dump($_SESSION['app'] );
+    }
     public function index()
     {
         // Get view file location from menu config
@@ -22,6 +38,7 @@ class PagesController extends Controller
         }
 
         // Get the default inner page
+        // unset($_SESSION['app']);
         return view('inner');
     }
 
@@ -226,9 +243,9 @@ class PagesController extends Controller
 
     public function dashboard()
     {
-      
-        $_SESSION['app'] = 'e-tax';
-                
+
+        // $_SESSION['app'] = 'e-tax';
+
         return view('pages.dashboard');
     }
 }

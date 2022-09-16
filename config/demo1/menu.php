@@ -1,7 +1,8 @@
 <?php
 
 use App\Core\Adapters\Theme;
-
+// var_dump($_SESSION['app']);
+// die();
 if (isset($_SESSION['app']) && $_SESSION['app'] == 'crypto') {
     return array(
         // Refer to config/global/menu.php

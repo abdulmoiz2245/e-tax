@@ -5,82 +5,106 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Session;
 use Auth;
+use Illuminate\Support\Facades\URL;
+
 
 
 class CryptoPagesController extends Controller
 {
+    public function __construct()
+    {
+        // $currentURL = URL::current();
+
+        // if (str_contains($currentURL, 'crypto')) { 
+        //     $_SESSION['app'] = 'crypto';
+        // }elseif(str_contains($currentURL, 'index')){
+
+        // }else{
+        //     $_SESSION['app'] = 'e-tax';
+        // }
+        // var_dump($_SESSION['app'] );
+    }
+
     public function index()
     {
-     
-        $_SESSION['app'] = 'crypto';
-                
+
+        // $_SESSION['app'] = 'crypto';
+
         return view('pages.crypto.dashboard');
     }
 
-    public function wallet(){
+    public function wallet()
+    {
         return view('pages.crypto.wallet.wallet');
     }
 
-    public function addWallet(){
+    public function addWallet()
+    {
         return view('pages.crypto.wallet.add_wallet');
     }
 
-    public function walletCoin(){
+    public function walletCoin()
+    {
         return view('pages.crypto.wallet.wallet_coin');
-        
     }
 
-    public function walletCoinImport(){
+    public function walletCoinImport()
+    {
         return view('pages.crypto.wallet.wallet_import');
-
     }
 
-    public function transaction(){
+    public function transaction()
+    {
         return view('pages.crypto.transaction.transaction');
-
     }
 
-    public function addTransaction(){
+    public function addTransaction()
+    {
         return view('pages.crypto.transaction.add_transaction');
-
     }
 
 
-    public function market(){
+    public function market()
+    {
         return view('pages.crypto.market.market');
-
     }
 
-    public function account(){
+    public function account()
+    {
 
         $user = Auth::user();
-        return view('pages.crypto.account.account' , ['user' => $user]);
-
+        return view('pages.crypto.account.account', ['user' => $user]);
     }
 
-    public function setting(){
+    public function setting()
+    {
 
         $user = Auth::user();
-        return view('pages.crypto.setting.setting' , ['user' => $user]);
+        return view('pages.crypto.setting.setting', ['user' => $user]);
     }
 
-    public function taxReports(){
+    public function taxReports()
+    {
         return view('pages.crypto.tax_reports.index');
     }
 
-    public function freePlan(){
+    public function freePlan()
+    {
         return view('pages.crypto.free_plan.index');
     }
 
-    public function checkoutType(){
+    public function checkoutType()
+    {
         return view('pages.crypto.checkout_type.index');
     }
 
-    public function paymentWithCard(){
+    public function paymentWithCard()
+    {
         return view('pages.crypto.payment_with_card.index');
     }
 
-    public function paymentWithCrypto(){
+    public function paymentWithCrypto()
+    {
         return view('pages.crypto.payment_with_crypto.index');
     }
 }

@@ -1,10 +1,29 @@
 <?php
 
-if(isset($_SESSION['app']) &&  $_SESSION['app'] == 'crypto'){
+
+
+$currentURL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+if (str_contains($currentURL, 'crypto')) {
+
+    $_SESSION['app'] = 'crypto';
+   
+
+} elseif (str_contains($currentURL, 'index') || str_contains($currentURL, 'login') || str_contains($currentURL, 'register')) {
+   
+
+} else {
+   
+
+
+    $_SESSION['app'] = 'e-tax';
+}
+if (isset($_SESSION['app']) &&  $_SESSION['app'] == 'crypto') {
     $aside = false;
-}else{
+} else {
     $aside = true;
 }
+
+
 return array(
     // Refer to config/global/general.php
 
