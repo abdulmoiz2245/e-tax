@@ -61,17 +61,23 @@
             top:10px;
         }
 
+        /* @media screen and (max-width: 770px) {
+            #transaction_table{
+                overflow-x: scroll;
+            }
+        } */
+
+
         /* @media (min-width: 1200px) {
             .container {
                 max-width: 980px !important;
             }
         } */
     </style>
-    <div class="d-md-flex justify-content-between" style="margin-bottom: 60px; margin-top:7%">
+    <div class="d-md-flex justify-content-between" style="margin-bottom: 4%; margin-top:5.4%">
         <div>
-            <h1 class="dash-title">Transactions</h1>
+            <h1 class="f-30-fig-neue">Transactions</h1>
         </div>
-
     </div>
 
     <div class="row">
@@ -111,7 +117,7 @@
                     }}
                 </div>
                 <div style=" align-self: center;">
-                    <div class="dropdown show">
+                    <div class="dropdown show" style="padding-top: 15px;">
                         <a class="btn dropdown-toggle f-16-neu-fig" style="box-shadow: 2px 2px 10px rgba(210, 209, 223, 0.3) !important;background:#fff;border-radius: 10px;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Transaction Type
                         </a>

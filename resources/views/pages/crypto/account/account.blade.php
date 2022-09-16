@@ -107,7 +107,7 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="sha512-Cy3gSrKCS8aJ7AIaammc0wLXyKRmTa8ntgHvU01Tuz4EdsqVgk/lKzFm/b/8RxOWBaoHI2uGLLU6rXMbqKcGHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <div class="row" style="margin-bottom: 20px;">
         <div class="col-md-12">
-            <h1 class="dash-title" style="font-size: 30px !important;">My Account </h1>
+            <h1 class="f-30-fig-neue">Account </h1>
         </div>
     </div>
     @if(session('status') && session('status') == 'success')
@@ -122,7 +122,7 @@
 
 
     <div id="exTab2" class="containersecond crypto">
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs f-18-fig-neue-400">
             <li class="active1 active">
                 <a href="#1" class="ab" data-toggle="tab">Edit Account</a>
             </li>
