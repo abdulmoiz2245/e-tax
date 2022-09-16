@@ -6,6 +6,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/themes/dark.css"> -->
     <style>
         table thead tr {
             height: 60px;
@@ -20,11 +22,11 @@
             table-layout: fixed;
         }
 
-        .select-box__current {
+        #transaction_table .select-box__current {
             border: none;
         }
 
-        .select-box__input-text {
+        #transaction_table .select-box__input-text {
             color: black;
             padding: 2px;
             padding-left: 9px;
@@ -40,133 +42,29 @@
             overflow-x: auto;
         }
 
-        .mrp-container {
-            margin-top: 10px;
+        .flatpickr-day.inRange {
+            color: #000 !important;
         }
 
-        .mrp-icon {
-            border: solid 1px #ddd;
-            border-radius: 5px 0px 0px 5px;
-            color: #40667A;
-            background: #eee;
-            padding: 7px;
-            margin-right: 0px;
-        }
-
-        .mrp-monthdisplay {
-            display: inline-block !important;
-            border: solid 1px #ddd;
-            padding: 5px 12px 5px 8px;
-            border-radius: 0px 5px 5px 0px;
-            background-color: #fff;
-            cursor: pointer;
-            margin-left: -5px;
-        }
-
-        .mrp-lowerMonth,
-        .mrp-upperMonth {
-            color: #40667A;
-            font-weight: bold;
-            font-size: 11px;
-            text-transform: uppercase;
-        }
-
-        .mrp-to {
-            color: #aaa;
-            margin-right: 0px;
-            margin-left: 0px;
-            font-size: 11px;
-            text-transform: uppercase;
-            /* background-color: #eee; */
-            padding: 5px 3px 5px 3px;
-        }
-
-        .mpr-month {
-            padding: 20px;
-            text-transform: uppercase;
-            font-size: 12px;
-        }
-
-        .mpr-calendar h5 {
+        #flatpickerdate {
+            padding: 13px 16px;
+            background: #FFFFFF;
+            border: 1px solid #EDEDED;
+            border-radius: 10px;
             width: 100%;
-            text-align: center;
-            font-weight: bold;
-            font-size: 18px
         }
 
-        .mpr-selected {
-            background: rgba(64, 102, 122, 0.75);
-            ;
-            color: #fff;
+        .flatpickr-day.selected.startRange,
+        .flatpickr-day.startRange.startRange,
+        .flatpickr-day.endRange.startRange {
+            color: #f0f0f0 !important;
         }
 
-        .mpr-month:hover {
-            border-radius: 5px;
-            box-shadow: 0 0 0 1px #ddd inset;
-            cursor: pointer;
-        }
+        .flatpickr-day.selected.endRange,
+        .flatpickr-day.startRange.endRange,
+        .flatpickr-day.endRange.endRange {
+            color: #f0f0f0 !important;
 
-        .mpr-selected.mpr-month:hover {
-            border-radius: 0px;
-            box-shadow: none;
-        }
-
-        .mpr-calendarholder .col-xs-6 {
-            max-width: 250px;
-            min-width: 250px;
-        }
-
-        .mpr-calendarholder .col-xs-1 {
-            max-width: 150px;
-            min-width: 150px;
-        }
-
-        .mpr-calendarholder .btn-info {
-            background-color: #40667A;
-            border-color: #406670;
-            width: 100%;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            font-size: 10px;
-            padding: 10px 0px;
-        }
-
-        .mpr-quickset {
-            color: #666;
-            text-transform: uppercase;
-            text-align: center;
-        }
-
-        .mpr-yeardown,
-        .mpr-yearup {
-            margin-left: 5px;
-            cursor: pointer;
-            color: #666;
-        }
-
-        .mpr-yeardown {
-            float: left;
-        }
-
-        .mpr-yearup {
-            float: right;
-        }
-
-        .mpr-yeardown:hover,
-        .mpr-yearup:hover {
-            color: #40667A;
-        }
-
-        .mpr-calendar:first .mpr-selected:first {
-            background-color: #40667A;
-        }
-
-        .mpr-calendar:last .mpr-selected:last {
-            background-color: #40667A;
-        }
-
-        .popover {
-            max-width: 1920px !important;
         }
     </style>
     <div class="card mb-5">
@@ -333,7 +231,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <div id="sla-data-range" class="mrp-container">
+                    <!-- <div id="sla-data-range" class="mrp-container" data-toggle="popover">
                         <span class="mrp-icon"><i class="fa fa-calendar"></i></span>
                         <div class="mrp-monthdisplay">
                             <span class="mrp-lowerMonth">Jul 2014</span>
@@ -342,8 +240,42 @@
                         </div>
                         <input type="hidden" value="201407" id="mrp-lowerDate" />
                         <input type="hidden" value="201408" id="mrp-upperDate" />
-                    </div>
+                    </div> -->
+                    <div class="form__group" style="
+                          position: relative;
+                        ">
+                        <svg style="position: absolute;top: 8px;right: 2px;" width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g filter="url(#filter0_d_208_2)">
+                                <circle cx="36" cy="32" r="16" fill="#FF5959" />
+                            </g>
+                            <g clip-path="url(#clip0_208_2)">
+                                <path d="M29 32H43V38.3C43 38.4857 42.9263 38.6637 42.795 38.795C42.6637 38.9263 42.4857 39 42.3 39H29.7C29.5143 39 29.3363 38.9263 29.205 38.795C29.0737 38.6637 29 38.4857 29 38.3V32ZM39.5 26.4H42.3C42.4857 26.4 42.6637 26.4737 42.795 26.605C42.9263 26.7363 43 26.9143 43 27.1V30.6H29V27.1C29 26.9143 29.0737 26.7363 29.205 26.605C29.3363 26.4737 29.5143 26.4 29.7 26.4H32.5V25H33.9V26.4H38.1V25H39.5V26.4Z" fill="white" />
+                            </g>
+                            <defs>
+                                <filter id="filter0_d_208_2" x="0" y="0" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dy="4" />
+                                    <feGaussianBlur stdDeviation="10" />
+                                    <feComposite in2="hardAlpha" operator="out" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.34902 0 0 0 0 0.34902 0 0 0 0.3 0" />
+                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_208_2" />
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_208_2" result="shape" />
+                                </filter>
+                                <clipPath id="clip0_208_2">
+                                    <rect width="20" height="20" fill="white" transform="translate(26 22)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
 
+
+                        <!-- <input type="email" id="email" class="form__field" value="32A9XzMhxirMqMeyW7GxNJNJ4UVqiDwDm4" readonly style="
+                            padding-left: 15px;
+                            padding-right: 45px;
+                        "> -->
+                        <input type="text" class="f-18-fig-neue-400" name="daterange" id="flatpickerdate" value="">
+
+                    </div>
                     <div style="margin-top: 40px ; margin-bottom:70px">
                         <p class="f-18-fig-neue" style="font-weight: 400;">Fiat on exchanges</p>
                         <p class="f-18-fig-neue">$ 12.345</p>
@@ -598,10 +530,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script> -->
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--  Flatpickr  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" /> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js" integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css" integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <style>
+        .table-condensed thead tr:nth-child(2),
+        .table-condensed tbody {
+            display: none
+        }
+    </style>
     <script>
         // ============================================
         // As of Chart.js v2.5.0
@@ -813,282 +755,14 @@
             }
         });
 
-        $('input[name="daterange"]').daterangepicker();
-    </script>
-    <script>
-        var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
-        $(function() {
-            startMonth = 7;
-            startYear = 2014
-            endMonth = 8;
-            endYear = 2015;
-            fiscalMonth = 7;
-            if (startMonth < 10)
-                startDate = parseInt("" + startYear + '0' + startMonth + "");
-            else
-                startDate = parseInt("" + startYear + startMonth + "");
-            if (endMonth < 10)
-                endDate = parseInt("" + endYear + '0' + endMonth + "");
-            else
-                endDate = parseInt("" + endYear + endMonth + "");
-
-            content = '<div class="row mpr-calendarholder">';
-            calendarCount = endYear - startYear;
-            if (calendarCount == 0)
-                calendarCount++;
-            var d = new Date();
-            for (y = 0; y < 2; y++) {
-                content += '<div class="col-xs-6" ><div class="mpr-calendar row" id="mpr-calendar-' + (y + 1) + '">' +
-                    '<h5 class="col-xs-12"><i class="mpr-yeardown fa fa-chevron-circle-left"></i><span>' + (startYear + y).toString() + '</span><i class="mpr-yearup fa fa-chevron-circle-right"></i></h5><div class="mpr-monthsContainer"><div class="mpr-MonthsWrapper">';
-                for (m = 0; m < 12; m++) {
-                    var monthval;
-                    if ((m + 1) < 10)
-                        monthval = "0" + (m + 1);
-                    else
-                        monthval = "" + (m + 1);
-                    content += '<span data-month="' + monthval + '" class="col-xs-3 mpr-month">' + MONTHS[m] + '</span>';
-                }
-                content += '</div></div></div></div>';
-            }
-            content += '<div class="col-xs-1"> <h5 class="mpr-quickset">Quick Set</h5>';
-            content += '<button class="btn btn-info mpr-fiscal-ytd">Fiscal YTD</button>';
-            content += '<button class="btn btn-info mpr-ytd">YTD</button>';
-            content += '<button class="btn btn-info mpr-prev-fiscal">Previous FY</button>';
-            content += '<button class="btn btn-info mpr-prev-year">Previous Year</button>';
-            content += '</div>';
-            content += '</div>';
-
-            $(document).on('click', '.mpr-month', function(e) {
-                e.stopPropagation();
-                $month = $(this);
-                var monthnum = $month.data('month');
-                var year = $month.parents('.mpr-calendar').children('h5').children('span').html();
-                if ($month.parents('#mpr-calendar-1').size() > 0) {
-                    //Start Date
-                    startDate = parseInt("" + year + monthnum);
-                    if (startDate > endDate) {
-
-                        if (year != parseInt(endDate / 100))
-                            $('.mpr-calendar:last h5 span').html(year);
-                        endDate = startDate;
-                    }
-                } else {
-                    //End Date
-                    endDate = parseInt("" + year + monthnum);
-                    if (startDate > endDate) {
-                        if (year != parseInt(startDate / 100))
-                            $('.mpr-calendar:first h5 span').html(year);
-                        startDate = endDate;
-                    }
-                }
-
-                paintMonths();
-            });
 
 
-            $(document).on('click', '.mpr-yearup', function(e) {
-                e.stopPropagation();
-                var year = parseInt($(this).prev().html());
-                year++;
-                $(this).prev().html("" + year);
-                $(this).parents('.mpr-calendar').find('.mpr-MonthsWrapper').fadeOut(175, function() {
-                    paintMonths();
-                    $(this).parents('.mpr-calendar').find('.mpr-MonthsWrapper').fadeIn(175);
-                });
-            });
+        $("input[name='daterange']").flatpickr({
+            mode: "range",
+            // minDate: "today",
+            dateFormat: "M y",
 
-            $(document).on('click', '.mpr-yeardown', function(e) {
-                e.stopPropagation();
-                var year = parseInt($(this).next().html());
-                year--;
-                $(this).next().html("" + year);
-                //paintMonths();
-                $(this).parents('.mpr-calendar').find('.mpr-MonthsWrapper').fadeOut(175, function() {
-                    paintMonths();
-                    $(this).parents('.mpr-calendar').find('.mpr-MonthsWrapper').fadeIn(175);
-                });
-            });
-
-            $(document).on('click', '.mpr-ytd', function(e) {
-                e.stopPropagation();
-                var d = new Date();
-                startDate = parseInt(d.getFullYear() + "01");
-                var month = d.getMonth() + 1;
-                if (month < 9)
-                    month = "0" + month;
-                endDate = parseInt("" + d.getFullYear() + month);
-                $('.mpr-calendar').each(function() {
-                    var $cal = $(this);
-                    var year = $('h5 span', $cal).html(d.getFullYear());
-                });
-                $('.mpr-calendar').find('.mpr-MonthsWrapper').fadeOut(175, function() {
-                    paintMonths();
-                    $('.mpr-calendar').find('.mpr-MonthsWrapper').fadeIn(175);
-                });
-            });
-
-            $(document).on('click', '.mpr-prev-year', function(e) {
-                e.stopPropagation();
-                var d = new Date();
-                var year = d.getFullYear() - 1;
-                startDate = parseInt(year + "01");
-                endDate = parseInt(year + "12");
-                $('.mpr-calendar').each(function() {
-                    var $cal = $(this);
-                    $('h5 span', $cal).html(year);
-                });
-                $('.mpr-calendar').find('.mpr-MonthsWrapper').fadeOut(175, function() {
-                    paintMonths();
-                    $('.mpr-calendar').find('.mpr-MonthsWrapper').fadeIn(175);
-                });
-            });
-
-            $(document).on('click', '.mpr-fiscal-ytd', function(e) {
-                e.stopPropagation();
-                var d = new Date();
-                var year;
-                if ((d.getMonth() + 1) < fiscalMonth)
-                    year = d.getFullYear() - 1;
-                else
-                    year = d.getFullYear();
-                if (fiscalMonth < 10)
-                    fm = "0" + fiscalMonth;
-                else
-                    fm = fiscalMonth;
-                if (d.getMonth() + 1 < 10)
-                    cm = "0" + (d.getMonth() + 1);
-                else
-                    cm = (d.getMonth() + 1);
-                startDate = parseInt("" + year + fm);
-                endDate = parseInt("" + d.getFullYear() + cm);
-                $('.mpr-calendar').each(function(i) {
-                    var $cal = $(this);
-                    if (i == 0)
-                        $('h5 span', $cal).html(year);
-                    else
-                        $('h5 span', $cal).html(d.getFullYear());
-                });
-                $('.mpr-calendar').find('.mpr-MonthsWrapper').fadeOut(175, function() {
-                    paintMonths();
-                    $('.mpr-calendar').find('.mpr-MonthsWrapper').fadeIn(175);
-                });
-            });
-
-            $(document).on('click', '.mpr-prev-fiscal', function() {
-                var d = new Date();
-                var year;
-                if ((d.getMonth() + 1) < fiscalMonth)
-                    year = d.getFullYear() - 2;
-                else
-                    year = d.getFullYear() - 1;
-                if (fiscalMonth < 10)
-                    fm = "0" + fiscalMonth;
-                else
-                    fm = fiscalMonth;
-                if (fiscalMonth - 1 < 10)
-                    efm = "0" + (fiscalMonth - 1);
-                else
-                    efm = (fiscalMonth - 1);
-                startDate = parseInt("" + year + fm);
-                endDate = parseInt("" + (d.getFullYear() - 1) + efm);
-                $('.mpr-calendar').each(function(i) {
-                    var $cal = $(this);
-                    if (i == 0)
-                        $('h5 span', $cal).html(year);
-                    else
-                        $('h5 span', $cal).html(d.getFullYear() - 1);
-                });
-                $('.mpr-calendar').find('.mpr-MonthsWrapper').fadeOut(175, function() {
-                    paintMonths();
-                    $('.mpr-calendar').find('.mpr-MonthsWrapper').fadeIn(175);
-                });
-            });
-
-            var mprVisible = false;
-            var mprpopover = $('.mrp-container').popover({
-                container: "body",
-                placement: "bottom",
-                html: true,
-                content: content
-            }).on('show.bs.popover', function() {
-                $('.popover').remove();
-                var waiter = setInterval(function() {
-                    if ($('.popover').length > 0) {
-                        clearInterval(waiter);
-                        setViewToCurrentYears();
-                        paintMonths();
-                    }
-                }, 50);
-            }).on('shown.bs.popover', function() {
-                mprVisible = true;
-            }).on('hidden.bs.popover', function() {
-                mprVisible = false;
-            });
-
-            $(document).on('click', '.mpr-calendarholder', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-            });
-            $(document).on("click", ".mrp-container", function(e) {
-                if (mprVisible) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    mprVisible = false;
-                }
-            });
-            $(document).on("click", function(e) {
-                if (mprVisible) {
-                    $('.mpr-calendarholder').parents('.popover').fadeOut(200, function() {
-                        $('.mpr-calendarholder').parents('.popover').remove();
-                        $('.mrp-container').trigger('click');
-                    });
-                    mprVisible = false;
-                }
-            });
         });
-
-        function setViewToCurrentYears() {
-            var startyear = parseInt(startDate / 100);
-            var endyear = parseInt(endDate / 100);
-            $('.mpr-calendar h5 span').eq(0).html(startyear);
-            $('.mpr-calendar h5 span').eq(1).html(endyear);
-        }
-
-        function paintMonths() {
-            $('.mpr-calendar').each(function() {
-                var $cal = $(this);
-                var year = $('h5 span', $cal).html();
-                $('.mpr-month', $cal).each(function(i) {
-                    if ((i + 1) > 9)
-                        cDate = parseInt("" + year + (i + 1));
-                    else
-                        cDate = parseInt("" + year + '0' + (i + 1));
-                    if (cDate >= startDate && cDate <= endDate) {
-                        $(this).addClass('mpr-selected');
-                    } else {
-                        $(this).removeClass('mpr-selected');
-                    }
-                });
-            });
-            $('.mpr-calendar .mpr-month').css("background", "");
-            //Write Text
-            var startyear = parseInt(startDate / 100);
-            var startmonth = parseInt(safeRound((startDate / 100 - startyear)) * 100);
-            var endyear = parseInt(endDate / 100);
-            var endmonth = parseInt(safeRound((endDate / 100 - endyear)) * 100);
-            $('.mrp-monthdisplay .mrp-lowerMonth').html(MONTHS[startmonth - 1] + " " + startyear);
-            $('.mrp-monthdisplay .mrp-upperMonth').html(MONTHS[endmonth - 1] + " " + endyear);
-            $('.mpr-lowerDate').val(startDate);
-            $('.mpr-upperDate').val(endDate);
-            if (startyear == parseInt($('.mpr-calendar:first h5 span').html()))
-                $('.mpr-calendar:first .mpr-selected:first').css("background", "#40667A");
-            if (endyear == parseInt($('.mpr-calendar:last h5 span').html()))
-                $('.mpr-calendar:last .mpr-selected:last').css("background", "#40667A");
-        }
-
-        function safeRound(val) {
-            return Math.round(((val) + 0.00001) * 100) / 100;
-        }
     </script>
+
 </x-base-layout>

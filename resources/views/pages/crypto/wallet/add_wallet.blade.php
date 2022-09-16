@@ -43,7 +43,7 @@
 
         .gallery .gallery-item {
             width: calc(100% / 6);
-            padding: 15px;
+            padding: 6px;
 
         }
 
@@ -151,11 +151,11 @@
                                 box-shadow: 2px 2px 10px rgba(210, 209, 223, 0.3);
                             ">
                         </div>
-                        <span class="filter-item active f-18-fig-questrial" data-filter="all">all</span>
-                        <span class="filter-item f-18-fig-questrial" data-filter="watch">Exchanges</span>
-                        <span class="filter-item f-18-fig-questrial" data-filter="headphone">Blokchains</span>
-                        <span class="filter-item f-18-fig-questrial" data-filter="camera">Wallets</span>
-                        <span class="filter-item f-18-fig-questrial" data-filter="phone">Services</span>
+                        <span class="filter-item active f-16-fig" data-filter="all">all</span>
+                        <span class="filter-item f-16-fig" data-filter="watch">Exchanges</span>
+                        <span class="filter-item f-16-fig" data-filter="headphone">Blokchains</span>
+                        <span class="filter-item f-16-fig" data-filter="camera">Wallets</span>
+                        <span class="filter-item f-16-fig" data-filter="phone">Services</span>
                     </div>
                 </div>
                 <div class="row">
@@ -173,7 +173,7 @@
 
                                         </div>
                                         <div>
-                                            <p class="f-16-fig">Coinbase</p>
+                                            <p class="f-16-fig">Binance</p>
 
                                         </div>
                                     </div>
@@ -193,11 +193,11 @@
 
                                         </div>
                                         <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/binance.png') }}" width="48" height="48" alt="">
+                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/kucoin.png') }}" width="48" height="48" alt="">
 
                                         </div>
                                         <div>
-                                            <p class="f-16-fig">Coinbase</p>
+                                            <p class="f-16-fig">KuCoin</p>
 
                                         </div>
                                     </div>
@@ -217,11 +217,11 @@
 
                                         </div>
                                         <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/binance.png') }}" width="48" height="48" alt="">
+                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/coinspot.png') }}" width="48" height="48" alt="">
 
                                         </div>
                                         <div>
-                                            <p class="f-16-fig">Coinbase</p>
+                                            <p class="f-16-fig">CoinSpot</p>
 
                                         </div>
                                     </div>
@@ -241,11 +241,11 @@
 
                                         </div>
                                         <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/binance.png') }}" width="48" height="48" alt="">
+                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/coinjar.png') }}" width="48" height="48" alt="">
 
                                         </div>
                                         <div>
-                                            <p class="f-16-fig">Coinbase</p>
+                                            <p class="f-16-fig">CoinJar</p>
 
                                         </div>
                                     </div>
@@ -266,11 +266,11 @@
 
                                         </div>
                                         <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/binance.png') }}" width="48" height="48" alt="">
+                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/shakepay.png') }}" width="48" height="48" alt="">
 
                                         </div>
                                         <div>
-                                            <p class="f-16-fig">Coinbase</p>
+                                            <p class="f-16-fig">ShakePay</p>
 
                                         </div>
                                     </div>
@@ -290,11 +290,11 @@
 
                                         </div>
                                         <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/binance.png') }}" width="48" height="48" alt="">
+                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/bybit.png') }}" width="48" height="48" alt="">
 
                                         </div>
                                         <div>
-                                            <p class="f-16-fig">Coinbase</p>
+                                            <p class="f-16-fig">ByBit</p>
 
                                         </div>
                                     </div>
@@ -314,11 +314,11 @@
 
                                         </div>
                                         <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/binance.png') }}" width="48" height="48" alt="">
+                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/bybit.png') }}" width="48" height="48" alt="">
 
                                         </div>
                                         <div>
-                                            <p class="f-16-fig">Coinbase</p>
+                                            <p class="f-16-fig">Coinbase Pro</p>
 
                                         </div>
                                     </div>
@@ -338,11 +338,11 @@
 
                                         </div>
                                         <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/binance.png') }}" width="48" height="48" alt="">
+                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/crypto.png') }}" width="48" height="48" alt="">
 
                                         </div>
                                         <div>
-                                            <p class="f-16-fig">Coinbase</p>
+                                            <p class="f-16-fig">Crypto.com</p>
 
                                         </div>
                                     </div>
@@ -363,11 +363,11 @@
 
                                         </div>
                                         <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/binance.png') }}" width="48" height="48" alt="">
+                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/swyftx.png') }}" width="48" height="48" alt="">
 
                                         </div>
                                         <div>
-                                            <p class="f-16-fig">Coinbase</p>
+                                            <p class="f-16-fig">Swyftx</p>
 
                                         </div>
                                     </div>
@@ -377,6 +377,238 @@
                         </div>
                     </div>
                     <!-- gallery item end -->
+
+                    <!-- gallery item start -->
+                    <div class="gallery-item watch">
+                        <div class="gallery-item-inner">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <div>
+                                            <input type="checkbox" name="" id="">
+
+                                        </div>
+                                        <div class="w-100 text-center">
+                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/bitbuy.png') }}" width="48" height="48" alt="">
+
+                                        </div>
+                                        <div>
+                                            <p class="f-16-fig">Bitbuy</p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- gallery item end -->
+
+                    <!-- gallery item start -->
+                    <div class="gallery-item watch">
+                        <div class="gallery-item-inner">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <div>
+                                            <input type="checkbox" name="" id="">
+
+                                        </div>
+                                        <div class="w-100 text-center">
+                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/bittrex.png') }}" width="48" height="48" alt="">
+
+                                        </div>
+                                        <div>
+                                            <p class="f-16-fig">Bittrex</p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- gallery item end -->
+
+                    <!-- gallery item start -->
+                    <div class="gallery-item watch">
+                        <div class="gallery-item-inner">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <div>
+                                            <input type="checkbox" name="" id="">
+
+                                        </div>
+                                        <div class="w-100 text-center">
+                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/cryptoapp.png') }}" width="48" height="48" alt="">
+
+                                        </div>
+                                        <div>
+                                            <p class="f-16-fig">Crypto.com App</p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- gallery item end -->
+
+                    <!-- gallery item start -->
+                    <div class="gallery-item watch">
+                        <div class="gallery-item-inner">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <div>
+                                            <input type="checkbox" name="" id="">
+
+                                        </div>
+                                        <div class="w-100 text-center">
+                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/binance.png') }}" width="48" height="48" alt="">
+
+                                        </div>
+                                        <div>
+                                            <p class="f-16-fig">Binance</p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- gallery item end -->
+
+                    <!-- gallery item start -->
+                    <div class="gallery-item watch">
+                        <div class="gallery-item-inner">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <div>
+                                            <input type="checkbox" name="" id="">
+
+                                        </div>
+                                        <div class="w-100 text-center">
+                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/kraken.png') }}" width="48" height="48" alt="">
+
+                                        </div>
+                                        <div>
+                                            <p class="f-16-fig">Kraken</p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- gallery item end -->
+
+                    <!-- gallery item start -->
+                    <div class="gallery-item watch">
+                        <div class="gallery-item-inner">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <div>
+                                            <input type="checkbox" name="" id="">
+
+                                        </div>
+                                        <div class="w-100 text-center">
+                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/cointree.png') }}" width="48" height="48" alt="">
+
+                                        </div>
+                                        <div>
+                                            <p class="f-16-fig">Cointree</p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- gallery item end -->
+
+                    <!-- gallery item start -->
+                    <div class="gallery-item watch">
+                        <div class="gallery-item-inner">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <div>
+                                            <input type="checkbox" name="" id="">
+
+                                        </div>
+                                        <div class="w-100 text-center">
+                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/coinsquare.png') }}" width="48" height="48" alt="">
+
+                                        </div>
+                                        <div>
+                                            <p class="f-16-fig">Coinsquare</p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- gallery item end -->
+
+                    <!-- gallery item start -->
+                    <div class="gallery-item watch">
+                        <div class="gallery-item-inner">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <div>
+                                            <input type="checkbox" name="" id="">
+
+                                        </div>
+                                        <div class="w-100 text-center">
+                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/gemini.png') }}" width="48" height="48" alt="">
+
+                                        </div>
+                                        <div>
+                                            <p class="f-16-fig">Gemini</p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- gallery item end -->
+
+                    <div class="gallery-item watch">
+                        <div class="gallery-item-inner">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <div>
+                                            <input type="checkbox" name="" id="">
+
+                                        </div>
+                                        <div class="w-100 text-center">
+                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/bitfinex.png') }}" width="48" height="48" alt="">
+
+                                        </div>
+                                        <div>
+                                            <p class="f-16-fig">Bitfinex</p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="row" style="margin-top: 40px;">

@@ -55,11 +55,13 @@ require('../../core/plugins/bootstrap-multiselectsplitter/bootstrap-multiselects
 // require('../../core/js/vendors/plugins/select2.init.js');
 
 // Flatpickr - is a lightweight and powerful datetime picker.
-// require('flatpickr/dist/flatpickr.js');
-// require('../../core/js/vendors/plugins/flatpickr.init.js');
+require('flatpickr/dist/flatpickr.js');
+require('../../core/js/vendors/plugins/flatpickr.init.js');
 
 // Inputmask - is a javascript library which creates an input mask: https://github.com/RobinHerbots/Inputmask
 require('inputmask/dist/inputmask.js');
+require('month-range-picker/datePicker.js');
+
 require('inputmask/dist/bindings/inputmask.binding.js');
 
 // noUiSlider - is a lightweight range slider with multi-touch support and a ton of features. It supports non-linear ranges, requires no external dependencies: https://refreshless.com/nouislider/

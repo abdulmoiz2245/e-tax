@@ -17,7 +17,7 @@
 <div class="menu right-menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-state-bg-light-primary text-center  py-4 fs-6 " style="width: 202px;" data-kt-menu="true">
     <!--begin::Menu item-->
     <div class="menu-item px-3">
-        <div class="menu-content d-flex align-items-center   justify-content-center px-3">
+        <div class="menu-content d-flex align-items-center   justify-content-center">
             <!--begin::Avatar-->
             <!-- <div class="symbol symbol-50px me-5">
                 <img alt="Logo" src="{{ auth()->user()->avatar_url }}"/>
@@ -40,11 +40,11 @@
      <!--begin::Menu item-->
      <div class="menu-item px-5">
          <?php if (isset($_SESSION['app']) && $_SESSION['app'] == 'crypto') { ?>
-            <a href="{{ route('crypto.account') }}" class="menu-link px-5 justify-content-center" style="color:black">
+            <a href="{{ route('crypto.account') }}" class="menu-link  justify-content-center" style="color:black">
                 My Account
             </a>
         <?php  } else { ?>
-            <a href="/account/account" class="menu-link px-5 justify-content-center" style="color:black">
+            <a href="/account/account" class="menu-link  justify-content-center" style="color:black">
                 My Account
             </a>
         <?php } ?>
@@ -61,13 +61,13 @@
     <div class="menu-item px-5">
          <?php if (isset($_SESSION['app']) && $_SESSION['app'] == 'crypto') { ?>
             <div class="menu-item px-5">
-                <a href="{{ route('crypto.setting') }}" class="menu-link px-5 justify-content-center" style="color:black">
+                <a href="{{ route('crypto.setting') }}" class="menu-link  justify-content-center" style="color:black">
                     Setting
                 </a>
             </div>
         <?php  } else { ?>
             <div class="menu-item px-5">
-                <a href="/billing/billing-invoice" class="menu-link px-5 justify-content-center" style="color:black">
+                <a href="/billing/billing-invoice" class="menu-link  justify-content-center" style="color:black">
                     Billing & Invoice
                 </a>
             </div>
@@ -82,7 +82,7 @@
         <?php if (isset($_SESSION['app']) && $_SESSION['app'] == 'crypto') { ?>
             
         <?php  } else { ?>
-            <a href="/contact" class="menu-link px-5 justify-content-center"style="color:black" >
+            <a href="/contact" class="menu-link  justify-content-center"style="color:black" >
                 <span class="menu-text">Contact Us</span>
             </a>
         <?php } ?>
@@ -100,7 +100,7 @@
 
     <!--begin::Menu item-->
     <div class="menu-item px-5 justify-content-center " style="color:black">
-        <a href="#" class= " menu-link px-5 justify-content-center" style="color:black" data-action="{{ theme()->getPageUrl('logout') }}" data-method="post" data-csrf="{{ csrf_token() }}" data-reload="true" class="button-ajax menu-link px-5">
+        <a href="#" class= " menu-link  justify-content-center" style="color:black" data-action="{{ theme()->getPageUrl('logout') }}" data-method="post" data-csrf="{{ csrf_token() }}" data-reload="true" class="button-ajax menu-link px-5">
             Log Out
         </a>
     </div>
