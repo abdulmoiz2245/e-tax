@@ -137,7 +137,7 @@
             <li class=""><a href="#4" class="ab" data-toggle="tab">Delete account</a>
             </li>
         </ul>
-        <form action="" >
+        <form action="{{ route('settings.accountUpdate') }}" method="POST">
             @csrf
             <div class="tab-content " style="
                     margin-top: 32px;
@@ -168,11 +168,11 @@
                                         padding-left: 15px;
                                         padding-right: 45px;
                                     "> -->
-                                <input type="text" id="name" value="" name="name" class="form__field" placeholder="Name" style="
+                                <input type="text" id="first_name" value="{{ $user->first_name }}" name="first_name" class="form__field" placeholder="First Name" style="
                                         padding-left: 15px;
                                         padding-right: 45px;
                                     ">
-                                <label for="name" class="form__label">Name</label>
+                                <label for="first_name" class="form__label">First Name</label>
                             </div>
 
 
@@ -197,11 +197,11 @@
                                         padding-left: 15px;
                                         padding-right: 45px;
                                     "> -->
-                                <input type="text" id="first_name" value="" name="surname" class="form__field" placeholder="Surname" style="
+                                <input type="text" id="last_name" value="{{ $user->last_name }}" name="last_name" class="form__field" placeholder="Last Name" style="
                                         padding-left: 15px;
                                         padding-right: 45px;
                                     ">
-                                <label for="surname" class="form__label">Surname</label>
+                                <label for="last_name" class="form__label">Last Name</label>
                             </div>
 
                             <div class="form__group">
@@ -259,11 +259,11 @@
                                         padding-left: 15px;
                                         padding-right: 45px;
                                     "> -->
-                                <input type="text" id="email_address" value="" name="email_address" class="form__field" placeholder="Email Address" style="
+                                <input type="text" id="email" value="" name="email" class="form__field" placeholder="Email Address" style="
                                         padding-left: 15px;
                                         padding-right: 45px;
                                     ">
-                                <label for="email_address" class="form__label">Email Address</label>
+                                <label for="email" class="form__label">Email Address</label>
                             </div>
 
                             <div class="form__group">

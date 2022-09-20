@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CryptoPagesController;
+use App\Http\Controllers\Crypto\PaymentController;
 
 
 Route::middleware('auth')->group(function () {
@@ -32,6 +33,8 @@ Route::middleware('auth')->group(function () {
         Route::get('checkout-type',[CryptoPagesController::class, 'checkoutType'])->name('checkout-type');
         Route::get('payment-with-card',[CryptoPagesController::class, 'paymentWithCard'])->name('payment-with-card');
         Route::get('payment-with-crypto',[CryptoPagesController::class, 'paymentWithCrypto'])->name('payment-with-crypto');
+
+        Route::post('create-payment-with-card-method',[PaymentController::class, 'create_payment_with_card_method'])->name('create-payment-with-card-method');
     });
 
   

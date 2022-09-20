@@ -144,8 +144,10 @@ class SettingsController extends Controller
     }
 
     public function accountUpdate(Request $request){
+
         $data = $request->all();
         $user =  Auth::user();
+
         if($data['first_name']  != null){
             $user->first_name = $data['first_name'] ;
         }
@@ -158,17 +160,43 @@ class SettingsController extends Controller
             $user->email = $data['email'] ;
         }
 
-        if($data['new_password']  != null){
-            if (password_verify($data['current_password'], $user->password)) {
-                $user->password =  Hash::make($data['new_password']);
-            }else{
-                return redirect()->route('account')->with(['status' => 'error' , 'data' => 'Password missmatch']);
+        if($request->exists('confirm_password') && $request->exists('delete_password')){
+            
+    
+            if(($data['new_password']  != null) && ($data['confirm_password']  != null)){
+                if (password_verify($data['current_password'], $user->password)) {
+                    if($data['new_password'] == $data['confirm_password']){
+                        $user->password =  Hash::make($data['new_password']);
+                    }
+                    else{
+                        return redirect()->route('crypto.account')->with(['status' => 'error' , 'data' => 'New Password does not match with Confirm Password']);
+                    }
+                }else{
+                    return redirect()->route('crypto.account')->with(['status' => 'error' , 'data' => 'Password missmatch']);
+                }
             }
+    
+            $user->save();
+    
+            return redirect()->route('crypto.account')->with(['status' => 'success' , 'data' => 'Account updated']);
+
+        }else{
+    
+            if($data['new_password']  != null){
+                if (password_verify($data['current_password'], $user->password)) {
+                    $user->password =  Hash::make($data['new_password']);
+                }else{
+                    return redirect()->route('account')->with(['status' => 'error' , 'data' => 'Password missmatch']);
+                }
+            }
+    
+            $user->save();
+    
+            return redirect()->route('account')->with(['status' => 'success' , 'data' => 'Account updated']);
         }
 
-        $user->save();
-
-        return redirect()->route('account')->with(['status' => 'success' , 'data' => 'Account updated']);
+        
+        
         
     }
 
