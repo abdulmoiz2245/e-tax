@@ -117,6 +117,14 @@
             <h1 class="dash-title" style="margin-bottom: 18px; font-size:30px !important">Add Your Wallets</h1>
         </div>
 
+        @if (\Session::has('message'))
+        <div class="alert alert-info">
+            <ul>
+                <li>{{ \Session::get('message') }}</li>
+            </ul>
+        </div>
+        @endif
+
     </div>
 
     <div>
@@ -162,468 +170,482 @@
                         <span class="filter-item f-16-fig" data-filter="phone">Services</span>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="gallery-item shoe">
-                        <div class="gallery-item-inner">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <div>
-                                            <input type="checkbox" name="" id="">
+                <form action="{{route('crypto.add-wallet.store')}}" method="post">
+                    @csrf
+                    <div class="row">
+                        <div class="gallery-item shoe">
+                            <div class="gallery-item-inner">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex">
+                                            <div>
+                                                <input type="checkbox" name="wallet_name" id="" checked value="coinbase">
 
-                                        </div>
-                                        <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/binance.png') }}" width="48" height="48" alt="">
+                                            </div>
+                                            <div class="w-100 text-center">
+                                                <img src="{{ asset(theme()->getMediaUrlPath() . 'img/coinbase.png') }}" width="48" height="48" alt="">
 
-                                        </div>
-                                        <div>
-                                            <p class="f-16-fig">Binance</p>
+                                            </div>
+                                            <div>
+                                                <p class="f-16-fig">Coinbase</p>
 
+                                            </div>
                                         </div>
+
                                     </div>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="gallery-item headphone">
+                            <div class="gallery-item-inner">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-md-flex">
+                                            <div>
+                                                <input type="checkbox" name="" id="" disabled>
+
+                                            </div>
+                                            <div class="w-100 text-center">
+                                                <img src="{{ asset(theme()->getMediaUrlPath() . 'img/kucoin.png') }}" width="48" height="48" alt="">
+
+                                            </div>
+                                            <div>
+                                                <p class="f-16-fig">KuCoin</p>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item camera">
+                            <div class="gallery-item-inner">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex">
+                                            <div>
+                                                <input type="checkbox" name="" id="" disabled>
+
+                                            </div>
+                                            <div class="w-100 text-center">
+                                                <img src="{{ asset(theme()->getMediaUrlPath() . 'img/coinspot.png') }}" width="48" height="48" alt="">
+
+                                            </div>
+                                            <div>
+                                                <p class="f-16-fig">CoinSpot</p>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" gallery-item headphone">
+                            <div class="gallery-item-inner">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex">
+                                            <div>
+                                                <input type="checkbox" name="" id="" disabled>
+
+                                            </div>
+                                            <div class="w-100 text-center">
+                                                <img src="{{ asset(theme()->getMediaUrlPath() . 'img/coinjar.png') }}" width="48" height="48" alt="">
+
+                                            </div>
+                                            <div>
+                                                <p class="f-16-fig">CoinJar</p>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- gallery item end -->
+                        <!-- gallery item start -->
+                        <div class="gallery-item camera">
+                            <div class="gallery-item-inner">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex">
+                                            <div>
+                                                <input type="checkbox" name="" id="" disabled>
+
+                                            </div>
+                                            <div class="w-100 text-center">
+                                                <img src="{{ asset(theme()->getMediaUrlPath() . 'img/shakepay.png') }}" width="48" height="48" alt="">
+
+                                            </div>
+                                            <div>
+                                                <p class="f-16-fig">ShakePay</p>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- gallery item end -->
+                        <div class="gallery-item phone">
+                            <div class="gallery-item-inner">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex">
+                                            <div>
+                                                <input type="checkbox" name="" id="" disabled>
+
+                                            </div>
+                                            <div class="w-100 text-center">
+                                                <img src="{{ asset(theme()->getMediaUrlPath() . 'img/bybit.png') }}" width="48" height="48" alt="">
+
+                                            </div>
+                                            <div>
+                                                <p class="f-16-fig">ByBit</p>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item camera">
+                            <div class="gallery-item-inner">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex">
+                                            <div>
+                                                <input type="checkbox" name="" id="" disabled>
+
+                                            </div>
+                                            <div class="w-100 text-center">
+                                                <img src="{{ asset(theme()->getMediaUrlPath() . 'img/bybit.png') }}" width="48" height="48" alt="">
+
+                                            </div>
+                                            <div>
+                                                <p class="f-16-fig">Coinbase Pro</p>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item watch">
+                            <div class="gallery-item-inner">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex">
+                                            <div>
+                                                <input type="checkbox" name="" id="" disabled>
+
+                                            </div>
+                                            <div class="w-100 text-center">
+                                                <img src="{{ asset(theme()->getMediaUrlPath() . 'img/crypto.png') }}" width="48" height="48" alt="">
+
+                                            </div>
+                                            <div>
+                                                <p class="f-16-fig">Crypto.com</p>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- gallery item start -->
+                        <div class="gallery-item watch">
+                            <div class="gallery-item-inner">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex">
+                                            <div>
+                                                <input type="checkbox" name="" id="" disabled>
+
+                                            </div>
+                                            <div class="w-100 text-center">
+                                                <img src="{{ asset(theme()->getMediaUrlPath() . 'img/swyftx.png') }}" width="48" height="48" alt="">
+
+                                            </div>
+                                            <div>
+                                                <p class="f-16-fig">Swyftx</p>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- gallery item end -->
+
+                        <!-- gallery item start -->
+                        <div class="gallery-item watch">
+                            <div class="gallery-item-inner">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex">
+                                            <div>
+                                                <input type="checkbox" name="" id="" disabled>
+
+                                            </div>
+                                            <div class="w-100 text-center">
+                                                <img src="{{ asset(theme()->getMediaUrlPath() . 'img/bitbuy.png') }}" width="48" height="48" alt="">
+
+                                            </div>
+                                            <div>
+                                                <p class="f-16-fig">Bitbuy</p>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- gallery item end -->
+
+                        <!-- gallery item start -->
+                        <div class="gallery-item watch">
+                            <div class="gallery-item-inner">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex">
+                                            <div>
+                                                <input type="checkbox" name="" id="" disabled>
+
+                                            </div>
+                                            <div class="w-100 text-center">
+                                                <img src="{{ asset(theme()->getMediaUrlPath() . 'img/bittrex.png') }}" width="48" height="48" alt="">
+
+                                            </div>
+                                            <div>
+                                                <p class="f-16-fig">Bittrex</p>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- gallery item end -->
+
+                        <!-- gallery item start -->
+                        <div class="gallery-item watch">
+                            <div class="gallery-item-inner">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex">
+                                            <div>
+                                                <input type="checkbox" name="" id="" disabled>
+
+                                            </div>
+                                            <div class="w-100 text-center">
+                                                <img src="{{ asset(theme()->getMediaUrlPath() . 'img/cryptoapp.png') }}" width="48" height="48" alt="">
+
+                                            </div>
+                                            <div>
+                                                <p class="f-16-fig">Crypto.com App</p>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- gallery item end -->
+
+                        <!-- gallery item start -->
+                        <div class="gallery-item watch">
+                            <div class="gallery-item-inner">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex">
+                                            <div>
+                                                <input type="checkbox" name="" id="" disabled>
+
+                                            </div>
+                                            <div class="w-100 text-center">
+                                                <img src="{{ asset(theme()->getMediaUrlPath() . 'img/binance.png') }}" width="48" height="48" alt="">
+
+                                            </div>
+                                            <div>
+                                                <p class="f-16-fig">Binance</p>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- gallery item end -->
+
+                        <!-- gallery item start -->
+                        <div class="gallery-item watch">
+                            <div class="gallery-item-inner">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex">
+                                            <div>
+                                                <input type="checkbox" name="" id="" disabled>
+
+                                            </div>
+                                            <div class="w-100 text-center">
+                                                <img src="{{ asset(theme()->getMediaUrlPath() . 'img/kraken.png') }}" width="48" height="48" alt="">
+
+                                            </div>
+                                            <div>
+                                                <p class="f-16-fig">Kraken</p>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- gallery item end -->
+
+                        <!-- gallery item start -->
+                        <div class="gallery-item watch">
+                            <div class="gallery-item-inner">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex">
+                                            <div>
+                                                <input type="checkbox" name="" id="" disabled>
+
+                                            </div>
+                                            <div class="w-100 text-center">
+                                                <img src="{{ asset(theme()->getMediaUrlPath() . 'img/cointree.png') }}" width="48" height="48" alt="">
+
+                                            </div>
+                                            <div>
+                                                <p class="f-16-fig">Cointree</p>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- gallery item end -->
+
+                        <!-- gallery item start -->
+                        <div class="gallery-item watch">
+                            <div class="gallery-item-inner">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex">
+                                            <div>
+                                                <input type="checkbox" name="" id="" disabled>
+
+                                            </div>
+                                            <div class="w-100 text-center">
+                                                <img src="{{ asset(theme()->getMediaUrlPath() . 'img/coinsquare.png') }}" width="48" height="48" alt="">
+
+                                            </div>
+                                            <div>
+                                                <p class="f-16-fig">Coinsquare</p>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- gallery item end -->
+
+                        <!-- gallery item start -->
+                        <div class="gallery-item watch">
+                            <div class="gallery-item-inner">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex">
+                                            <div>
+                                                <input type="checkbox" name="" id="" disabled>
+
+                                            </div>
+                                            <div class="w-100 text-center">
+                                                <img src="{{ asset(theme()->getMediaUrlPath() . 'img/gemini.png') }}" width="48" height="48" alt="">
+
+                                            </div>
+                                            <div>
+                                                <p class="f-16-fig">Gemini</p>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- gallery item end -->
+
+                        <div class="gallery-item watch">
+                            <div class="gallery-item-inner">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex">
+                                            <div>
+                                                <input type="checkbox" name="" id="" disabled>
+
+                                            </div>
+                                            <div class="w-100 text-center">
+                                                <img src="{{ asset(theme()->getMediaUrlPath() . 'img/bitfinex.png') }}" width="48" height="48" alt="">
+
+                                            </div>
+                                            <div>
+                                                <p class="f-16-fig">Bitfinex</p>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="gallery-item headphone">
-                        <div class="gallery-item-inner">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-md-flex">
-                                        <div>
-                                            <input type="checkbox" name="" id="">
+                    <div class="form__group mt-7" style="position: relative;">
+                        <svg style="position: absolute;top: 24px;right: 12px;" class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.438 5.09831V7.30962H8.78555C7.97173 7.30962 7.30962 7.97173 7.30962 8.78554V16.438H5.09831C4.49272 16.438 4 15.9452 4 15.3394V5.09831C4 4.49272 4.49275 4 5.09831 4H15.3395C15.9453 4 16.438 4.49275 16.438 5.09831Z" fill="#6F6F6F" />
+                            <path d="M19.9997 9.03808V19.2792C19.9997 19.6774 19.6769 20.0002 19.2787 20.0002H9.03759C8.63939 20.0002 8.31641 19.6774 8.31641 19.2792V9.03808C8.31641 8.63988 8.63938 8.31689 9.03759 8.31689H19.2787C19.6769 8.31689 19.9997 8.63987 19.9997 9.03808Z" fill="#6F6F6F" />
+                        </svg>
 
-                                        </div>
-                                        <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/kucoin.png') }}" width="48" height="48" alt="">
-
-                                        </div>
-                                        <div>
-                                            <p class="f-16-fig">KuCoin</p>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
+                        <label for="access_token">Access Token</label>
+                        <input type="text" id="access_token" name="access_token" class="form__field" style="
+                            padding-left: 15px;
+                            padding-right: 45px;
+                        ">
                     </div>
 
-                    <div class="gallery-item camera">
-                        <div class="gallery-item-inner">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <div>
-                                            <input type="checkbox" name="" id="">
-
-                                        </div>
-                                        <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/coinspot.png') }}" width="48" height="48" alt="">
-
-                                        </div>
-                                        <div>
-                                            <p class="f-16-fig">CoinSpot</p>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class=" gallery-item headphone">
-                        <div class="gallery-item-inner">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <div>
-                                            <input type="checkbox" name="" id="">
-
-                                        </div>
-                                        <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/coinjar.png') }}" width="48" height="48" alt="">
-
-                                        </div>
-                                        <div>
-                                            <p class="f-16-fig">CoinJar</p>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- gallery item end -->
-                    <!-- gallery item start -->
-                    <div class="gallery-item camera">
-                        <div class="gallery-item-inner">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <div>
-                                            <input type="checkbox" name="" id="">
-
-                                        </div>
-                                        <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/shakepay.png') }}" width="48" height="48" alt="">
-
-                                        </div>
-                                        <div>
-                                            <p class="f-16-fig">ShakePay</p>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- gallery item end -->
-                    <div class="gallery-item phone">
-                        <div class="gallery-item-inner">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <div>
-                                            <input type="checkbox" name="" id="">
-
-                                        </div>
-                                        <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/bybit.png') }}" width="48" height="48" alt="">
-
-                                        </div>
-                                        <div>
-                                            <p class="f-16-fig">ByBit</p>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item camera">
-                        <div class="gallery-item-inner">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <div>
-                                            <input type="checkbox" name="" id="">
-
-                                        </div>
-                                        <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/bybit.png') }}" width="48" height="48" alt="">
-
-                                        </div>
-                                        <div>
-                                            <p class="f-16-fig">Coinbase Pro</p>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="gallery-item watch">
-                        <div class="gallery-item-inner">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <div>
-                                            <input type="checkbox" name="" id="">
-
-                                        </div>
-                                        <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/crypto.png') }}" width="48" height="48" alt="">
-
-                                        </div>
-                                        <div>
-                                            <p class="f-16-fig">Crypto.com</p>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- gallery item start -->
-                    <div class="gallery-item watch">
-                        <div class="gallery-item-inner">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <div>
-                                            <input type="checkbox" name="" id="">
-
-                                        </div>
-                                        <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/swyftx.png') }}" width="48" height="48" alt="">
-
-                                        </div>
-                                        <div>
-                                            <p class="f-16-fig">Swyftx</p>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- gallery item end -->
-
-                    <!-- gallery item start -->
-                    <div class="gallery-item watch">
-                        <div class="gallery-item-inner">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <div>
-                                            <input type="checkbox" name="" id="">
-
-                                        </div>
-                                        <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/bitbuy.png') }}" width="48" height="48" alt="">
-
-                                        </div>
-                                        <div>
-                                            <p class="f-16-fig">Bitbuy</p>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- gallery item end -->
-
-                    <!-- gallery item start -->
-                    <div class="gallery-item watch">
-                        <div class="gallery-item-inner">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <div>
-                                            <input type="checkbox" name="" id="">
-
-                                        </div>
-                                        <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/bittrex.png') }}" width="48" height="48" alt="">
-
-                                        </div>
-                                        <div>
-                                            <p class="f-16-fig">Bittrex</p>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- gallery item end -->
-
-                    <!-- gallery item start -->
-                    <div class="gallery-item watch">
-                        <div class="gallery-item-inner">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <div>
-                                            <input type="checkbox" name="" id="">
-
-                                        </div>
-                                        <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/cryptoapp.png') }}" width="48" height="48" alt="">
-
-                                        </div>
-                                        <div>
-                                            <p class="f-16-fig">Crypto.com App</p>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- gallery item end -->
-
-                    <!-- gallery item start -->
-                    <div class="gallery-item watch">
-                        <div class="gallery-item-inner">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <div>
-                                            <input type="checkbox" name="" id="">
-
-                                        </div>
-                                        <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/binance.png') }}" width="48" height="48" alt="">
-
-                                        </div>
-                                        <div>
-                                            <p class="f-16-fig">Binance</p>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- gallery item end -->
-
-                    <!-- gallery item start -->
-                    <div class="gallery-item watch">
-                        <div class="gallery-item-inner">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <div>
-                                            <input type="checkbox" name="" id="">
-
-                                        </div>
-                                        <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/kraken.png') }}" width="48" height="48" alt="">
-
-                                        </div>
-                                        <div>
-                                            <p class="f-16-fig">Kraken</p>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- gallery item end -->
-
-                    <!-- gallery item start -->
-                    <div class="gallery-item watch">
-                        <div class="gallery-item-inner">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <div>
-                                            <input type="checkbox" name="" id="">
-
-                                        </div>
-                                        <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/cointree.png') }}" width="48" height="48" alt="">
-
-                                        </div>
-                                        <div>
-                                            <p class="f-16-fig">Cointree</p>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- gallery item end -->
-
-                    <!-- gallery item start -->
-                    <div class="gallery-item watch">
-                        <div class="gallery-item-inner">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <div>
-                                            <input type="checkbox" name="" id="">
-
-                                        </div>
-                                        <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/coinsquare.png') }}" width="48" height="48" alt="">
-
-                                        </div>
-                                        <div>
-                                            <p class="f-16-fig">Coinsquare</p>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- gallery item end -->
-
-                    <!-- gallery item start -->
-                    <div class="gallery-item watch">
-                        <div class="gallery-item-inner">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <div>
-                                            <input type="checkbox" name="" id="">
-
-                                        </div>
-                                        <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/gemini.png') }}" width="48" height="48" alt="">
-
-                                        </div>
-                                        <div>
-                                            <p class="f-16-fig">Gemini</p>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- gallery item end -->
-
-                    <div class="gallery-item watch">
-                        <div class="gallery-item-inner">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <div>
-                                            <input type="checkbox" name="" id="">
-
-                                        </div>
-                                        <div class="w-100 text-center">
-                                            <img src="{{ asset(theme()->getMediaUrlPath() . 'img/bitfinex.png') }}" width="48" height="48" alt="">
-
-                                        </div>
-                                        <div>
-                                            <p class="f-16-fig">Bitfinex</p>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row" style="margin-top: 40px;">
-                    <div class="col-12 text-center">
-                        <a href="{{ route('crypto.add_wallet') }}">
-                            <button class="btn p-2" style="background: #F4B42A;  border-radius: 10px;color:#fff;padding-left:60px !important;padding-right:60px !important;padding-top:13px !important;padding-bottom:11px !important">
+                    <div class="row" style="margin-top: 40px;">
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn p-2" style="background: #F4B42A;  border-radius: 10px;color:#fff;padding-left:60px !important;padding-right:60px !important;padding-top:13px !important;padding-bottom:11px !important">
                                 <span class="f-16-neu-fig" style="color:#fff;">Confirm</span>
                             </button>
-                        </a>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </section>
     </div>

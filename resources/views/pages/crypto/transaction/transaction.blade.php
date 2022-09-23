@@ -323,7 +323,7 @@
                             <p class="f-16-fig text-dark">12:32 PM</p>
                         </td>
 
-                        <td class="text-right">
+                        <td class="pt-0">
                             <svg width="20" height="4" viewBox="0 0 20 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M2 0C0.9 0 0 0.9 0 2C0 3.1 0.9 4 2 4C3.1 4 4 3.1 4 2C4 0.9 3.1 0 2 0ZM18 0C16.9 0 16 0.9 16 2C16 3.1 16.9 4 18 4C19.1 4 20 3.1 20 2C20 0.9 19.1 0 18 0ZM10 0C8.9 0 8 0.9 8 2C8 3.1 8.9 4 10 4C11.1 4 12 3.1 12 2C12 0.9 11.1 0 10 0Z" fill="black" />
                             </svg>
@@ -412,7 +412,7 @@
                             <p class="f-16-fig text-dark">12:32 PM</p>
                         </td>
 
-                        <td class="text-right">
+                        <td class="pt-0">
                             <svg width="20" height="4" viewBox="0 0 20 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M2 0C0.9 0 0 0.9 0 2C0 3.1 0.9 4 2 4C3.1 4 4 3.1 4 2C4 0.9 3.1 0 2 0ZM18 0C16.9 0 16 0.9 16 2C16 3.1 16.9 4 18 4C19.1 4 20 3.1 20 2C20 0.9 19.1 0 18 0ZM10 0C8.9 0 8 0.9 8 2C8 3.1 8.9 4 10 4C11.1 4 12 3.1 12 2C12 0.9 11.1 0 10 0Z" fill="black" />
                             </svg>

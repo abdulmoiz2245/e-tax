@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePlanTable extends Migration
+class CreateCryptoPlanTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,16 @@ class CreatePlanTable extends Migration
      */
     public function up()
     {
-        Schema::create('efile_plan', function (Blueprint $table) {
+        if(!Schema::hasTable('users')){
+        Schema::create('crypto_plan', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
             $table->string('amount')->nullable();
-            $table->string('duration')->nullable();
+            $table->string('transactions')->nullable();
 
             $table->timestamps();
         });
+        }
     }
 
     /**
@@ -30,6 +32,6 @@ class CreatePlanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('efile_plan');
+        Schema::dropIfExists('crypto_plan');
     }
 }

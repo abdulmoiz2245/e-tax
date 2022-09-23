@@ -726,16 +726,17 @@
     <!-- Success Modal -->
     <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content ps-4 pe-4">
+            <div class="modal-content ps-4 pe-4 text-center">
                 <div class="modal-header" style="border-bottom-width: 0px;">
-                    <h5 class="modal-title f-30-fig-neue" style="padding-top: 6%;" id="successModalLabel">Your request successful send</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    
+                    <button type="button" id="successModalClose" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" style="padding-top: 0px; padding-bottom:0px;">
+                <h5 class="modal-title f-30-fig-neue" id="successModalLabel">Your request successful send</h5>
+                <div class="modal-body pt-5" style="padding-top: 0px; padding-bottom:0px;">
                     <p class="f-18-fig-questrial" style="color: #555555;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
                 </div>
 
-                <div>
+                <div class="mt-7" style="padding-bottom: 10%;">
                     <svg width="101" height="101" viewBox="0 0 101 101" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="50.5" cy="50.5" r="40.5" fill="#FAB60C" />
                         <g clip-path="url(#clip0_390_13)">
@@ -754,10 +755,15 @@
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         document.getElementById('send_invitation').onclick = function(){
-            //document.getElementById('inviteFriendsModal').hide();
-            console.log("hassan");
+            $('#inviteFriendsModal').hide();
         };
+        document.getElementById('successModalClose').onclick = function(){
+            $('.modal-backdrop').remove();
+        }
+
+        
     </script>
 </x-base-layout>

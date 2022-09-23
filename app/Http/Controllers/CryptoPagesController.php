@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Session;
 use Auth;
+use Exception;
 use Illuminate\Support\Facades\URL;
 
 
@@ -41,6 +42,33 @@ class CryptoPagesController extends Controller
     public function addWallet()
     {
         return view('pages.crypto.wallet.add_wallet');
+
+    }
+
+    public function store(Request $request)
+    {
+
+        try{
+            $endpoint = "https://api.coinbase.com/v2/user";
+            $client = new \GuzzleHttp\Client();
+            $token = $request->access_token;
+
+            $guzzle = new \GuzzleHttp\Client(['base_uri' => 'https://api.coinbase.com/v2/']);
+
+            $raw_response = $guzzle->get('accounts', [
+                'headers' => ['Authorization' => 'Bearer ' . $token]
+            ]);
+
+            $result = $raw_response->getBody()->getContents();
+
+            $result = json_decode($result);
+
+            return view('pages.crypto.wallet.wallet_coin', compact('result'));
+
+        } catch (\GuzzleHttp\Exception\RequestException $e){
+            return back()->with('message',$e->getMessage());
+        }
+
     }
 
     public function walletCoin()

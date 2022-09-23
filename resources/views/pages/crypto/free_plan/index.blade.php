@@ -12,12 +12,20 @@
         }
     </style>
 
+    <?php
+
+    $user_id = Auth::user()->id;
+
+    ?>
+
+
     <div style="margin-top: 4%;">
         <h1 class="f-30-fig-neue tax_plan_title">Choose your tax plan</h1>
     </div>
     <div class="d-md-flex justify-content-between col-8">
         <div>
             <p class="f-16-fig" style="color: #6F6F6F;">Your transactions: 0 in this year, 11 total</p>
+            <span class="d-none" id="etest">{{$user_id}}</span>
         </div>
         <div class="tax_plan_top_dropdown">
             {{ theme()->getView('partials/widgets/form/input/_select',
@@ -40,7 +48,7 @@
     <div class="row">
         <div class="col-md-9 col-12">
             <div class="d-md-flex justify-content-between tax_plan_top_bars">
-                <div class="card ">
+                <div class="card" id="newbie">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-9">
@@ -59,7 +67,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="holder">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-9">
@@ -67,7 +75,7 @@
                                 <p class="card-text f-16-fig">
                                     1.000 Transactions
                                 </p>
-                                <h1 class="f-26-fig-neu">$49</h1>
+                                <h1 class="f-26-fig-neu">$149</h1>
                             </div>
                             <div class="col-3">
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -78,7 +86,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="trader">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-9">
@@ -86,7 +94,7 @@
                                 <p class="card-text f-16-fig">
                                     3.000 Transactions
                                 </p>
-                                <h1 class="f-26-fig-neu">$49</h1>
+                                <h1 class="f-26-fig-neu">$249</h1>
                             </div>
                             <div class="col-3">
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -97,7 +105,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="pro">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-9">
@@ -105,7 +113,7 @@
                                 <p class="card-text f-16-fig">
                                     10.000 + Transactions
                                 </p>
-                                <h1 class="f-26-fig-neu">$49 <span class="f-18-fig-questrial" style="color: #3D5EC5;">customize</span></h1>
+                                <h1 class="f-26-fig-neu">$349 <span class="f-18-fig-questrial" style="color: #3D5EC5;">customize</span></h1>
                             </div>
                             <div class="col-3">
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -120,7 +128,7 @@
             <div class="card tax_plan_list mt-5">
                 <div class="d-flex justify-content-between pt-2">
                     <div>
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" checked name="" id="" disabled>
                         <label>
                             <h5 class="f-20-fig">Tax report for United States</h5>
                             <p class="f-16-fig" style="color: #6F6F6F;">Access reports for the tax year beginning on 1 January 2021</p>
@@ -133,7 +141,7 @@
                 <hr style="color:#BFBFBF ;">
                 <div class="d-flex justify-content-between">
                     <div>
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" name="" id="daily_sync" value="120">
                         <label>
                             <h5 class="f-20-fig">Daily Sync</h5>
                             <p class="f-16-fig" style="color: #6F6F6F;">Koinly will automatically check for new transactions on all your synced wallets. Valid for 1 year from date of purchase</p>
@@ -146,7 +154,7 @@
                 <hr style="color:#BFBFBF ;">
                 <div class="d-flex justify-content-between">
                     <div>
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" name="" id="dual_nationality" value="120">
                         <label>
                             <h5 class="f-20-fig">Dual Nationality</h5>
                             <p class="f-16-fig" style="color: #6F6F6F;">Download reports for one additional country. Ideal for expats</p>
@@ -159,7 +167,7 @@
                 <hr style="color:#BFBFBF ;">
                 <div class="d-flex justify-content-between">
                     <div>
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" name="" id="tax_report_for_us" value="120">
                         <label>
                             <h5 class="f-20-fig">Tax report for United States</h5>
                             <p class="f-16-fig" style="color: #6F6F6F;">Due to high demand the expert reviews can take 4-6 weeks to complete. One of our experts will review your imported data and highlight any issues. Ideal for new users</p>
@@ -172,7 +180,7 @@
                 <hr class="bottom_hr" style="color:#BFBFBF ;">
                 <div class="d-flex justify-content-between">
                     <div class="total_cost" style="align-self:center;">
-                        <span class="f-18-fig-questrial ps-10" style="color: #6F6F6F;">Total cost: <span class="f-18-fig-neue">$320</span></span>
+                        <span class="f-18-fig-questrial ps-10" style="color: #6F6F6F;">Total cost: <span class="f-18-fig-neue">$</span><span class="f-18-fig-neue" id="totalCost">0</span></span>
                     </div>
                     <div>
                         <a href="{{ route('crypto.checkout-type') }}" class="btn" style="background: #F4B42A;  color:#fff" type="button">Checkout</a>
@@ -239,4 +247,163 @@
             </div>
         </div>
     </div>
+    <script>
+        let newbie = document.getElementById("newbie");
+        let holder = document.getElementById("holder");
+        let trader = document.getElementById("trader");
+        let pro = document.getElementById("pro");
+        let totalCOST = document.getElementById('totalCost');
+        let daily_sync = document.getElementById('daily_sync');
+        let dual_nationality = document.getElementById('dual_nationality');
+        let tax_report_for_us = document.getElementById('tax_report_for_us');
+        var flag = false;
+
+
+
+        let services = {};
+        services.daily_sync = {
+            title: 'Daily Sync',
+            price: '120',
+            status: false
+        };
+        services.dual_nationality = {
+            title: 'Dual Nationality',
+            price: '120',
+            status: false
+        };
+
+        services.tax_report_for_us = {
+            title: 'Tax report for United States',
+            price: '120',
+            status: false
+        };
+
+
+        //var storedNames = JSON.parse(localStorage.getItem("names"));
+
+
+
+
+        daily_sync.addEventListener('change', function() {
+            if (daily_sync.checked) {
+                totalCOST.innerText = parseInt(totalCOST.innerText) + parseInt(daily_sync.value);
+                localStorage.price = parseInt(totalCOST.innerText);
+                flag = true;
+
+                services.daily_sync.status = true;
+                localStorage.setItem("services", JSON.stringify(services));
+            } else {
+                if (flag) {
+                    totalCOST.innerText = parseInt(totalCOST.innerText) - parseInt(daily_sync.value);
+                    localStorage.price = parseInt(totalCOST.innerText);
+
+                    services.daily_sync.status = false;
+                    localStorage.setItem("services", JSON.stringify(services));
+                }
+            }
+        })
+
+
+        dual_nationality.addEventListener('change', function() {
+            if (dual_nationality.checked) {
+                totalCOST.innerText = parseInt(totalCOST.innerText) + parseInt(dual_nationality.value);
+                localStorage.price = parseInt(totalCOST.innerText);
+                flag = true;
+
+                services.dual_nationality.status = true;
+                localStorage.setItem("services", JSON.stringify(services));
+            } else {
+                if (flag) {
+                    totalCOST.innerText = parseInt(totalCOST.innerText) - parseInt(daily_sync.value);
+                    localStorage.price = parseInt(totalCOST.innerText);
+
+                    services.dual_nationality.status = false;
+                    localStorage.setItem("services", JSON.stringify(services));
+                }
+            }
+        })
+
+        tax_report_for_us.addEventListener('change', function() {
+            if (tax_report_for_us.checked) {
+                totalCOST.innerText = parseInt(totalCOST.innerText) + parseInt(dual_nationality.value);
+                localStorage.price = parseInt(totalCOST.innerText);
+                flag = true;
+
+                services.tax_report_for_us.status = true;
+                localStorage.setItem("services", JSON.stringify(services));
+            } else {
+                if (flag) {
+                    totalCOST.innerText = parseInt(totalCOST.innerText) - parseInt(daily_sync.value);
+                    localStorage.price = parseInt(totalCOST.innerText);
+
+                    services.tax_report_for_us.status = false;
+                    localStorage.setItem("services", JSON.stringify(services));
+                }
+            }
+        })
+
+        newbie.onclick = function() {
+            newbie.style.border = "1px solid #9181DB";
+            holder.style.border = "none";
+            trader.style.border = "none";
+            pro.style.border = "none";
+            totalCOST.innerText = 49;
+            daily_sync.checked = false;
+            dual_nationality.checked = false;
+            tax_report_for_us.checked = false;
+            localStorage.price = parseInt(totalCOST.innerText);
+            localStorage.planType = 'Newbie';
+            localStorage.planPrice = 49;
+            localStorage.crypto_plan_id = 1;
+        }
+
+
+        holder.onclick = function() {
+            holder.style.border = "1px solid #9181DB";
+            newbie.style.border = "none";
+            trader.style.border = "none";
+            pro.style.border = "none";
+            totalCOST.innerText = 149;
+            daily_sync.checked = false;
+            dual_nationality.checked = false;
+            tax_report_for_us.checked = false;
+            localStorage.price = parseInt(totalCOST.innerText);
+            localStorage.planType = 'Holder';
+            localStorage.planPrice = 149;
+            localStorage.crypto_plan_id = 2;
+        }
+
+        trader.onclick = function() {
+            trader.style.border = "1px solid #9181DB";
+            holder.style.border = "none";
+            newbie.style.border = "none";
+            pro.style.border = "none";
+            totalCOST.innerText = 249;
+            daily_sync.checked = false;
+            dual_nationality.checked = false;
+            tax_report_for_us.checked = false;
+            localStorage.price = parseInt(totalCOST.innerText);
+            localStorage.planType = 'Trader';
+            localStorage.planPrice = 249;
+            localStorage.crypto_plan_id = 3;
+        }
+
+        pro.onclick = function() {
+            pro.style.border = "1px solid #9181DB";
+            holder.style.border = "none";
+            trader.style.border = "none";
+            newbie.style.border = "none";
+            totalCOST.innerText = 349;
+            daily_sync.checked = false;
+            dual_nationality.checked = false;
+            tax_report_for_us.checked = false;
+            localStorage.price = parseInt(totalCOST.innerText);
+            localStorage.planType = 'Pro';
+            localStorage.planPrice = 349;
+            localStorage.crypto_plan_id = 4;
+        }
+
+        let idUser = document.getElementById('etest');
+        localStorage.userID = parseInt(idUser.innerText);
+    </script>
 </x-base-layout>
