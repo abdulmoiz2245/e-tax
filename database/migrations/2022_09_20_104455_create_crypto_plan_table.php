@@ -13,7 +13,7 @@ class CreateCryptoPlanTable extends Migration
      */
     public function up()
     {
-        if(!Schema::hasTable('users')){
+        // if(!Schema::hasTable('users')){
         Schema::create('crypto_plan', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
@@ -22,7 +22,7 @@ class CreateCryptoPlanTable extends Migration
 
             $table->timestamps();
         });
-        }
+        // }
     }
 
     /**
