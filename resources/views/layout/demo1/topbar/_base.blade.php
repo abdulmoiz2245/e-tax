@@ -10,12 +10,19 @@ $toolbarButtonIconSizeClass = "svg-icon-1";
 {{--begin::Toolbar wrapper--}}
 <div class="d-flex align-items-stretch flex-shrink-0">
 
+@php
+
+$active_crypto_plan = Auth::user()->active_crypto_plan;
+$plan_name = \App\Models\CryptoPlan::select('name')->where('id', $active_crypto_plan ?? 0)->first();
+
+@endphp
+    @if(isset($_SESSION['app']) && $_SESSION['app'] == 'crypto')
     <div class="topbar-item align-self-center" data-offset="10px,0px" style="margin-right:30px">
         <a href="{{ route('crypto.free-plan') }}">
-            <h4 class="f-16-neu-fig" style="color:#2B014C" >Free Plan</h4>
-
+            <h4 class="f-16-neu-fig" style="color:#2B014C" id="free_plan">{{$plan_name->name ?? 'Free Plan'}}</h4>
         </a>
     </div>
+    @endif
     {{--begin::User--}}
     @if(Auth::check())
     <div class="d-flex align-items-center {{ $toolbarButtonMarginClass }}" id="kt_header_user_menu_toggle">

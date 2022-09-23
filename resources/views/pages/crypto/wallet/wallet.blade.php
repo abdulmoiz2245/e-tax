@@ -94,7 +94,7 @@
                 <tbody class="tbody">
                     <tr>
                         <td>
-                            <a href="{{ route('crypto.wallet_coin') }}">
+                            <a href="">
 
                                 <div class="icon d-md-flex " style="padding-left: 20px;">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

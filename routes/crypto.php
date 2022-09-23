@@ -13,6 +13,8 @@ Route::middleware('auth')->group(function () {
         Route::get('wallet',[CryptoPagesController::class, 'wallet'])->name('wallet');
 
         Route::get('add-wallet',[CryptoPagesController::class, 'addWallet'])->name('add_wallet');
+        Route::post('add-wallet/store',[CryptoPagesController::class, 'store'])->name('add-wallet.store');
+
 
         Route::get('wallet-coin',[CryptoPagesController::class, 'walletCoin'])->name('wallet_coin');
         Route::get('wallet-import',[CryptoPagesController::class, 'walletCoinImport'])->name('wallet_coin_import');
