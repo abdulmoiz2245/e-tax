@@ -82,6 +82,10 @@
             display: none;
         }
 
+        body {
+            background-color: #F8F9FD;
+        }
+
         /*responsive*/
         @media(max-width: 491px) {
             .gallery .gallery-item {

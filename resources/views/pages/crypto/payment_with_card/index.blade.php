@@ -1,5 +1,9 @@
 <x-base-layout>
-
+    <style>
+        body {
+            background-color: #F8F9FD;
+        }
+    </style>
     <div class="payment_with_card">
         <div class="f-16-neu-400-fig">
                 <a href="{{route('crypto.checkout-type')}}"><span class="pe-2">

@@ -97,6 +97,9 @@
         button {
             border-radius: 10px;
         }
+        body {
+            background-color: #F8F9FD;
+        }
 
         @media (min-width: 576px) {
             .modal-dialog {

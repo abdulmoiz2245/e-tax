@@ -23,6 +23,10 @@
             padding-bottom: 18px;
 
         }
+
+        body {
+            background-color: #F8F9FD;
+        }
     </style>
 
     <div class="d-md-flex justify-content-between" style="margin-bottom: 60px; margin-top:7%">

@@ -5,6 +5,10 @@
             max-width: 400px;
         }
 
+        body {
+            background-color: #F8F9FD;
+        }
+
         /* .drop-container {
             position: relative;
             display: flex;

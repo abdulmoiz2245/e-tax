@@ -66,6 +66,15 @@
             color: #f0f0f0 !important;
 
         }
+        body {
+            background-color: #F8F9FD;
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                width: 1400px;
+            }
+        }
     </style>
     <div class="card mb-5">
         <div class="card-body">

@@ -1,5 +1,9 @@
 <x-base-layout>
-
+    <style>
+        body {
+            background-color: #F8F9FD;
+        }
+    </style>
     <div class="checkout_type mx-auto">
         <div class="f-16-neu-400-fig" style="padding-bottom: 3%; padding-top:3%;">
                 <a href="{{route('crypto.free-plan')}}"><span class="pe-2">

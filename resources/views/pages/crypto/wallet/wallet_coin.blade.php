@@ -60,6 +60,10 @@
 
         }
 
+        body {
+            background-color: #F8F9FD;
+        }
+
       
     </style>
 

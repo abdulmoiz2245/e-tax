@@ -23,15 +23,17 @@
 
         }
 
-        @media (min-width: 1200px) {
-            .container {
-                max-width: 980px !important;
-            }
-        }
+     
 
         @media (min-width: 576px) {
             .modal-dialog {
                 max-width: 600px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                width: 1300px;
             }
         }
     </style>

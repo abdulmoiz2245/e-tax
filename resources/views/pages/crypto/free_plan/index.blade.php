@@ -6,6 +6,10 @@
                 max-width: 1507px;
             }
         }
+
+        body {
+            background-color: #F8F9FD;
+        }
     </style>
 
     <div style="margin-top: 4%;">

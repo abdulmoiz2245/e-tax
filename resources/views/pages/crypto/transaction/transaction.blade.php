@@ -27,6 +27,10 @@
 
         }
 
+        #transaction_table .text-right{
+            padding-right: 20px;
+        }
+
         .form__field:focus {
             padding-bottom: 0px;
         }

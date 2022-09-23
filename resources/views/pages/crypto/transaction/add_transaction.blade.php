@@ -17,6 +17,10 @@
             }
 
         }
+
+        body {
+            background-color: #F8F9FD;
+        }
     </style>
     <div class="row gy-5 g-xl-4 mb-5" style="margin-top: 1.2%; ">
         <div class="col-md-12 f-16-neu-400-fig">

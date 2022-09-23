@@ -1,4 +1,9 @@
 <x-base-layout>
+    <style>
+        body {
+            background-color: #F8F9FD;
+        }
+    </style>
 
     <div class="d-md-flex justify-content-between" style="margin-top: 4.8%; ">
         <div>

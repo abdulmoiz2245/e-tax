@@ -14,6 +14,10 @@
 
         }
 
+        body {
+            background-color: #F8F9FD;
+        }
+
         .nav-tabs .active {
             border-bottom: 2px solid #2B014C;
         }
