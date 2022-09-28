@@ -139,7 +139,7 @@
 
                     <div class="col-md-4 col-12 ps-5">
                         <div class="payment_with_card_order_details pt-3 ml-3">
-                            <h5 class="f-18-fig-neue">Order #{{$randomOrderNumber}}</h5>
+                            <h5 class="f-18-fig-neue">Order # <span id="order_number">{{$randomOrderNumber}}</span></h5>
                             <div id="order_details" class="d-flex justify-content-between f-16-fig" style="color: #6F6F6F;">
                                 <span>Includes 1x <span id="planType"></span>:</span>
                                 <span>$<span id="planPrice"></span></span>
@@ -183,6 +183,7 @@
         var user = document.getElementById('user').innerText;
         let amount = 0;
         let crypto_plan_id = 0;
+        let order_number = document.getElementById('order_number').innerText;
         if (localStorage.userID == parseInt(user)) {
             amount = localStorage.price;
             crypto_plan_id = localStorage.crypto_plan_id;
@@ -239,6 +240,7 @@
 
                         amount: amount,
                         crypto_plan_id: crypto_plan_id,
+                        order_number: order_number,
                         currency: 'usd',
 
                         card_name: data.get('card_name'),

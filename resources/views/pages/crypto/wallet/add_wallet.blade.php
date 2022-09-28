@@ -625,22 +625,22 @@
                         </div>
                     </div>
 
-                    <div class="form__group mt-7" style="position: relative;">
+                    <!-- <div class="form__group mt-7" style="position: relative;">
                         <svg style="position: absolute;top: 24px;right: 12px;" class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16.438 5.09831V7.30962H8.78555C7.97173 7.30962 7.30962 7.97173 7.30962 8.78554V16.438H5.09831C4.49272 16.438 4 15.9452 4 15.3394V5.09831C4 4.49272 4.49275 4 5.09831 4H15.3395C15.9453 4 16.438 4.49275 16.438 5.09831Z" fill="#6F6F6F" />
                             <path d="M19.9997 9.03808V19.2792C19.9997 19.6774 19.6769 20.0002 19.2787 20.0002H9.03759C8.63939 20.0002 8.31641 19.6774 8.31641 19.2792V9.03808C8.31641 8.63988 8.63938 8.31689 9.03759 8.31689H19.2787C19.6769 8.31689 19.9997 8.63987 19.9997 9.03808Z" fill="#6F6F6F" />
                         </svg>
 
-                        <label for="access_token">Access Token</label>
-                        <input type="text" id="access_token" name="access_token" class="form__field" style="
+                        <label for="client_id">Client ID</label>
+                        <input type="text" id="client_id" name="client_id" class="form__field" style="
                             padding-left: 15px;
                             padding-right: 45px;
                         ">
-                    </div>
+                    </div> -->
 
                     <div class="row" style="margin-top: 40px;">
                         <div class="col-12 text-center">
-                            <button type="submit" class="btn p-2" style="background: #F4B42A;  border-radius: 10px;color:#fff;padding-left:60px !important;padding-right:60px !important;padding-top:13px !important;padding-bottom:11px !important">
+                            <button type="submit" class="btn p-2 confirmBtn" style="background: #F4B42A;  border-radius: 10px;color:#fff;padding-left:60px !important;padding-right:60px !important;padding-top:13px !important;padding-bottom:11px !important">
                                 <span class="f-16-neu-fig" style="color:#fff;">Confirm</span>
                             </button>
                         </div>
@@ -675,5 +675,8 @@
                 });
             }
         });
+
+        let confirmBtn = document.getElementById('confirmBtn');
+        header()
     </script>
 </x-base-layout>

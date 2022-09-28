@@ -91,12 +91,19 @@
             </div>
         </div>
 
+        <?php
+
+        $user_id = Auth::user()->id;
+        $user_wallet_info = App\Models\UserWalletInfo::where('user_id', $user_id)->first();
+
+        ?>
+
         <div class="col-12">
             <table class="table crypto_table">
                 <tbody class="tbody">
                     <tr>
                         <td>
-                            <a href="">
+                            <a href="{{route('crypto.wallet_coin')}}">
 
                                 <div class="icon d-md-flex " style="padding-left: 20px;">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -120,11 +127,16 @@
 
                         </td>
                         <td>
-                            <p class="f-16-fig pl-3" style="color:#0052FE;margin-bottom: 0;">11 transactions</p>
+                            <p class="f-16-fig pl-3" style="color:#0052FE;margin-bottom: 0;">0 transactions</p>
 
                         </td>
-                        <td>
+                        <td class="pt-9">
                             <span>
+                            @if(isset($user_wallet_info))
+                                {{$user_wallet_info->wallet_name}}
+                            @endif
+                            </span>
+                            <!-- <span>
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_304_49)">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H32V32H0V0Z" fill="#264C92" />
@@ -187,7 +199,7 @@
                                     </defs>
                                 </svg>
 
-                            </span>
+                            </span> -->
                         </td>
                         <td class="dropdown">
                             <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -240,7 +252,7 @@
                             </ul>
                         </td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td>
                             <div class="icon d-md-flex " style="padding-left: 20px;">
                                 <svg width="48" height="16" viewBox="0 0 48 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -321,7 +333,7 @@
                                 </li>
                             </ul>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>

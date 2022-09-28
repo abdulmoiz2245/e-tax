@@ -76,6 +76,13 @@
             }
         }
     </style>
+    @if (\Session::has('message'))
+    <div class="alert alert-info">
+        <ul>
+            <li>{{ \Session::get('message') }}</li>
+        </ul>
+    </div>
+    @endif
     <div class="card mb-5">
         <div class="card-body">
             <div class="row">
@@ -108,7 +115,7 @@
                                 </div>
                                 <div class="">
                                     <p class="f-18-fig-questrial">
-                                        Total Valuem
+                                        Total Value
                                     </p>
                                     <h3 class="f-20-fig">
                                         $23.738

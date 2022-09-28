@@ -545,10 +545,14 @@
                         </tfoot>
                     </table>
                 </div>
-
-
-
             </div>
+
+            @php
+
+            $user_id = Auth::user()->id;
+            $invoices = \App\Models\Payment::select('amount', 'billed_at', 'order_number')->where('user_id', $user_id ?? 0)->get();
+
+            @endphp
 
             <div class="tab-pane" id="4">
                 <div class="table-wapper-crypto" style="
@@ -590,34 +594,46 @@
                             </tr>
                         </thead>
                         <tbody class="tbody">
+                            @if(isset($invoices))
+                            @foreach($invoices as $invoice)
                             <tr>
                                 <td>
-                                    <p class="f-16-fig text-dark">Aug 18, 2022</p>
+                                    <p class="f-16-fig text-dark">{{$invoice->billed_at}}</p>
 
                                 </td>
                                 <td>
-                                    <p class="f-16-fig text-dark">IN889B47C7</p>
-
-                                </td>
-
-                                <td>
-                                    <p class="f-16-fig text-dark">2022</p>
+                                    <p class="f-16-fig text-dark">{{$invoice->order_number}}</p>
 
                                 </td>
 
                                 <td>
-                                    <p class="f-16-fig text-dark">$49.00</p>
+                                    <?php
+
+                                    $order_year = explode("-", $invoice->billed_at);
+
+                                    ?>
+                                    <p class="f-16-fig text-dark">{{$order_year[0]}}</p>
 
                                 </td>
+
                                 <td>
+                                    <p class="f-16-fig text-dark">$<span>{{$invoice->amount}}</span>.00</p>
+
+                                </td>
+                                <!-- <td>
                                     <p class="f-16-fig text-dark">
                                         <span class="badge-danger f-14-neu-400-fig">Pending</span>
+                                    </p>
+                                </td> -->
+                                <td>
+                                    <p class="f-16-fig text-dark">
+                                        <span class="badge-success f-14-neu-400-fig">Approved</span>
                                     </p>
                                 </td>
 
                             </tr>
-
-
+                            @endforeach
+                            @endif
                         </tbody>
 
                         <tfoot>
@@ -728,7 +744,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content ps-4 pe-4 text-center">
                 <div class="modal-header" style="border-bottom-width: 0px;">
-                    
+
                     <button type="button" id="successModalClose" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <h5 class="modal-title f-30-fig-neue" id="successModalLabel">Your request successful send</h5>
@@ -757,13 +773,11 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        document.getElementById('send_invitation').onclick = function(){
+        document.getElementById('send_invitation').onclick = function() {
             $('#inviteFriendsModal').hide();
         };
-        document.getElementById('successModalClose').onclick = function(){
+        document.getElementById('successModalClose').onclick = function() {
             $('.modal-backdrop').remove();
         }
-
-        
     </script>
 </x-base-layout>

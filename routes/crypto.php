@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\CryptoPagesController;
 use App\Http\Controllers\Crypto\PaymentController;
-
+use Illuminate\Http\Request;
 
 Route::middleware('auth')->group(function () {
 
@@ -20,7 +20,7 @@ Route::middleware('auth')->group(function () {
         Route::get('wallet-import',[CryptoPagesController::class, 'walletCoinImport'])->name('wallet_coin_import');
 
         Route::group(['prefix'=>'transaction','as'=>'transaction.'], function(){
-            Route::get('transaction',[CryptoPagesController::class, 'transaction'])->name('transaction');
+            Route::get('transaction',[CryptoPagesController::class, 'listTransactions'])->name('transaction');
             Route::get('add',[CryptoPagesController::class, 'addTransaction'])->name('add');
 
         });
@@ -37,6 +37,8 @@ Route::middleware('auth')->group(function () {
         Route::get('payment-with-crypto',[CryptoPagesController::class, 'paymentWithCrypto'])->name('payment-with-crypto');
 
         Route::post('create-payment-with-card-method',[PaymentController::class, 'create_payment_with_card_method'])->name('create-payment-with-card-method');
+        Route::get('/oauth/callback', [CryptoPagesController::class, 'callback'])->name('callback');
+        Route::get('/list-transactions', [CryptoPagesController::class, 'listTransactions'])->name('list_transactions');
     });
 
   
