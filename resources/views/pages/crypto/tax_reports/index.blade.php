@@ -1,5 +1,13 @@
 <x-base-layout>
 
+    <?php
+    
+    $trans = Auth::user()->Walletinfo->transactions;
+    $deposits = Auth::user()->Walletinfo->deposits;
+    $withdrawals = Auth::user()->Walletinfo->withdrawals;
+
+    ?>
+
     <div class="d-md-flex justify-content-between" style="margin-top: 4.8%; ">
         <div>
             <h1 class="f-30-fig-neue">Tax Reports</h1>
@@ -30,9 +38,9 @@
                     <h5 class="card-title f-18-fig-neue">Summary</h5>
                     <p class="card-text f-16-fig">Koinly needs your full transaction history (fiat → crypto → crypto → fiat) in order to calculate your tax reports correctly. The transactions used in this report are summarized below.</p>
                     <div class="tax-report-tags">
-                        <a href="#" class="btn1 f-14-neu-400-fig">0 transaction</a>
-                        <a href="#" class="btn2 f-14-neu-400-fig">0 deposits</a>
-                        <a href="#" class="btn2 f-14-neu-400-fig">0 withdrawals</a>
+                        <a href="#" class="btn1 f-14-neu-400-fig">{{$trans ?? 'No'}} transactions</a>
+                        <a href="#" class="btn2 f-14-neu-400-fig">{{$deposits ?? 'No'}} deposits</a>
+                        <a href="#" class="btn2 f-14-neu-400-fig">{{$withdrawals ?? 'No'}} withdrawals</a>
                         <a href="#" class="btn2 f-14-neu-400-fig">0 trades</a>
                         <a href="#" class="btn2 f-14-neu-400-fig">0 transfers</a>
                     </div>

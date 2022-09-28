@@ -19,7 +19,7 @@ class PaymentController extends Controller
     {
         $user = Auth::user();
         $data = $request->all();
-        // dd($data);
+        dd($data);
         $data['card_expiry'] = explode("-", $data['card_expiry']);
         $card_exp_year = $data['card_expiry'][0];
         $card_exp_month = $data['card_expiry'][1];
@@ -64,6 +64,7 @@ class PaymentController extends Controller
                                 $payment_entry->billed_at = date('Y-m-d');
                                 //$payment_entry->next_billed_at = date('Y-m-d', strtotime('+1 year', strtotime(date('Y-m-d'))));
                                 $payment_entry->crypto_plan_id = $data['crypto_plan_id'];
+                                $payment_entry->order_number = $data['order_number'];
                                 $payment_entry->save();
         
                                 // $cronjob_payment =  Cronjob_payment::findPaymentOrCreate($user->id);
